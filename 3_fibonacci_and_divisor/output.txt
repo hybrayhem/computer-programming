@@ -1,0 +1,66 @@
+
+Please enter term(s) number : -4
+Please enter “positive” term(s) number: a
+Please enter “numeric” term(s) number: 5
+Fibonacci Sequence:
+1
+1
+2
+3
+5
+
+Please enter term(s) number : *
+
+Please enter input number : 3
+Natural Number Divisors: 1, 
+
+before sum --> h_d_sum: 0.000000
+1/i: 1.000000, h_d_sum: 1.000000
+3
+before sum --> h_d_sum: 1.000000
+1/i: 0.333333, h_d_sum: 1.333333
+
+Is Perfect Number? : No
+ d_count: 2.000000, h_mean: 1.500000, int h_mean: 1
+Is Harmonic Divisor Number? : No
+
+Please enter input number : 18
+Natural Number Divisors: 1, 
+
+before sum --> h_d_sum: 0.000000
+1/i: 1.000000, h_d_sum: 1.000000
+2, 
+
+before sum --> h_d_sum: 1.000000
+1/i: 0.500000, h_d_sum: 1.500000
+3, 
+
+before sum --> h_d_sum: 1.500000
+1/i: 0.333333, h_d_sum: 1.833333
+6, 
+
+before sum --> h_d_sum: 1.833333
+1/i: 0.166667, h_d_sum: 2.000000
+9, 
+
+before sum --> h_d_sum: 2.000000
+1/i: 0.111111, h_d_sum: 2.111111
+18
+before sum --> h_d_sum: 2.111111
+1/i: 0.055556, h_d_sum: 2.166667
+
+Is Perfect Number? : No
+ d_count: 6.000000, h_mean: 2.769231, int h_mean: 2
+Is Harmonic Divisor Number? : No
+
+Please enter input number : *
+
+Please enter 5 numbers: 1 4 3 7 8  
+Maximum number is: 8
+Minimum number is: 1
+Difference between maximum and minimum is 7
+
+Please enter weight(kg) : 80
+Please enter height(m) : 188
+Your category: Severely Underweight
+

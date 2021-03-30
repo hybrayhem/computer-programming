@@ -1,0 +1,10 @@
+Enter your polynomial [n a_n a_n-1 a_n-2 ... a_0]: 4 3 2 0 -1 5
+p(x) = 3.0x^4 + 2.0x^3 - x + 5.0
+
+Please enter an integer number : 28
+This number does not satisfy any special cases
+
+Please enter first integer number : 15
+Please enter second integer number : 20
+Sum of prime numbers between 15 and 20 : 36
+

@@ -1,0 +1,1 @@
+we will alter the integration by replacing the controllers with joint position based controllers and improve the stability of the during trajectory execution. 

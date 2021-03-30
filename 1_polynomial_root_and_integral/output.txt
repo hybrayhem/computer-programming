@@ -1,0 +1,33 @@
+### TEST INTEGRAL 3 ###
+integral 1.2x^3+0.8x+1 from -2 to 13 = 8645.82
+should be 8644.5
+
+integral -3.2x^3+1.2x^2+0.6x+1 from 3 to 19 = -101326.89
+should be -101338
+
+integral 1.2x^3-x^2+4.1x from 81 to 90 = 6706167.87
+should be 6706290
+
+
+### TEST INTEGRAL 4 ###
+integral 1.2x^4+0.8x^2+x+2.4 from -2 to 13 = 89826.22
+should be 89824.5
+
+integral -3.2x^4+1.2x^3+0.6x^2+x from 3 to 19 = -1543953.88
+should be -1543930
+
+integral 1.2x^4-x^3+4.1x^2-1 from -10 to -4 = 27464.13
+should be 27463.4
+
+
+### TEST ROOT FINDER 3 ###
+5.6x^2+x-1
+Ground truth root: 0.340000 vs found root: 0.330982
+
+
+### TEST ROOT FINDER 4 ###
+-3.2x^4+5.6x^2+x-1
+Ground truth root: 1.345220 vs found root: 1.349604
+
+-3.2x^4+x^3-5.72x^2+5.6
+Ground truth root: 0.875906 vs found root: 0.905194

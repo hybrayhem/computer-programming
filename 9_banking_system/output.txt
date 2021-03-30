@@ -1,0 +1,82 @@
+***********Banking System***********
+
+Invalid input.
+
+Current Sequence: 
+1 - Add customer
+2 - Process customer
+Enter -1 for exit
+
+> 2
+There is not any customer in bank system sequence.
+
+Current Sequence: 
+1 - Add customer
+2 - Process customer
+Enter -1 for exit
+
+> 1
+
+Please enter the name of the customer : Halil
+Please enter the age of the customer : 19
+Please enter the label of the customer : 2
+
+Current Sequence: 2
+1 - Add customer
+2 - Process customer
+Enter -1 for exit
+
+> 1
+
+Please enter the name of the customer : Henry
+Please enter the age of the customer : 38
+Please enter the label of the customer : 3
+
+Current Sequence: 2-3
+1 - Add customer
+2 - Process customer
+Enter -1 for exit
+
+> 1
+
+Please enter the name of the customer : Jack
+Please enter the age of the customer : 26
+Please enter the label of the customer : 4
+
+Current Sequence: 2-3-4
+1 - Add customer
+2 - Process customer
+Enter -1 for exit
+
+> 2
+
+Current Sequence: 3-4
+1 - Add customer
+2 - Process customer
+Enter -1 for exit
+
+> 2
+
+Current Sequence: 4
+1 - Add customer
+2 - Process customer
+Enter -1 for exit
+
+> 2
+
+Current Sequence: 
+1 - Add customer
+2 - Process customer
+Enter -1 for exit
+
+> 2
+There is not any customer in bank system sequence.
+
+Current Sequence: 
+1 - Add customer
+2 - Process customer
+Enter -1 for exit
+
+> -1
+exit
+

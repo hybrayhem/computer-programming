@@ -1,0 +1,36 @@
+# Polynomial input format = (3, a), (2, b), (1, c), (0, d) #
+
+Enter first polynomial: Invalid degree: -815867280, assuming as coefficient 0
+Invalid degree: -815867280, assuming as coefficient 0
+Invalid degree: -815867280, assuming as coefficient 0
+Invalid degree: -815867280, assuming as coefficient 0
+Enter second polynomial: Invalid degree: -815867280, assuming as coefficient 0
+Invalid degree: -815867280, assuming as coefficient 0
+Invalid degree: -815867280, assuming as coefficient 0
+Invalid degree: -815867280, assuming as coefficient 0
+
+Enter operand (-, +, *): 0.00 x^6 + 0.00 x^5 + 0.00 x^4 + 0.00 x^3 + 0.00 x^2 + 0.00 x + 0.00
+
+Please enter 1. 4D vector: 
+Please enter 2. 4D vector: 
+Please enter 3. 4D vector: 
+Please enter 4. 4D vector: 
+Please enter 5. 4D vector: Mean a0: 2.200000
+Mean a1: -23.000000
+Mean a2: -2.600000
+Mean a3: -4.400000
+The longest distance between two points: 34.423829
+
+
+Party A: 4 seat(s).
+Party B: 3 seat(s).
+Party C: 1 seat(s).
+Party D: 0 seat(s).
+Party E: 0 seat(s).
+
+
+Counter-Clockwise Order: (1.000000,1.000000) - (-1.000000,1.000000) - (-1.000000,-1.000000)
+
+
+Encrypted number: 175
+
