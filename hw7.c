@@ -26,13 +26,15 @@ int main(){
 		return 0;
 	}
 	
+	fscanf(ptrin, "%s", word);
+	/*fseek(ptrin, -strlen(word), SEEK_CUR);*/
 	while(!feof(ptrin)){
-		fscanf(ptrin, "%s", word);
-		fseek(ptrin, -strlen(word), SEEK_CUR);
-		
+		fseek(ptrin, -strlen(word), SEEK_CUR);		
 		fix_spelling_error(&word[0]);
 		fprintf(ptrin, "%s ", word);
-		if(word[strlen(word)-1] == '|') break;
+		/*if(word[strlen(word)-1] == '|') break;*/
+		
+		fscanf(ptrin, "%s", word);
 	}
 
     printf("READ DONE\n");
