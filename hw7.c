@@ -20,35 +20,20 @@ int main(){
     char word[50];
     
 	ptrin = fopen(fileout, "r+");
-
 	if(ptrin == NULL){
 		printf("Couldn't open file %s.\n'", filein);
 		return 0;
 	}
 	
 	fscanf(ptrin, "%s", word);
-	/*fseek(ptrin, -strlen(word), SEEK_CUR);*/
 	while(!feof(ptrin)){
 		fseek(ptrin, -strlen(word), SEEK_CUR);		
 		fix_spelling_error(&word[0]);
 		fprintf(ptrin, "%s ", word);
-		/*if(word[strlen(word)-1] == '|') break;*/
 		
 		fscanf(ptrin, "%s", word);
 	}
 
-    printf("READ DONE\n");
-
-	
-	strcpy(word, "asitar,");
-	/*printf("%c - %c : %d\n", word[0], word[1], abs(word[0] - word[4]));*/
-	/*strcpy(word, "Musac");*/
-	fix_spelling_error(&word[0]);
-
-	/*strcpy(word, "\"musac/a");
-	seperate_puncs(&word[0]);*/
-
-	/*printf("len: %d\n", strlen("–"));*/
 	fclose(ptrin);
     return 0;
 }
@@ -82,8 +67,6 @@ void find_best_correction(char *word){
 
     FILE *dictin;
 	dictin = fopen(dictfile, "r");
-
-	/*if(strlen(word) < 2) return;*/
 
 	rewind(dictin);
 	while(!(feof(dictin))){
@@ -124,10 +107,6 @@ int strdiff(char *word1, char *word2){
 }
 
 void seperate_puncs(char *word, char *pre, char *body, char *post){
-	/* noktalama ile başlıyorsa pre içine al */
-	/* noktalama işareti çıkana kadar oku, posta koy ve kalan kelimeyi fixle */
-
-
 	int i = 0, j = 0;
 	while(is_alphabetic(word[i]) == 0){
 		/*printf("pre + %c\n", word[i]);*/
@@ -148,8 +127,6 @@ void seperate_puncs(char *word, char *pre, char *body, char *post){
 		i++;
 		j++;
 	}
-
-	/*printf("result: '%s %s %s', [%s]\n", pre, body, post, word);*/
 }
 
 int is_alphabetic(char c){
@@ -157,15 +134,3 @@ int is_alphabetic(char c){
 	if((c <= 90 && c >= 65) || (c <= 122 && c >= 97)) return 1;
 	return 0;
 }
-/*
-
-not defteri
-
-kesme işaretlerini sil önceden, ".," gibi işaretleri de ayır
-
-kelime sonlarındaki nokta virgülleri at
-tek karakter kelimeleri atla
-
-kelimeyi al, sözlükle karşılaştır
-
-*/
