@@ -7,18 +7,20 @@
 #define fileout "test.txt"
 
 void fix_spelling_error();
+void fix_spelling_error2();
 void find_best_correction();
-int strdiff(); 
+float strdiff(); 
 int not_seperator(char c); 
 void seperate_puncs(); 
 void tolwr(); 
 void match_case(); 
-
+int not_to_vowel(char c1, char c2);
 
 int main(){
     FILE *ptrin;
 
     char word[50];
+    char word2[50];
     
 	ptrin = fopen(fileout, "r+");
 	if(ptrin == NULL){
@@ -29,7 +31,7 @@ int main(){
 	fscanf(ptrin, "%s", word);
 	while(!feof(ptrin)){
 		fseek(ptrin, -strlen(word), SEEK_CUR);		
-		fix_spelling_error(&word[0]);
+		fix_spelling_error2(&word[0]);
 		fprintf(ptrin, "%s ", word);
 		
 		fscanf(ptrin, "%s", word);
@@ -37,8 +39,19 @@ int main(){
 
 	/*strcpy(word, "musac");*/		
 	strcpy(word, "Musac's");		
+	fix_spelling_error(&word[0]);	
+
+	strcpy(word, "ssarch");		
 	fix_spelling_error(&word[0]);
 	
+	/*strcpy(word, "ssarch");
+	strcpy(word2, "search");
+	printf("\n%s and %s difference: %.2f\n", word, word2, strdiff(word, word2));
+
+	strcpy(word, "ssarch");
+	strcpy(word2, "starch");
+	printf("\n%s and %s difference: %.2f\n", word, word2, strdiff(word, word2));*/
+
 	fclose(ptrin);
     return 0;
 }
@@ -61,14 +74,42 @@ void fix_spelling_error(char *word){
 	tolwr(new_body, body, length);
 	printf("body to lowercase: %s\n", new_body);
 
-	printf("body [%s] > ", body);
-	find_best_correction(&body[0], 2);
-	printf("[%s]\n", body);
+	printf("body [%s] > ", new_body);
+	find_best_correction(&new_body[0], 2);
+	printf("[%s]\n", new_body);
 
 	match_case(new_body, body, length);
 	printf("body case match: %s\n", new_body);
 
-	sprintf(word, "%s%s%s", pre, body, post);
+	sprintf(word, "%s%s%s", pre, new_body, post);
+	printf("word assemble: [%s]\n\n", word);
+}
+
+void fix_spelling_error2(char *word){
+	char pre[20] = {0};
+	char body[20] = {0};
+	char new_body[20] = {0}; /* corrected body */
+	char post[20] = {0};
+
+	int length = 0;
+
+	seperate_puncs(&word[0], pre, body, post);
+	length = strlen(body);
+	printf("result: %s + %s + %s = [%s]\n", pre, body, post, word);
+
+	if(length < 3) return;
+
+	tolwr(new_body, body, length);
+	printf("body to lowercase: %s\n", new_body);
+
+	printf("body [%s] > ", new_body);
+	find_best_correction(&new_body[0], 3);
+	printf("[%s]\n", new_body);
+
+	match_case(new_body, body, length);
+	printf("body case match: %s\n", new_body);
+
+	sprintf(word, "%s%s%s", pre, new_body, post);
 	printf("word assemble: [%s]\n\n", word);
 }
 
@@ -88,7 +129,7 @@ void match_case(char *dest, char *src, int len){
 }
 
 void find_best_correction(char *word, int tlr){
-	int diff, diffmin = tlr + 1;
+	float diff, diffmin = tlr + 2;
 	char dword[50]; 
 	char correctw[50] = {0};
 
@@ -99,10 +140,9 @@ void find_best_correction(char *word, int tlr){
 	while(!(feof(dictin))){
 		fscanf(dictin, "%s", dword);
 		diff = strdiff(word, dword);
-		if(diff < 0) continue;
-
-		if(diff < tlr){	
-			/*printf("\nMATCH = %s | %s, difference: %d\n", word, dword, diff);*/
+		
+		if(diff < tlr && diff != -1){	
+			printf("\nMATCH = %s | %s, difference: %.2f\n", word, dword, diff);
 			if(diff < diffmin){
 				diffmin = diff;
 				strcpy(correctw, dword);
@@ -115,26 +155,49 @@ void find_best_correction(char *word, int tlr){
 	fclose(dictin);
 }
 
-int strdiff(char *word1, char *word2){
-	int i, l, l1, l2, diff;
-	l1 = strlen(word1);
-	l2 = strlen(word2);
+float strdiff(char *word1, char *word2){
+	int i, l1, l2;
+	float diff = 0.0;
 	char c1, c2;
 
-	if(l1 != l2) return -1;
-	/*if (l1 <= l2) l = l1;
-	else l = l2;*/
+	l1 = strlen(word1);
+	l2 = strlen(word2);
 
-	/*diff = abs(l1 - l2);*/
-	diff = 0;
+	if(l1 != l2) return -1;
 
 	for (i = 0; i < l1; i++){
 		c1 = word1[i];
 		c2 = word2[i];
 
-		if ((c1 != c2)) diff++;
+		if ((c1 != c2)){
+			diff++;
+			if (not_to_vowel(c1, c2)){
+				diff = diff + 0.05; /* adds more cost to make not preferred */
+				/*printf("%c to %c +0.05\n", c1, c2);*/
+			}/*else 
+				printf("%c to %c nothing\n", c1, c2);*/
+		}
 	}
 	return diff;
+}
+
+int not_to_vowel(char c1, char c2)
+{
+	/*printf("%c to %c ", c1, c2);*/
+	/*if ((c1 == 'a' || c1 == 'e' || c1 == 'i' || c1 == 'o' || c1 == 'u') &&
+		(c2 != 'a' && c2 != 'e' && c2 != 'i' && c2 != 'o' && c2 != 'u'))
+	{*/
+	if ((c1 != 'a' && c1 != 'e' && c1 != 'i' && c1 != 'o' && c1 != 'u') /* c1 is consonant */
+		&&
+		(c2 == 'a' || c2 == 'e' || c2 == 'i' || c2 == 'o' || c2 == 'u')) /* c2 is vowel */
+	{
+		/*printf("1");*/
+		return 0;
+	}else{
+		/*printf("0\n");*/
+	}
+
+	return 1;
 }
 
 void seperate_puncs(char *word, char *pre, char *body, char *post){
@@ -162,6 +225,6 @@ void seperate_puncs(char *word, char *pre, char *body, char *post){
 
 int not_seperator(char c){
 	/*if(c > 127) return -1;*/
-	if((c <= 90 && c >= 65) || (c <= 122 && c >= 97) || c == '&') return 1;
+	if((c <= 90 && c >= 65) || (c <= 122 && c >= 97) || c == '&' || c == '-') return 1; /* takes alphabetical letters and &- signs as part of word */
 	return 0;
 }
