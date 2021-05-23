@@ -24,12 +24,24 @@ int update_movie(Movie movie);
 int main(){
     Movie *movies;
     FILE *src;
-    char muyuk[20];
-
-    src = fopen(TESTFILE, "r"); 
-
+    char *muyuk = (char *)calloc(20, sizeof(char));
+    
+    src = fopen(TESTFILE, "r");
     while(!feof(src)){
-        fscanf(src, "%20[^,]s", muyuk);
+
+        fscanf(src, "%20[^,]s%*c", muyuk);
+        printf("MUYUK = '%s' ", muyuk);
+
+        fscanf(src, "%20[^,]s%*c", muyuk);
+        printf("'%s' ", muyuk);
+
+        fscanf(src, "%20[^,]s%*c", muyuk);
+        printf("'%s' ", muyuk);
+
+        fscanf(src, "%20[^,]s%*c", muyuk);
+        printf("'%s' ", muyuk);
+
+        fscanf(src, "%20[^\n]s%*c", muyuk);
         printf("'%s'\n", muyuk);
     }
 
