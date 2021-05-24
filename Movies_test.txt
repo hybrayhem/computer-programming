@@ -2,6 +2,7 @@ budget,genre,name,score,year
 30000000,animation,rugrats in paris: the movie,6.1,2000
 70000000,action,six days seven nights,5.8,1998
 60000000,adventure,far and away,6.5,1992
+unknown,action,dangerously close,6.6,1986
 unknown,comedy,greenfingers,6.9,2000
 unknown,adventure,american honey,7.0,2016
 unknown,action,crime story,6.8,1993
