@@ -20,32 +20,87 @@ int show_menu();
 int insert_movie(Movie movie);
 int update_movie(Movie movie);
 
+int numerate_genre(char **genres, char genre[]){
+    int i;
+    
+    printf("genre = %s\n", genre);
+    for(i=0; genres[i] != NULL; i++){
+        printf("genres %d. = %s\n", i, genres[i]);
+    }
+}
+
+int parse_movie(FILE *src, Movie *movie, char **genres){
+    int i, counter = 0;
+    char input, *ap, *apb = NULL;
+
+    do
+    {
+        fscanf(src, "%c", &input);
+        counter++;
+
+        ap = (char *)calloc(counter, sizeof(char));
+        for (i = 0; i < counter - 1; i++)
+        {
+            ap[i] = apb[i];
+        }
+        ap[counter - 1] = input;
+
+        if (apb != NULL)
+            free(apb);
+        apb = ap;
+
+    } while (input != '\n' && !feof(src));
+
+    apb = strtok(ap, ",");
+    printf("movie = %s; ", apb);
+    if(strcmp(apb, "unknown") == 0){
+        movie->budget = -1;
+    }else{
+        movie->budget = strtod(apb, NULL);
+    }
+
+    apb = strtok(NULL, ",");
+    printf("%s; ", apb);
+    movie->genre = numerate_genre(genres, apb);
+
+    apb = strtok(NULL, ",");
+    printf("%s; ", apb);
+    movie->name = apb;
+
+    apb = strtok(NULL, ",");
+    printf("%s; ", apb);
+    movie->score = strtod(apb, NULL);
+
+    apb = strtok(NULL, ",");
+    apb[strlen(apb) - 1] = '\0';
+    printf("%s\n", apb);
+    movie->year = atoi(apb);
+
+    /*printf("ap = %s\n", ap);*/
+    /*free(ap);*/
+
+    return 1;
+}
 
 int main(){
-    Movie *movies;
+    int l = 0, success;
     FILE *src;
-    char *muyuk = (char *)calloc(20, sizeof(char));
+
+    Movie *movies = (Movie *)calloc(20, sizeof(Movie));
+    char *genres = (char *)calloc(1, sizeof(char));
+    genres[0] = NULL;
     
     src = fopen(TESTFILE, "r");
     while(!feof(src)){
-
-        fscanf(src, "%20[^,]s%*c", muyuk);
-        printf("MUYUK = '%s' ", muyuk);
-
-        fscanf(src, "%20[^,]s%*c", muyuk);
-        printf("'%s' ", muyuk);
-
-        fscanf(src, "%20[^,]s%*c", muyuk);
-        printf("'%s' ", muyuk);
-
-        fscanf(src, "%20[^,]s%*c", muyuk);
-        printf("'%s' ", muyuk);
-
-        fscanf(src, "%20[^\n]s%*c", muyuk);
-        printf("'%s'\n", muyuk);
+        success = parse_movie(src, &movies[l], &genres);
+        printf("Movie: %.1f, %d, %s, %.1f, %d\n\n", movies[l].budget, movies[l].genre, movies[l].name, movies[l].score, movies[l].year);
+        if(success){
+            l++;
+        }
     }
 
     show_menu();
+    free(movies);
     return 0;
 }
 

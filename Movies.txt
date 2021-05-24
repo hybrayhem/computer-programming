@@ -85,7 +85,7 @@ unknown,drama,jacknife,6.4,1989
 250000000,action,john carter,6.6,2012
 unknown,action,3 ninjas: high noon at mega mountain,2.8,1998
 95000000,comedy,the campaign,6.1,2012
-9600000,biography,conspiración y poder,6.8,2015
+9600000,biography,conspiraciï¿½n y poder,6.8,2015
 20000000,comedy,how high,6.3,2001
 unknown,comedy,the abcs of death,4.7,2012
 unknown,drama,intimidad,6.2,2001
@@ -108,7 +108,7 @@ unknown,action,sidekicks,4.9,1992
 35000000,drama,empire of the sun,7.8,1987
 39000000,drama,the time traveler's wife,7.1,2009
 54000000,action,dracula 2000,4.9,2000
-55000000,drama,un ángel enamorado,6.7,1998
+55000000,drama,un ï¿½ngel enamorado,6.7,1998
 unknown,drama,the wind will carry us,7.6,1999
 unknown,comedy,personal services,6.4,1987
 10000000,horror,hostel: part ii,5.5,2007
@@ -221,7 +221,7 @@ unknown,comedy,about last night...,6.2,1986
 unknown,comedy,atl,6.0,2006
 unknown,comedy,love potion no. 9,5.6,1992
 unknown,adventure,deadly illusion,4.7,1987
-unknown,comedy,amélie,8.4,2001
+unknown,comedy,amï¿½lie,8.4,2001
 unknown,drama,the wind that shakes the barley,7.5,2006
 unknown,comedy,drinking buddies,6.1,2013
 40000000,action,the in-laws,5.7,2003
@@ -261,7 +261,7 @@ unknown,comedy,rosalie goes shopping,6.0,1989
 10000000,action,rapid fire,6.3,1992
 unknown,comedy,save the date,5.8,2012
 unknown,drama,sister my sister,6.9,1994
-20000000,sci-fi,asesinos cibernéticos,6.4,1995
+20000000,sci-fi,asesinos cibernï¿½ticos,6.4,1995
 15000000,biography,the danish girl,7.1,2015
 unknown,comedy,miami rhapsody,5.4,1995
 100000000,action,eraser,6.1,1996
@@ -277,7 +277,7 @@ unknown,drama,the cutting edge,6.9,1992
 27000000,comedy,martian child,6.8,2007
 9000000,horror,black christmas,4.6,2006
 21000000,comedy,synecdoche new york,7.5,2008
-unknown,drama,el espía que sabía demasiado,7.1,2011
+unknown,drama,el espï¿½a que sabï¿½a demasiado,7.1,2011
 40000000,comedy,a million ways to die in the west,6.1,2014
 unknown,drama,betty blue,7.4,1986
 20000000,comedy,17 again,6.4,2009
@@ -373,7 +373,7 @@ unknown,action,undead,5.5,2003
 17000000,comedy,while you were sleeping,6.7,1995
 30000000,comedy,father of the bride part ii,5.9,1995
 3500000,comedy,the bronze,6.0,2015
-35000000,adventure,más allá de las fronteras,6.5,2003
+35000000,adventure,mï¿½s allï¿½ de las fronteras,6.5,2003
 19200000,adventure,squanto: a warrior's tale,6.1,1994
 76000000,animation,the adventures of rocky & bullwinkle,4.2,2000
 unknown,comedy,beautiful girls,7.2,1996
@@ -405,7 +405,7 @@ unknown,action,secretos peligrosos,7.2,2010
 unknown,drama,morning glory,6.6,1993
 unknown,comedy,rita sue and bob too,6.4,1987
 10000000,horror,vanishing on 7th street,4.9,2010
-62000000,action,u-571: la batalla del atlántico,6.6,2000
+62000000,action,u-571: la batalla del atlï¿½ntico,6.6,2000
 8000000,drama,the trigger effect,5.7,1996
 85000000,action,air force one,6.5,1997
 6000000,comedy,movie 43,4.3,2013
@@ -431,7 +431,7 @@ unknown,comedy,girl asleep,6.2,2015
 unknown,drama,el libro de cabecera,6.7,1996
 55000000,animation,the pirates! band of misfits,6.7,2012
 unknown,crime,dream lover,5.1,1986
-40000000,action,el especialista: la resurrección,5.6,2016
+40000000,action,el especialista: la resurrecciï¿½n,5.6,2016
 unknown,action,jake speed,5.3,1986
 50000000,action,the adventures of sharkboy and lavagirl 3-d,3.5,2005
 unknown,family,the amazing panda adventure,5.8,1995
@@ -485,7 +485,7 @@ unknown,comedy,greenberg,6.1,2010
 unknown,comedy,starter for 10,6.7,2006
 unknown,drama,holy smoke,5.9,1999
 35000000,action,flight of the intruder,5.7,1991
-3000000,horror,la noche de la expiación,5.7,2013
+3000000,horror,la noche de la expiaciï¿½n,5.7,2013
 4500000,drama,requiem for a dream,8.3,2000
 14000000,adventure,white fang,6.7,1991
 19000000,horror,friday the 13th,5.6,2009
@@ -506,7 +506,7 @@ unknown,biography,el asesino de john lennon,5.7,2007
 11000000,crime,blink,6.2,1993
 200000000,action,2012,5.8,2009
 15000000,comedy,the importance of being earnest,6.9,2002
-unknown,comedy,la ciénaga,7.0,2001
+unknown,comedy,la ciï¿½naga,7.0,2001
 4500000,comedy,critters 2,5.3,1988
 15000000,drama,the craft,6.3,1996
 unknown,drama,this is my life,6.0,1992
@@ -714,7 +714,7 @@ unknown,comedy,lock stock and two smoking barrels,8.2,1998
 6500000,comedy,school daze,5.8,1988
 unknown,action,world gone wild,5.2,1987
 7000000,crime,american psycho,7.6,2000
-12000000,crime,crimen sin perdón,7.4,2007
+12000000,crime,crimen sin perdï¿½n,7.4,2007
 unknown,comedy,time of the gypsies,8.3,1988
 unknown,romance,salsa,4.9,1988
 130000000,animation,kung fu panda,7.6,2008
@@ -733,7 +733,6 @@ unknown,action,quiet cool,5.7,1986
 unknown,drama,violets are blue...,5.7,1986
 1000000,drama,nadja,6.0,1994
 15000000,adventure,flicka,6.2,2006
-unknown,comedy,sing street,,
 200000000,animation,a christmas carol,6.8,2009
 unknown,drama,the orphanage,7.5,2007
 11000000,comedy,back to school,6.6,1986
@@ -858,7 +857,7 @@ unknown,adventure,black beauty,6.6,1994
 75000000,animation,monster house,6.6,2006
 10000000,biography,lovelace,6.2,2013
 45000000,drama,across the universe,7.4,2007
-unknown,drama,la salvación,6.7,2014
+unknown,drama,la salvaciï¿½n,6.7,2014
 13000000,drama,calendar girl,5.0,1993
 10000000,comedy,screwed,5.7,2000
 unknown,action,flashback,6.2,1990
@@ -924,7 +923,7 @@ unknown,adventure,the way,7.4,2010
 unknown,action,renegades,5.3,1989
 unknown,drama,the constant gardener,7.5,2005
 unknown,drama,a month in the country,7.2,1987
-unknown,action,taxi 2 - alta tensión,6.4,2000
+unknown,action,taxi 2 - alta tensiï¿½n,6.4,2000
 88000000,adventure,the brothers grimm,5.9,2005
 5000000,horror,as above so below,6.2,2014
 19000000,adventure,a very harold & kumar 3d christmas,6.3,2011
@@ -971,7 +970,7 @@ unknown,drama,state of play,7.1,2009
 18000000,adventure,vibes,5.5,1988
 40000000,mystery,color of night,5.1,1994
 90000000,crime,the departed,8.5,2006
-unknown,comedy,zonas húmedas,5.8,2013
+unknown,comedy,zonas hï¿½medas,5.8,2013
 8000000,drama,99 homes,7.1,2014
 11000000,comedy,cry-baby,6.5,1990
 60000000,drama,up close & personal,6.1,1996
@@ -1041,7 +1040,7 @@ unknown,crime,kill list,6.4,2011
 40000000,comedy,mr. baseball,5.9,1992
 unknown,comedy,fading gigolo,6.2,2013
 unknown,comedy,happy-go-lucky,7.0,2008
-30000000,animation,pokémon: the movie 2000,6.0,1999
+30000000,animation,pokï¿½mon: the movie 2000,6.0,1999
 unknown,drama,my name is joe,7.5,1998
 18000000,comedy,project x,6.1,1987
 17000000,drama,diggstown,7.0,1992
@@ -1124,7 +1123,7 @@ unknown,drama,el papalote azul,7.7,1993
 unknown,comedy,book of love,6.1,1990
 500000,crime,mean creek,7.3,2004
 unknown,adventure,return to snowy river,6.6,1988
-133000000,adventure,stuart little un ratón en la familia,5.9,1999
+133000000,adventure,stuart little un ratï¿½n en la familia,5.9,1999
 60000000,drama,along came a spider,6.3,2001
 12000000,drama,2046,7.5,2004
 17000000,comedy,a night at the roxbury,6.2,1998
@@ -1151,7 +1150,7 @@ unknown,action,nemesis,5.6,1992
 40000000,biography,the express,7.3,2008
 90000000,comedy,the stepford wives,5.2,2004
 20000000,drama,the exorcism of emily rose,6.7,2005
-60000000,adventure,el libro mágico,6.1,2008
+60000000,adventure,el libro mï¿½gico,6.1,2008
 unknown,drama,bajo la arena,7.8,2015
 unknown,comedy,pass the ammo,6.1,1988
 unknown,comedy,angel-a,7.1,2005
@@ -1180,7 +1179,7 @@ unknown,comedy,a midwinter's tale,7.3,1995
 unknown,drama,mrs dalloway,6.9,1997
 30000000,action,kick-ass,7.7,2010
 unknown,comedy,the sisterhood of the traveling pants 2,6.2,2008
-9000000,drama,crash: extraños placeres,6.4,1996
+9000000,drama,crash: extraï¿½os placeres,6.4,1996
 14000000,biography,suffragette,6.9,2015
 unknown,action,dead or alive,6.9,1999
 15000000,comedy,radioland murders,6.2,1994
@@ -1238,7 +1237,7 @@ unknown,comedy,a long way down,6.4,2014
 unknown,drama,stand and deliver,7.3,1988
 38000000,action,riddick,6.4,2013
 55000000,animation,paddington,7.2,2014
-unknown,comedy,la versión de mi vida,7.3,2010
+unknown,comedy,la versiï¿½n de mi vida,7.3,2010
 80000000,action,daylight,5.8,1996
 12000000,drama,the perfect guy,5.6,2015
 unknown,drama,the five heartbeats,7.5,1991
@@ -1271,7 +1270,7 @@ unknown,drama,light of day,5.5,1987
 5800000,biography,walker,6.6,1987
 unknown,drama,jesus of montreal,7.5,1989
 9000000,comedy,death at a funeral,7.4,2007
-23000000,comedy,the naked gun 2½: the smell of fear,6.8,1991
+23000000,comedy,the naked gun 2ï¿½: the smell of fear,6.8,1991
 85000000,animation,horton hears a who!,6.8,2008
 4000000,action,avenging force,5.9,1986
 52000000,comedy,mamma mia!,6.4,2008
@@ -1309,7 +1308,7 @@ unknown,comedy,the crazy stranger,7.7,1997
 unknown,drama,beyond the clouds,6.5,1995
 unknown,drama,american anthem,4.0,1986
 130000000,action,kingdom of heaven,7.2,2005
-unknown,drama,caché,7.3,2005
+unknown,drama,cachï¿½,7.3,2005
 73000000,crime,the bone collector,6.7,1999
 25000000,drama,brokedown palace,6.4,1999
 25000000,adventure,leviathan,5.8,1989
@@ -1353,7 +1352,7 @@ unknown,comedy,benny & joon,7.2,1993
 unknown,drama,the namesake,7.6,2006
 15000000,comedy,solitary man,6.4,2009
 unknown,comedy,my demon lover,4.6,1987
-27000000,action,timecop: policía del futuro,5.8,1994
+27000000,action,timecop: policï¿½a del futuro,5.8,1994
 30000000,action,antitrust,6.1,2001
 58800000,action,american sniper,7.3,2014
 125000000,action,the day after tomorrow,6.4,2004
@@ -1377,11 +1376,11 @@ unknown,drama,romance,5.3,1999
 unknown,drama,otello,7.2,1986
 1300000,comedy,gummo,6.7,1997
 unknown,animation,jetsons: the movie,5.5,1990
-52000000,action,parís en la mira,6.5,2010
+52000000,action,parï¿½s en la mira,6.5,2010
 unknown,adventure,weekend at bernie's,6.4,1989
 15000000,action,the program,6.4,1993
 26000000,adventure,the adventures of elmo in grouchland,5.8,1999
-23000000,comedy,chéri,6.2,2009
+23000000,comedy,chï¿½ri,6.2,2009
 84000000,action,red 2,6.7,2013
 unknown,action,iron eagle,5.3,1986
 unknown,drama,werckmeister harmonies,8.3,2000
@@ -1475,7 +1474,7 @@ unknown,comedy,totally f***ed up,6.1,1993
 3500000,comedy,then she found me,6.0,2007
 43000000,comedy,mr. saturday night,5.8,1992
 3900000,adventure,fanboys,6.6,2009
-40000000,comedy,a él no le gustas tanto,6.4,2009
+40000000,comedy,a ï¿½l no le gustas tanto,6.4,2009
 unknown,adventure,lovewrecked,4.9,2005
 60000000,comedy,duplicity,6.2,2009
 unknown,comedy,zombeavers,4.8,2014
@@ -1565,9 +1564,9 @@ unknown,drama,fairytale: a true story,6.5,1997
 39000000,comedy,josie and the pussycats,5.3,2001
 140000000,animation,treasure planet,7.1,2002
 35000000,horror,poltergeist,4.9,2015
-1800000,drama,el último exorcismo,5.6,2010
+1800000,drama,el ï¿½ltimo exorcismo,5.6,2010
 unknown,action,year of the gun,5.7,1991
-unknown,drama,ma mère,5.1,2004
+unknown,drama,ma mï¿½re,5.1,2004
 unknown,comedy,one more saturday night,5.7,1986
 unknown,animation,your name,8.5,2016
 unknown,action,mcbain,4.7,1991
@@ -1636,10 +1635,10 @@ unknown,drama,talk to her,8.0,2002
 unknown,comedy,today's special,6.7,2009
 unknown,action,aces: iron eagle iii,3.5,1992
 30000000,comedy,knocked up,7.0,2007
-13000000,drama,la habitación,8.2,2015
+13000000,drama,la habitaciï¿½n,8.2,2015
 3000000,comedy,the d train,5.0,2015
 135000000,action,miami vice,6.0,2006
-62000000,action,æon flux,5.5,2005
+62000000,action,ï¿½on flux,5.5,2005
 unknown,drama,tristan + isolde,6.9,2006
 14000000,comedy,the thing called love,6.3,1993
 unknown,comedy,truly madly deeply,7.3,1990
@@ -1651,7 +1650,7 @@ unknown,action,the condemned,6.1,2007
 70000000,drama,wolf,6.2,1994
 unknown,comedy,santa with muscles,2.4,1996
 unknown,crime,the counterfeiters,7.6,2007
-40000000,comedy,ri¢hie ri¢h,5.3,1994
+40000000,comedy,riï¿½hie riï¿½h,5.3,1994
 25000000,comedy,joe versus the volcano,5.7,1990
 150000000,action,thor,7.0,2011
 unknown,comedy,dom hemingway,6.2,2013
@@ -1662,7 +1661,7 @@ unknown,drama,close my eyes,6.4,1991
 unknown,comedy,doc hollywood,6.1,1991
 12000000,crime,jackie brown,7.5,1997
 30000000,comedy,i'll be home for christmas,5.4,1998
-7400000,drama,melancolía,7.1,2011
+7400000,drama,melancolï¿½a,7.1,2011
 3000000,comedy,parents,6.2,1989
 unknown,comedy,kicking and screaming,7.0,1995
 6000000,biography,the last king of scotland,7.7,2006
@@ -1818,12 +1817,12 @@ unknown,comedy,dil chahta hai,8.2,2001
 115000000,animation,monsters inc.,8.1,2001
 unknown,action,taxi,6.9,1998
 unknown,drama,prospero's books,6.9,1991
-7300000,animation,persépolis,8.1,2007
+7300000,animation,persï¿½polis,8.1,2007
 unknown,action,kickboxer 2: the road back,4.5,1991
 unknown,drama,mothers and daughters,4.9,2016
 unknown,animation,vampire hunter d: bloodlust,7.7,2000
 11000000,comedy,american pie,7.0,1999
-25000000,comedy,¡three amigos!,6.4,1986
+25000000,comedy,ï¿½three amigos!,6.4,1986
 15000000,comedy,twins,6.0,1988
 unknown,comedy,suits,4.2,1999
 unknown,comedy,how to make love to a negro without getting tired,4.6,1989
@@ -1838,7 +1837,7 @@ unknown,drama,storyville,5.8,1992
 unknown,comedy,zombie high,4.2,1987
 20000000,adventure,princesa por accidente,5.8,2011
 18000000,drama,rich in love,6.3,1992
-unknown,comedy,malèna,7.5,2000
+unknown,comedy,malï¿½na,7.5,2000
 25000000,comedy,i.q.,6.2,1994
 20000000,comedy,georgia rule,5.9,2007
 unknown,biography,chuck,6.5,2016
@@ -1891,7 +1890,7 @@ unknown,comedy,crossing the bridge,6.4,1992
 12000000,comedy,think like a man,6.6,2012
 35000000,action,the count of monte cristo,7.7,2002
 20000000,action,pathfinder,5.4,2007
-16000000,animation,pokémon 3: the movie,5.7,2000
+16000000,animation,pokï¿½mon 3: the movie,5.7,2000
 unknown,action,wild america,6.3,1997
 25000000,drama,chocolat,7.3,2000
 unknown,adventure,tommy boy,7.1,1995
@@ -1969,7 +1968,7 @@ unknown,drama,atanarjuat: the fast runner,7.5,2001
 200000,comedy,spanking the monkey,6.3,1994
 25000000,comedy,mother's day,5.6,2016
 30000000,horror,mimic,5.9,1997
-80000000,comedy,ni en tu casa ni en la mía,5.6,2008
+80000000,comedy,ni en tu casa ni en la mï¿½a,5.6,2008
 11000000,crime,dead man walking,7.6,1995
 unknown,comedy,who's the man?,5.5,1993
 13000000,comedy,illegally yours,4.2,1988
@@ -1984,7 +1983,7 @@ unknown,drama,pola x,5.8,1999
 unknown,action,kuffs,5.8,1992
 23000000,adventure,alaska,5.7,1996
 23000000,comedy,someone like you...,6.1,2001
-14000000,comedy,cop & ½,3.9,1993
+14000000,comedy,cop & ï¿½,3.9,1993
 100000000,fantasy,sleepy hollow,7.4,1999
 unknown,drama,the son's room,7.4,2001
 unknown,drama,sarafina!,6.4,1992
@@ -2011,7 +2010,7 @@ unknown,drama,the hanoi hilton,6.0,1987
 22000000,comedy,diary of a wimpy kid: dog days,6.3,2012
 2500000,comedy,garden state,7.5,2004
 60000000,animation,alvin and the chipmunks,5.2,2007
-unknown,drama,tierra de sueños,7.8,2002
+unknown,drama,tierra de sueï¿½os,7.8,2002
 1500000,crime,nine queens,7.9,2000
 2000000,comedy,blue in the face,6.7,1995
 unknown,drama,tale of tales,6.4,2015
@@ -2053,7 +2052,7 @@ unknown,comedy,the allnighter,4.0,1987
 11000000,comedy,the sixth man,5.6,1997
 12000000,biography,a home of our own,7.1,1993
 60000000,action,priest,5.7,2011
-unknown,action,acusado sin razón,6.1,1998
+unknown,action,acusado sin razï¿½n,6.1,1998
 unknown,comedy,the war of the roses,6.8,1989
 unknown,drama,rachel getting married,6.7,2008
 unknown,drama,the guardian,5.3,1990
@@ -2066,7 +2065,7 @@ unknown,comedy,the ballad of the sad cafe,6.5,1991
 60000000,action,london has fallen,5.9,2016
 12600000,crime,the drop,7.1,2014
 150000000,adventure,night at the museum: battle of the smithsonian,5.9,2009
-7000000,horror,el demonio neón,6.2,2016
+7000000,horror,el demonio neï¿½n,6.2,2016
 15000000,horror,perturbados,5.5,1998
 11000000,horror,el juego del miedo vi,6.0,2009
 10000000,comedy,how to make an american quilt,6.2,1995
@@ -2237,12 +2236,12 @@ unknown,comedy,folks!,5.5,1992
 40000000,biography,ray,7.7,2004
 45000000,comedy,yours mine & ours,5.4,2005
 unknown,crime,true story,6.3,2015
-30000000,comedy,mi papá es un gato,5.3,2016
+30000000,comedy,mi papï¿½ es un gato,5.3,2016
 45000000,drama,jakob the liar,6.5,1999
 unknown,drama,trollhunter,7.0,2010
 2900000,horror,no one lives,6.0,2012
 unknown,drama,crazy love,7.0,1987
-38000000,mystery,la última puerta,6.7,1999
+38000000,mystery,la ï¿½ltima puerta,6.7,1999
 18000000,drama,in country,5.9,1989
 unknown,drama,bliss,6.1,1997
 20000000,comedy,broadcast news,7.2,1987
@@ -2261,7 +2260,7 @@ unknown,drama,whiteboyz,5.3,1999
 25000000,comedy,bride of chucky,5.4,1998
 unknown,biography,american splendor,7.5,2003
 15000000,comedy,whatever works,7.2,2009
-unknown,crime,el fin del sueño americano,6.1,2016
+unknown,crime,el fin del sueï¿½o americano,6.1,2016
 10000000,drama,another woman,7.4,1988
 40000000,adventure,amelia,5.8,2009
 22000000,crime,derailed,6.6,2005
@@ -2288,7 +2287,7 @@ unknown,comedy,making mr. right,5.3,1987
 unknown,action,american ninja 4: the annihilation,3.8,1990
 100000000,drama,gravity,7.8,2013
 75000000,action,the rock,7.4,1996
-2000000,adventure,y tu mamá también,7.7,2001
+2000000,adventure,y tu mamï¿½ tambiï¿½n,7.7,2001
 40000000,comedy,my best friend's girl,5.9,2008
 30000000,drama,in dreams,5.5,1999
 36000000,biography,the people vs. larry flynt,7.3,1996
@@ -2356,7 +2355,7 @@ unknown,comedy,burglar,5.0,1987
 6000000,comedy,barefoot,6.6,2014
 unknown,comedy,feds,5.3,1988
 unknown,action,operation dumbo drop,5.0,1995
-unknown,comedy,8 ½ women,5.8,1999
+unknown,comedy,8 ï¿½ women,5.8,1999
 unknown,crime,mi vida loca,6.5,1993
 11000000,drama,fried green tomatoes,7.7,1991
 75000000,action,vertical limit,5.9,2000
@@ -2402,7 +2401,7 @@ unknown,action,highwaymen,5.7,2004
 unknown,comedy,dark eyes,7.6,1987
 27000000,crime,kiss the girls,6.6,1997
 25000000,action,masterminds,5.8,2016
-78000000,crime,dragón rojo,7.2,2002
+78000000,crime,dragï¿½n rojo,7.2,2002
 150000000,action,white house down,6.4,2013
 unknown,drama,lady macbeth,7.0,2016
 4000000,horror,the darkness,4.4,2016
@@ -2441,12 +2440,12 @@ unknown,comedy,popcorn,5.7,1991
 17000000,comedy,the pest,5.0,1997
 80000000,animation,hotel transylvania 2,6.7,2015
 10000000,action,hard to kill,5.7,1990
-unknown,drama,la vida según attenberg,6.2,2010
+unknown,drama,la vida segï¿½n attenberg,6.2,2010
 unknown,biography,the madness of king george,7.2,1994
 12000000,comedy,a life less ordinary,6.4,1997
 unknown,drama,the invitation,6.7,2015
 10000000,action,toy soldiers,6.5,1991
-unknown,adventure,héctor y el secreto de la felicidad,7.0,2014
+unknown,adventure,hï¿½ctor y el secreto de la felicidad,7.0,2014
 unknown,drama,contra viento y marea,7.9,1996
 unknown,drama,a river runs through it,7.3,1992
 15000000,crime,wall street,7.4,1987
@@ -2480,7 +2479,7 @@ unknown,comedy,roger dodger,7.0,2002
 15000000,comedy,diary of a wimpy kid,6.2,2010
 85000000,action,collateral damage,5.5,2002
 26000000,drama,brothers,7.1,2009
-unknown,drama,una señal en la tormenta,6.4,2014
+unknown,drama,una seï¿½al en la tormenta,6.4,2014
 unknown,drama,flirting,7.3,1991
 10000000,horror,saw iv,5.9,2007
 unknown,comedy,eagle vs shark,6.8,2007
@@ -2534,7 +2533,7 @@ unknown,crime,b. monkey,6.0,1998
 unknown,comedy,mansfield park,7.1,1999
 40000000,crime,vantage point,6.6,2008
 14000000,comedy,flipped,7.7,2010
-unknown,action,la última ola,6.7,2015
+unknown,action,la ï¿½ltima ola,6.7,2015
 3000000,adventure,swiss army man,7.0,2016
 75000000,comedy,anger management,6.2,2003
 unknown,comedy,feeling minnesota,5.4,1996
@@ -2551,7 +2550,7 @@ unknown,comedy,hot pursuit,5.8,1987
 140000000,action,pirates of the caribbean: the curse of the black pearl,8.0,2003
 40000000,comedy,the guilt trip,5.8,2012
 4000000,biography,una historia de amor y oscuridad,6.0,2015
-unknown,crime,léon: the professional,8.6,1994
+unknown,crime,lï¿½on: the professional,8.6,1994
 unknown,comedy,sleep with me,5.7,1994
 2000000,crime,the proposition,7.4,2005
 unknown,drama,dark obsession,4.8,1989
@@ -2596,14 +2595,14 @@ unknown,animation,the princess and the goblin,6.9,1991
 2000000,biography,the snowtown murders,6.6,2011
 26000000,mystery,red eye,6.5,2005
 unknown,adventure,lord of the flies,6.4,1990
-2500000,fantasy,túnel al infierno,6.0,1987
+2500000,fantasy,tï¿½nel al infierno,6.0,1987
 2500000,comedy,los idiotas,6.9,1998
 unknown,biography,blaze,5.9,1989
 unknown,comedy,the angels' share,7.0,2012
 50000000,comedy,zoolander 2,4.7,2016
 unknown,comedy,teeth,5.4,2007
 2000000,horror,diary of the dead,5.7,2007
-30000000,comedy,drácula: muerto pero feliz,5.8,1995
+30000000,comedy,drï¿½cula: muerto pero feliz,5.8,1995
 1900000,crime,river's edge,7.1,1986
 unknown,comedy,mr. wrong,3.8,1996
 1000000,crime,bad lieutenant,7.1,1992
@@ -2633,7 +2632,7 @@ unknown,action,bronson,7.1,2008
 unknown,comedy,secret things,6.1,2002
 1800000,drama,songcatcher,7.2,2000
 60000000,action,resident evil: afterlife,5.9,2010
-unknown,action,kites: más allá de las fronteras,6.1,2010
+unknown,action,kites: mï¿½s allï¿½ de las fronteras,6.1,2010
 16000000,comedy,used people,6.0,1992
 unknown,drama,three colors: red,8.1,1994
 19000000,crime,sunset,5.7,1988
@@ -2650,7 +2649,7 @@ unknown,drama,the war zone,7.4,1999
 14000000,biography,the imitation game,8.0,2014
 12000000,crime,raising cain,6.0,1992
 105000000,animation,antz,6.6,1998
-unknown,drama,el círculo roto,7.8,2012
+unknown,drama,el cï¿½rculo roto,7.8,2012
 5000000,drama,moon,7.9,2009
 5000000,action,assassination,5.1,1987
 unknown,comedy,martians go home,2.8,1989
@@ -2681,7 +2680,7 @@ unknown,comedy,romy and michele's high school reunion,6.2,1997
 3000000,horror,sinister,6.8,2012
 unknown,biography,a dangerous method,6.5,2011
 unknown,drama,talent for the game,5.9,1991
-65000000,comedy,escándalo,6.7,1998
+65000000,comedy,escï¿½ndalo,6.7,1998
 3800000,comedy,don't be a menace to south central while drinking your juice in the hood,6.6,1996
 unknown,drama,the fringe dwellers,6.7,1986
 29000000,drama,the notebook,7.9,2004
@@ -2839,7 +2838,7 @@ unknown,comedy,off beat,5.0,1986
 80000000,comedy,grown ups 2,5.4,2013
 13000000,adventure,the astronaut farmer,6.3,2006
 unknown,comedy,something new,6.8,2006
-unknown,action,estación zombie: tren a busan,7.5,2016
+unknown,action,estaciï¿½n zombie: tren a busan,7.5,2016
 42000000,comedy,hero,6.5,1992
 20000000,action,excess baggage,5.3,1997
 5200000,action,class of 1999,5.8,1990
@@ -2859,7 +2858,7 @@ unknown,comedy,opportunity knocks,6.0,1990
 unknown,horror,phantoms,5.4,1998
 145000000,animation,mr. peabody & sherman,6.8,2014
 unknown,drama,once,7.9,2007
-unknown,comedy,¡ay carmela!,7.2,1990
+unknown,comedy,ï¿½ay carmela!,7.2,1990
 24000000,comedy,the great outdoors,6.6,1988
 25000000,adventure,labyrinth,7.4,1986
 15000000,drama,black snake moan,7.0,2006
@@ -2885,7 +2884,7 @@ unknown,comedy,the little rascals,6.3,1994
 18000000,comedy,just married,5.4,2003
 unknown,action,fallen,7.0,1998
 2500000,comedy,super,6.8,2010
-50000000,action,básico y letal,6.5,2003
+50000000,action,bï¿½sico y letal,6.5,2003
 unknown,comedy,going all the way,5.7,1997
 unknown,drama,matador,7.0,1986
 unknown,comedy,monsoon wedding,7.4,2001
@@ -2912,7 +2911,7 @@ unknown,comedy,fast food,4.3,1989
 unknown,biography,the last station,7.0,2009
 unknown,action,the hitman,5.3,1991
 unknown,adventure,buddy,4.8,1997
-unknown,drama,el hijo de saúl,7.5,2015
+unknown,drama,el hijo de saï¿½l,7.5,2015
 26000000,action,clockstoppers,5.2,2002
 80000000,crime,the interpreter,6.4,2005
 unknown,comedy,kuch kuch hota hai,7.8,1998
@@ -3089,7 +3088,7 @@ unknown,comedy,2 days in the valley,6.5,1996
 unknown,drama,leviathan,7.6,2014
 14000000,drama,beautiful,5.4,2000
 unknown,comedy,modern girls,5.9,1986
-unknown,drama,círculo de amigos,6.6,1995
+unknown,drama,cï¿½rculo de amigos,6.6,1995
 unknown,biography,triumph of the spirit,6.9,1989
 60000000,mystery,the truth about charlie,4.8,2002
 1000000,fantasy,the night flier,6.0,1997
@@ -3180,7 +3179,7 @@ unknown,comedy,nowhere,6.4,1997
 17000000,crime,brooklyn's finest,6.7,2009
 19000000,comedy,scary movie,6.2,2000
 16000000,adventure,moonrise kingdom,7.8,2012
-unknown,comedy,sólo con tu pareja,7.1,1991
+unknown,comedy,sï¿½lo con tu pareja,7.1,1991
 10000000,comedy,the mighty ducks,6.4,1992
 19000000,animation,sausage party,6.2,2016
 35000000,action,batman,7.6,1989
@@ -3199,7 +3198,7 @@ unknown,comedy,jumpin' jack flash,5.8,1986
 85000000,action,allied,7.1,2016
 1500000,fantasy,pontypool,6.7,2008
 40000000,biography,jersey boys,6.8,2014
-11000000,drama,más fuerte que las bombas,6.6,2015
+11000000,drama,mï¿½s fuerte que las bombas,6.6,2015
 6428966,crime,infernal affairs,8.1,2002
 unknown,comedy,shaun of the dead,8.0,2004
 unknown,crime,the advocate,6.8,1993
@@ -3220,7 +3219,7 @@ unknown,thriller,the rich man's wife,5.2,1996
 70000000,comedy,what women want,6.4,2000
 7000000,action,warlock,6.2,1989
 20000000,comedy,dragnet,5.9,1987
-unknown,comedy,léolo,7.6,1992
+unknown,comedy,lï¿½olo,7.6,1992
 6000000,drama,the crush,5.7,1993
 unknown,comedy,first sunday,4.3,2008
 unknown,crime,somos guerreros,7.9,1994
@@ -3450,7 +3449,7 @@ unknown,biography,coco before chanel,6.7,2009
 16000000,drama,the illusionist,7.6,2006
 15000000,comedy,beethoven's 2nd,4.8,1993
 unknown,action,ned kelly,6.5,2003
-unknown,crime,les misérables,7.5,1998
+unknown,crime,les misï¿½rables,7.5,1998
 20000000,action,la hermandad,6.5,2009
 unknown,crime,guilty as sin,5.6,1993
 unknown,animation,a troll in central park,5.4,1994
@@ -3537,7 +3536,7 @@ unknown,comedy,tamara drewe,6.2,2010
 unknown,drama,howards end,7.5,1992
 80000000,action,the book of eli,6.9,2010
 31000000,biography,quiz show,7.5,1994
-unknown,crime,la cérémonie,7.6,1995
+unknown,crime,la cï¿½rï¿½monie,7.6,1995
 25000000,comedy,son of the pink panther,3.8,1993
 80000000,animation,fantasia 2000,7.2,1999
 35000000,action,smilla's sense of snow,6.4,1997
@@ -3576,7 +3575,7 @@ unknown,drama,the saint of fort washington,7.2,1993
 16000000,comedy,men women & children,6.7,2014
 unknown,comedy,father of the bride,6.5,1991
 unknown,drama,swades,8.3,2004
-unknown,drama,la vida sin mí,7.6,2003
+unknown,drama,la vida sin mï¿½,7.6,2003
 unknown,comedy,palindromes,6.8,2004
 17000000,comedy,the best man holiday,6.7,2013
 60000000,action,reign of fire,6.2,2002
@@ -3600,7 +3599,7 @@ unknown,crime,la jugada,7.2,1998
 55000000,comedy,wonder boys,7.4,2000
 6500000,drama,shame,7.2,2011
 47000000,action,dick tracy,6.1,1990
-unknown,comedy,ménage,7.0,1986
+unknown,comedy,mï¿½nage,7.0,1986
 unknown,action,death before dishonor,4.9,1987
 2000000,drama,we are your friends,6.2,2015
 12000000,drama,two lovers,7.1,2008
@@ -3719,7 +3718,7 @@ unknown,biography,baadasssss!,7.4,2003
 8000000,animation,anomalisa,7.2,2015
 3500000,comedy,ringmaster,3.2,1998
 100000,drama,another earth,7.0,2011
-unknown,drama,las nubes de maría,6.7,2014
+unknown,drama,las nubes de marï¿½a,6.7,2014
 82000000,comedy,the longest yard,6.4,2005
 66000000,drama,the x files,7.0,1998
 18000000,comedy,blind date,5.9,1987
@@ -3766,7 +3765,7 @@ unknown,comedy,boy,7.5,2010
 unknown,biography,glory road,7.2,2006
 unknown,drama,about elly,8.1,2009
 5000000,drama,youth without youth,6.3,2007
-30000000,comedy,café society,6.7,2016
+30000000,comedy,cafï¿½ society,6.7,2016
 8000000,comedy,ruby sparks,7.2,2012
 4000000,mystery,the boy next door,4.7,2015
 15000000,drama,newsies,7.0,1992
@@ -3857,7 +3856,7 @@ unknown,drama,shelter,7.8,2007
 unknown,comedy,the real blonde,6.0,1997
 unknown,drama,journey of hope,7.6,1990
 unknown,drama,the return,8.0,2003
-180000000,animation,wall·e,8.4,2008
+180000000,animation,wallï¿½e,8.4,2008
 135000000,animation,happy feet two,5.9,2011
 unknown,crime,love & murder,4.4,1990
 15000000,action,passenger 57,5.8,1992
@@ -3885,7 +3884,7 @@ unknown,drama,body chemistry,4.4,1990
 60000000,animation,kubo and the two strings,7.8,2016
 31000000,comedy,mermaids,6.6,1990
 unknown,action,masterminds,5.2,1997
-7000000,comedy,sólo los amantes sobreviven,7.3,2013
+7000000,comedy,sï¿½lo los amantes sobreviven,7.3,2013
 unknown,drama,knight of cups,5.7,2015
 unknown,biography,love is the devil: study for a portrait of francis bacon,6.4,1998
 80000000,animation,scooby-doo 2: monsters unleashed,5.0,2004
@@ -3907,7 +3906,7 @@ unknown,drama,29 palmas - pasiones salvajes,5.2,2003
 unknown,action,the host,7.0,2006
 20000000,comedy,moon over parador,5.9,1988
 1500000,comedy,the squid and the whale,7.4,2005
-20000000,drama,el gran pequeño,7.4,2015
+20000000,drama,el gran pequeï¿½o,7.4,2015
 20000000,adventure,strange wilderness,5.3,2008
 26000000,comedy,the marrying man,5.7,1991
 25000000,drama,rain man,8.0,1988
@@ -3986,7 +3985,7 @@ unknown,drama,9 songs,4.9,2004
 85000000,crime,ocean's thirteen,6.9,2007
 200000000,action,transformers: revenge of the fallen,6.0,2009
 110000000,action,x-men 2,7.5,2003
-48000000,action,búsqueda implacable 3,6.0,2014
+48000000,action,bï¿½squeda implacable 3,6.0,2014
 55000000,action,metro,5.5,1997
 unknown,action,the getaway,5.7,1994
 unknown,adventure,senior trip,5.6,1995
@@ -4034,7 +4033,7 @@ unknown,drama,carriers,6.0,2009
 12000000,crime,step up,6.5,2006
 40000000,animation,fantastic mr. fox,7.8,2009
 25000000,drama,abandon,4.9,2002
-20000000,adventure,terror en silent hill 2: la revelación,5.0,2012
+20000000,adventure,terror en silent hill 2: la revelaciï¿½n,5.0,2012
 unknown,biography,a royal affair,7.6,2012
 unknown,drama,the handmaid's tale,6.0,1990
 11000000,comedy,slackers,5.3,2002
@@ -4181,7 +4180,7 @@ unknown,comedy,out cold,5.5,1989
 unknown,comedy,l'auberge espagnole,7.3,2002
 unknown,drama,duet for one,7.0,1986
 22000000,action,extreme prejudice,6.6,1987
-3600000,drama,adiós a las vegas,7.6,1995
+3600000,drama,adiï¿½s a las vegas,7.6,1995
 28000000,comedy,alexander and the terrible horrible no good very bad day,6.2,2014
 26000000,comedy,bad santa 2,5.5,2016
 20000000,comedy,home for the holidays,6.6,1995
@@ -4340,7 +4339,7 @@ unknown,comedy,adult world,6.2,2013
 20000000,action,young guns ii,6.5,1990
 1000000,horror,chernobyl diaries,5.0,2012
 unknown,comedy,babette's feast,7.8,1987
-20000000,mystery,pasión un asesinato perfecto,5.3,2012
+20000000,mystery,pasiï¿½n un asesinato perfecto,5.3,2012
 38000000,drama,water for elephants,6.9,2011
 unknown,drama,heartbeats,7.2,2010
 60000000,animation,sinbad: legend of the seven seas,6.7,2003
@@ -4380,7 +4379,7 @@ unknown,comedy,carrie pilby,6.6,2016
 20000000,crime,malicia,6.4,1993
 68000000,action,the saint,6.2,1997
 31000000,comedy,arachnophobia,6.4,1990
-unknown,drama,humanité,6.9,1999
+unknown,drama,humanitï¿½,6.9,1999
 70000000,action,battle los angeles,5.8,2011
 12000000,adventure,star kid,5.4,1997
 10000000,comedy,danny collins,7.0,2015
@@ -4512,7 +4511,7 @@ unknown,drama,come undone,6.7,2000
 8000000,comedy,the last days of disco,6.6,1998
 35000000,comedy,license to wed,5.3,2007
 110000000,action,horizonte profundo,7.2,2016
-25000000,crime,un día de furia,7.6,1993
+25000000,crime,un dï¿½a de furia,7.6,1993
 35000000,drama,eye of the beholder,4.9,1999
 102000000,action,cloud atlas,7.5,2012
 unknown,drama,complete unknown,5.4,2016
@@ -4600,7 +4599,7 @@ unknown,comedy,fatal instinct,5.7,1993
 25000,comedy,the brothers mcmullen,6.6,1995
 6000000,action,13 assassins,7.6,2010
 unknown,comedy,phat beach,3.9,1996
-150000000,action,misión: imposible 5 - nación secreta,7.4,2015
+150000000,action,misiï¿½n: imposible 5 - naciï¿½n secreta,7.4,2015
 78000000,action,the league of extraordinary gentlemen,5.8,2003
 unknown,comedy,my chauffeur,5.6,1986
 7000000,comedy,everything is illuminated,7.5,2005
@@ -4642,7 +4641,7 @@ unknown,comedy,pride and prejudice,5.3,2003
 26000000,horror,final destination 2,6.2,2003
 unknown,comedy,loverboy,5.9,1989
 15000000,crime,confidence,6.7,2003
-unknown,animation,bébé's kids,5.5,1992
+unknown,animation,bï¿½bï¿½'s kids,5.5,1992
 unknown,comedy,the castle,7.7,1997
 35000000,comedy,playing for keeps,5.7,2012
 85000000,action,the rundown,6.7,2003
@@ -4884,7 +4883,7 @@ unknown,comedy,the dish,7.2,2000
 160000000,action,the 13th warrior,6.6,1999
 46000000,comedy,the flintstones,4.8,1994
 unknown,action,the man from nowhere,7.8,2010
-17000000,drama,9½ weeks,5.9,1986
+17000000,drama,9ï¿½ weeks,5.9,1986
 51000000,animation,la granja,5.6,2006
 9000000,comedy,nick and norah's infinite playlist,6.7,2008
 unknown,drama,contracted,5.3,2013
@@ -4994,14 +4993,14 @@ unknown,comedy,human nature,6.4,2001
 unknown,adventure,map of the human heart,7.2,1992
 5000000,comedy,piranha 3dd,3.8,2012
 24000000,animation,ferngully: las aventuras de zak y crysta,6.5,1992
-28000000,animation,la piedra y el pingüino,5.6,1995
+28000000,animation,la piedra y el pingï¿½ino,5.6,1995
 10000000,horror,the strangers,6.2,2008
 54000000,action,blade ii,6.7,2002
 17000000,comedy,carpool,4.9,1996
 25000000,comedy,say it isn't so,4.9,2001
 unknown,comedy,swimming to cambodia,7.8,1987
 20000000,comedy,scary movie 5,3.5,2013
-28000000,comedy,las leyes de atracción,5.9,2004
+28000000,comedy,las leyes de atracciï¿½n,5.9,2004
 1200000,comedy,but i'm a cheerleader,6.6,1999
 3500000,comedy,defendor,6.8,2009
 9000000,comedy,indian summer,6.5,1993
@@ -5056,7 +5055,7 @@ unknown,comedy,touch and go,5.8,1986
 120000000,action,king arthur,6.3,2004
 unknown,drama,forever young,6.3,1992
 33000000,action,resident evil,6.7,2002
-unknown,animation,el príncipe cascanueces,6.9,1990
+unknown,animation,el prï¿½ncipe cascanueces,6.9,1990
 unknown,drama,youngblood,6.1,1986
 13000000,comedy,the new guy,5.9,2002
 24000000,crime,the yards,6.4,2000
@@ -5211,9 +5210,9 @@ unknown,crime,no man's land,6.1,1987
 85000000,action,the fast and the furious: tokyo drift,6.0,2006
 35000000,comedy,horrible bosses,6.9,2011
 7500000,drama,rampage,6.3,1987
-25000000,action,búsqueda implacable,7.8,2008
+25000000,action,bï¿½squeda implacable,7.8,2008
 9000000,comedy,hamlet 2,6.4,2008
-40000000,biography,hasta el último hombre,8.2,2016
+40000000,biography,hasta el ï¿½ltimo hombre,8.2,2016
 8000000,comedy,license to drive,6.3,1988
 unknown,biography,farinelli,6.9,1994
 unknown,action,rescue me,5.5,1992
@@ -5240,7 +5239,7 @@ unknown,adventure,the deceivers,6.1,1988
 10000000,crime,brother,7.2,2000
 unknown,action,the protector,7.1,2005
 70000000,animation,storks,6.8,2016
-2000000,action,hardcore: misión extrema,6.7,2015
+2000000,action,hardcore: misiï¿½n extrema,6.7,2015
 75000000,comedy,funny people,6.3,2009
 unknown,comedy,in the loop,7.5,2009
 unknown,drama,wuthering heights,6.1,2011
@@ -5341,7 +5340,7 @@ unknown,comedy,clockwise,6.6,1986
 25000000,horror,1408,6.8,2007
 25000000,crime,the untouchables,7.9,1987
 19000000,comedy,crimes and misdemeanors,8.0,1989
-20500000,drama,cosmópolis,5.0,2012
+20500000,drama,cosmï¿½polis,5.0,2012
 unknown,biography,lutero,6.6,2003
 unknown,adventure,last of the dogmen,6.9,1995
 400000,comedy,napoleon dynamite,6.9,2004
@@ -5350,9 +5349,9 @@ unknown,comedy,la bicicleta verde,7.6,2012
 unknown,drama,my summer of love,6.8,2004
 27000000,action,armored,5.7,2009
 25000000,action,the bodyguard,6.2,1992
-30000000,animation,pokémon: the first movie - mewtwo strikes back,6.0,1998
+30000000,animation,pokï¿½mon: the first movie - mewtwo strikes back,6.0,1998
 unknown,drama,mr. & mrs. bridge,6.7,1990
-unknown,drama,ninfomanía: segunda parte,6.7,2013
+unknown,drama,ninfomanï¿½a: segunda parte,6.7,2013
 unknown,comedy,switch,5.7,1991
 25000000,drama,there will be blood,8.1,2007
 109000000,adventure,the cat in the hat,3.8,2003
@@ -5366,7 +5365,7 @@ unknown,drama,new best friend,5.3,2002
 12600000,horror,wrong turn,6.1,2003
 3000000,comedy,citizen ruth,7.0,1996
 1000000,crime,god's pocket,6.1,2014
-61000000,drama,les misérables,7.6,2012
+61000000,drama,les misï¿½rables,7.6,2012
 unknown,family,miracle on 34th street,6.4,1994
 55000000,comedy,forrest gump,8.8,1994
 15000000,action,no way out,7.1,1987
@@ -5396,7 +5395,7 @@ unknown,drama,the year my voice broke,7.5,1987
 8000000,action,deepstar six,5.2,1989
 12000000,comedy,from justin to kelly,2.1,2003
 5000000,drama,cinema paradiso,8.5,1988
-unknown,horror,sangre caníbal,6.0,2001
+unknown,horror,sangre canï¿½bal,6.0,2001
 60000000,action,the jackal,6.4,1997
 17000000,comedy,el hotel de los fantasmas,5.7,1988
 1300000,crime,prison,5.9,1987
@@ -5452,10 +5451,10 @@ unknown,action,just cause,6.4,1995
 unknown,drama,the russia house,6.1,1990
 unknown,drama,swing kids,6.8,1993
 300000000,action,pirates of the caribbean: at world's end,7.1,2007
-80000000,fantasy,la maldición,4.9,1999
+80000000,fantasy,la maldiciï¿½n,4.9,1999
 8000000,comedy,that awkward moment,6.2,2014
 26000000,comedy,freaky friday,6.1,2003
-25000000,drama,la casa de los espíritus,6.9,1993
+25000000,drama,la casa de los espï¿½ritus,6.9,1993
 6500000,action,3 ninjas,5.2,1992
 1000000,horror,hellraiser,7.0,1987
 900000,comedy,meet the blacks,6.0,2016
@@ -5600,7 +5599,7 @@ unknown,adventure,hunt for the wilderpeople,7.9,2016
 8500000,action,welcome to the punch,6.1,2013
 unknown,drama,body shots,5.0,1999
 6500000,crime,crash,7.8,2004
-unknown,mystery,enemigos idénticos,6.9,2013
+unknown,mystery,enemigos idï¿½nticos,6.9,2013
 11000000,comedy,bring it on,6.0,2000
 18000000,drama,honey,5.3,2003
 19000000,crime,kansas city,6.3,1996
@@ -5622,7 +5621,7 @@ unknown,comedy,four lions,7.3,2010
 150000000,action,mission: impossible iii,6.9,2006
 8000000,biography,dangerous beauty,7.3,1998
 13000000,drama,the fabulous baker boys,6.8,1989
-115000000,action,juego de espías,7.1,2001
+115000000,action,juego de espï¿½as,7.1,2001
 5000000,horror,oculus,6.5,2013
 16700000,action,don 2,7.1,2011
 200000,comedy,swingers,7.3,1996
@@ -5678,7 +5677,7 @@ unknown,action,rogue,6.2,2007
 13000000,action,robocop,7.5,1987
 30000000,comedy,for love or money,6.1,1993
 unknown,drama,clara's heart,6.3,1988
-35000000,comedy,el bebé de bridget jones,6.6,2016
+35000000,comedy,el bebï¿½ de bridget jones,6.6,2016
 15000000,crime,thunderheart,6.8,1992
 18000000,comedy,switching channels,5.9,1988
 63600000,action,get carter,5.1,2000
@@ -5813,7 +5812,7 @@ unknown,comedy,meeting venus,6.8,1991
 30000000,drama,hide and seek,5.9,2005
 32000000,action,defiance,7.2,2008
 6788000,comedy,drop dead fred,5.8,1991
-10000000,drama,noches púrpuras,6.7,2007
+10000000,drama,noches pï¿½rpuras,6.7,2007
 10000000,horror,the hitcher,5.6,2007
 185000000,animation,brave,7.2,2012
 85000000,crime,ocean's eleven,7.8,2001
@@ -5878,7 +5877,7 @@ unknown,action,khuda gawah,6.6,1992
 110000000,adventure,passengers,7.0,2016
 unknown,comedy,nine months,5.4,1995
 30000000,action,the quest,5.5,1996
-3000000,action,oldboy: cinco días para vengarse,8.4,2003
+3000000,action,oldboy: cinco dï¿½as para vengarse,8.4,2003
 50000000,action,desperate measures,6.1,1998
 6000000,comedy,three o'clock high,7.2,1987
 60000000,adventure,almost famous,7.9,2000
@@ -5916,7 +5915,7 @@ unknown,thriller,defense of the realm,6.6,1986
 2800000,comedy,mystery train,7.6,1989
 15000000,adventure,a kid in king arthur's court,4.8,1995
 1500000,horror,session 9,6.5,2001
-42000000,comedy,brüno,5.8,2009
+42000000,comedy,brï¿½no,5.8,2009
 unknown,comedy,roll bounce,6.0,2005
 30000000,drama,nights in rodanthe,6.0,2008
 26000000,comedy,ever after: a cinderella story,7.0,1998
@@ -5959,13 +5958,13 @@ unknown,biography,ed gein,5.6,2000
 105000000,action,punto de quiebre,5.3,2015
 35000000,action,stolen,5.5,2012
 10000000,drama,disconnect,7.6,2012
-5000000,comedy,casarse... está en griego,6.6,2002
+5000000,comedy,casarse... estï¿½ en griego,6.6,2002
 90000000,drama,flags of our fathers,7.1,2006
 20000000,biography,12 years a slave,8.1,2013
 unknown,drama,rust and bone,7.5,2012
 80000000,comedy,analyze this,6.7,1999
 unknown,drama,evil,7.8,2003
-25000000,comedy,¿sabes quién viene?,7.2,2011
+25000000,comedy,ï¿½sabes quiï¿½n viene?,7.2,2011
 unknown,comedy,ice princess,6.0,2005
 unknown,action,low blow,3.5,1986
 4000000,comedy,mondays in the sun,7.7,2002
@@ -5997,11 +5996,11 @@ unknown,comedy,mistress,5.5,1992
 35000000,crime,mujer fatal,6.3,2002
 unknown,crime,the escapist,6.8,2008
 32500000,comedy,bridesmaids,6.8,2011
-unknown,drama,después de la boda,7.8,2006
+unknown,drama,despuï¿½s de la boda,7.8,2006
 unknown,drama,nathalie...,6.3,2003
 unknown,action,the blood of heroes,6.5,1989
 40000000,action,apocalypto,7.8,2006
-45000000,action,búsqueda implacable 2,6.3,2012
+45000000,action,bï¿½squeda implacable 2,6.3,2012
 250000,comedy,the incredibly true adventure of two girls in love,6.5,1995
 50000000,comedy,shall we dance,6.1,2004
 35000000,action,street fighter,3.8,1994
@@ -6113,14 +6112,14 @@ unknown,animation,a goofy movie,6.8,1995
 unknown,crime,the glass shield,6.6,1994
 4500000,biography,monster: asesina en serie,7.3,2003
 unknown,comedy,secret ballot,6.7,2001
-32000000,action,rápida y mortal,6.4,1995
+32000000,action,rï¿½pida y mortal,6.4,1995
 17000000,action,running scared,7.4,2006
 unknown,drama,proof,7.4,1991
 unknown,action,shoot to kill,6.8,1988
 70000000,drama,basic instinct 2,4.2,2006
 7400000,action,surviving the game,6.1,1994
 unknown,comedy,29th street,7.3,1991
-20000000,horror,mamá,6.2,2013
+20000000,horror,mamï¿½,6.2,2013
 14000000,comedy,pretty woman,7.0,1990
 155000000,adventure,the chronicles of narnia: the voyage of the dawn treader,6.3,2010
 20000000,crime,jennifer 8,6.2,1992
@@ -6142,7 +6141,7 @@ unknown,comedy,withnail & i,7.8,1987
 20000000,comedy,date movie,2.7,2006
 10000000,drama,good will hunting,8.3,1997
 28000000,drama,el asalto,6.3,2000
-unknown,drama,ninfomanía: primera parte,7.0,2013
+unknown,drama,ninfomanï¿½a: primera parte,7.0,2013
 30000000,action,safe,6.5,2012
 500000,comedy,the perfect host,6.8,2010
 unknown,drama,amy foster,6.9,1997
@@ -6180,7 +6179,7 @@ unknown,drama,the stoning of soraya m.,8.0,2008
 unknown,biography,the long day closes,7.5,1992
 unknown,drama,high art,6.7,1998
 unknown,comedy,it takes two,5.7,1988
-unknown,drama,exótica,7.2,1994
+unknown,drama,exï¿½tica,7.2,1994
 25000000,drama,draft day,6.8,2014
 3000000,action,phantasm ii,6.5,1988
 20000000,action,bird on a wire,5.9,1990
@@ -6257,7 +6256,7 @@ unknown,comedy,torch song trilogy,7.7,1988
 unknown,comedy,i hope they serve beer in hell,5.3,2009
 9500000,comedy,wild at heart,7.2,1990
 7000000,drama,el piano,7.6,1993
-unknown,biography,en algún lugar de áfrica,7.7,2001
+unknown,biography,en algï¿½n lugar de ï¿½frica,7.7,2001
 unknown,drama,koi... mil gaya,7.1,2003
 60000000,action,jack reacher,7.0,2012
 80000000,drama,sphere,6.0,1998
@@ -6402,7 +6401,7 @@ unknown,action,enemy territory,6.5,1987
 unknown,comedy,the ringer,5.8,2005
 unknown,drama,crooked hearts,6.1,1991
 14000000,action,out for justice,6.0,1991
-unknown,comedy,jamón jamón,6.5,1992
+unknown,comedy,jamï¿½n jamï¿½n,6.5,1992
 unknown,action,best seller,6.5,1987
 55000000,comedy,maid in manhattan,5.1,2002
 22000000,action,fire birds,4.7,1990
@@ -6464,7 +6463,7 @@ unknown,biography,breach,7.0,2007
 150000000,mystery,angels & demons,6.7,2009
 149000000,animation,flushed away,6.6,2006
 75000000,action,killers,5.4,2010
-unknown,comedy,un hombre gruñón,7.7,2015
+unknown,comedy,un hombre gruï¿½ï¿½n,7.7,2015
 unknown,biography,frankie & alice,6.5,2010
 12000000,adventure,harold & kumar escape from guantanamo bay,6.6,2008
 40000000,mystery,secret window,6.6,2004
@@ -6665,7 +6664,7 @@ unknown,biography,renoir,6.6,2012
 unknown,crime,in secret,6.1,2013
 unknown,comedy,antonia's line,7.5,1995
 40000000,animation,corpse bride,7.4,2005
-47000000,adventure,1492: conquista del paraíso,6.5,1992
+47000000,adventure,1492: conquista del paraï¿½so,6.5,1992
 32000000,comedy,going the distance,6.3,2010
 5000000,drama,25th hour,7.7,2002
 22000000,biography,gorillas in the mist,7.0,1988
@@ -6769,7 +6768,7 @@ unknown,action,district 13: ultimatum,6.5,2009
 20000000,comedy,wayne's world,7.0,1992
 unknown,horror,nightflyers,4.0,1987
 16000000,action,run,6.1,1991
-45000000,crime,día del atentado,7.4,2016
+45000000,crime,dï¿½a del atentado,7.4,2016
 18000000,comedy,big,7.3,1988
 10000000,comedy,mafia!,5.5,1998
 110000000,animation,the smurfs,5.5,2011
@@ -6784,7 +6783,7 @@ unknown,drama,norwegian wood,6.4,2010
 70000000,action,man on fire,7.7,2004
 130000000,adventure,prometheus,7.0,2012
 29000000,action,wind,6.5,1992
-4800000,crime,sólo dios perdona,5.7,2013
+4800000,crime,sï¿½lo dios perdona,5.7,2013
 36000000,action,a man apart,6.1,2003
 30000000,animation,the curse of the were-rabbit,7.5,2005
 8000000,mystery,mortal thoughts,5.7,1991
