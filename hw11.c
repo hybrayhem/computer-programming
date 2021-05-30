@@ -27,20 +27,45 @@ void print_movies(movie_budget *mb, movie_name *mn) {
     }
 }
 
-void print_movie(movie_budget *mb, movie_name *mn) {
-    printf("movie\n");
-    printf("Movie budget: b: %d, y: %d, n: %s\n", mb->budget, mb->year, mb->name);
-    printf("Movie name: g: %s, n: %s, s: %.2f\n\n", mn->genre, mn->name, mn->score);
+void print_last_movie(movie_budget *mb, movie_name *mn) {
+    if (mb->next == NULL && mn->next == NULL) {
+        printf("movie\n");
+        printf("Movie budget: b: %d, y: %d, n: %s\n", mb->budget, mb->year, mb->name);
+        printf("Movie name: g: %s, n: %s, s: %.2f\n\n", mn->genre, mn->name, mn->score);
+    } else {
+        print_movies(mb->next, mn->next);
+    }
 }
 
-void insert_movie(movie_budget *mb_list, movie_name *mn_list, int budget, int year, char *name, char *genre, double score) {
+void insert_movie(movie_budget *mb, movie_name *mn, int budget, int year, char *name, char *genre, double score) {
     movie_budget *next_mb = (movie_budget *)malloc(sizeof(movie_budget));
     movie_name *next_mn = (movie_name *)malloc(sizeof(movie_name));
-    
 
+    next_mb->budget = budget;
+    next_mb->year = year;
+    next_mb->name = (char *)malloc((strlen(name) + 1) * sizeof(char));
+    strcpy(next_mb->name, name);
+
+    next_mn->name = (char *)malloc((strlen(name) + 1) * sizeof(char));
+    strcpy(next_mn->name, name);
+    next_mn->genre = (char *)malloc((strlen(genre) + 1) * sizeof(char));
+    strcpy(next_mn->genre, genre);
+    next_mn->score = score;
+
+    /* TODO: search if exists update, else insert to end */
+
+    next_mb->next = NULL;
+    next_mn->next = NULL;
+    if(mb != NULL && mn != NULL){
+        mb->next = next_mb;
+        mn->next = next_mn;
+    }else{
+        mb = next_mb;
+        mn = next_mn;
+    }
 }
 
-void get_movie(FILE *src, movie_budget *mb, movie_name *mn) {
+void get_movie(FILE *src, int *budget, int *year, char *name, char *genre, double *score) {
     int i, counter = 0;
     char input, *ap, *apb = NULL;
 
@@ -64,30 +89,30 @@ void get_movie(FILE *src, movie_budget *mb, movie_name *mn) {
         apb = strtok(ap, ",");
         /*printf("movie = %s; ", apb);*/
         if (strcmp(apb, "unknown") == 0) {
-            mb->budget = -1;
+            *budget = -1;
         } else {
-            mb->budget = strtod(apb, NULL);
+            *budget = strtod(apb, NULL);
         }
 
         apb = strtok(NULL, ",");
         /*printf("%s; ", apb);*/
-        mn->genre = (char *)malloc((strlen(apb) + 1) * sizeof(char));
-        strcpy(mn->genre, apb);
+        /*if(genre != NULL) free(genre);*/
+        genre = (char *)malloc((strlen(apb) + 1) * sizeof(char));
+        strcpy(genre, apb);
 
         apb = strtok(NULL, ",");
         /*printf("%s; ", apb);*/
-        mb->name = (char *)malloc((strlen(apb) + 1) * sizeof(char));
-        mn->name = (char *)malloc((strlen(apb) + 1) * sizeof(char));
-        strcpy(mb->name, apb);
-        strcpy(mn->name, apb);
+        /*if(name != NULL) free(name);*/
+        name = (char *)malloc((strlen(apb) + 1) * sizeof(char));
+        strcpy(name, apb);
 
         apb = strtok(NULL, ",");
         /*printf("%s; ", apb);*/
-        mn->score = strtod(apb, NULL);
+        *score = strtod(apb, NULL);
 
         apb = strtok(NULL, ",");
         /*printf("%s.\n", apb);*/
-        mb->year = atoi(apb);
+        *year = atoi(apb);
     }
 
     /*printf("ap = %s\n", ap);*/
@@ -123,22 +148,23 @@ void get_headers(FILE *src, char headers[][10]) {
 
 int main() {
     FILE *src;
-    movie_budget *temp_mb, *head_mb;
-    movie_name *temp_mn, *head_mn;
+    movie_budget *head_mb;
+    movie_name *head_mn;
     char headers[5][10] = {0};
+
+    int budget, year;
+    char *name, *genre;
+    double score;
 
     src = fopen(SRCFILE, "r");
     head_mb = (movie_budget *)malloc(sizeof(movie_budget));
     head_mn = (movie_name *)malloc(sizeof(movie_name));
-    temp_mb = (movie_budget *)malloc(sizeof(movie_budget));
-    temp_mn = (movie_name *)malloc(sizeof(movie_name));
-
     get_headers(src, headers);
-    while (!feof(src)) {
-        get_movie(src, temp_mb, temp_mn);
-        print_movie(temp_mb, temp_mn);
-        insert_movie(head_mb, head_mn, temp_mb, temp_mn);
-    }
+    /*while (!feof(src)) {*/
+        get_movie(src, &budget, &year, name, genre, &score);
+        insert_movie(head_mb, head_mn, budget, year, name, genre, score);
+        print_last_movie(head_mb, head_mn);
+    /*}*/
 
     /*print_movies(head_mb, head_mn);*/
     return 0;
