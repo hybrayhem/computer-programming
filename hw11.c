@@ -21,20 +21,18 @@ typedef union movie_pack {
     movie_name *n;
 } movie_pack;
 
+void print_movie(movie_budget *mb, movie_name *mn) {
+    /*printf("Movie budget = b: %d, y: %d, n: %s\n", mb->budget, mb->year, mb->name);
+    printf("Movie name = g: %s, n: %s, s: %.2f\n\n", mn->genre, mn->name, mn->score);*/
+    printf("%-15d %-12s %-35s %1.1f %10d\n", mb->budget, mn->genre, mb->name, mn->score, mb->year);
+}
 void print_movies(movie_budget *mb, movie_name *mn) {
     if (mb == NULL || mn == NULL) {
         printf("\n");
     } else {
-        printf("Movies\n");
-        printf("Movie budget: b: %d, y: %d, n: %s\n", mb->budget, mb->year, mb->name);
-        printf("Movie name: g: %s, n: %s, s: %.2f\n\n", mn->genre, mn->name, mn->score);
+        print_movie(mb, mn);
         print_movies(mb->next, mn->next);
     }
-}
-
-void print_movie(movie_budget *mb, movie_name *mn) {
-    printf("Movie budget = b: %d, y: %d, n: %s\n", mb->budget, mb->year, mb->name);
-    printf("Movie name = g: %s, n: %s, s: %.2f\n\n", mn->genre, mn->name, mn->score);
 }
 
 void print_last_movie(movie_budget *mb, movie_name *mn) {
@@ -69,32 +67,37 @@ movie_budget *sorted_insert(movie_budget **mb, movie_name **mn, int budget, int 
     return (*mb);
 }
 
-movie_pack *search_movie_by_name(movie_budget *mb, movie_name *mn, char name[]) {
+/* returns a movie_pack union array which including [mb_found, mn_found, mb_prev, mn_prev] */
+movie_pack *get_movie_by_name(movie_budget *mb, movie_name *mn, char name[]) {
     int success = 0;
-    movie_budget *mb_search = mb;
-    movie_name *mn_search = mn;
+    movie_budget *mb_found = mb, *mb_prev = NULL;
+    movie_name *mn_found = mn, *mn_prev = NULL;
     movie_pack *pack = (movie_pack *)calloc(2, sizeof(movie_pack));
 
-    while (mb_search != NULL) {
+    while (mb_found != NULL) {
         /*printf("mb search: %s vs %s\n", mb_search->name, name);*/
-        if (strcmp(mb_search->name, name) == 0) {
+        if (strcmp(mb_found->name, name) == 0) {
             printf("Movie Budget exists.\n");
-            pack[0].b = mb_search;
+            pack[0].b = mb_found;
+            pack[2].b = mb_prev;
             success = 1;
             break;
         }
-        mb_search = mb_search->next;
+        mb_prev = mb_found;
+        mb_found = mb_found->next;
     }
 
-    while (mn_search != NULL) {
+    while (mn_found != NULL) {
         /*printf("mn search: %s vs %s\n", mn_search->name, name);*/
-        if (strcmp(mn_search->name, name) == 0) {
+        if (strcmp(mn_found->name, name) == 0) {
             printf("Movie Name exists.\n");
-            pack[1].n = mn_search;
+            pack[1].n = mn_found;
+            pack[3].n = mn_prev;
             success = 1;
             break;
         }
-        mn_search = mn_search->next;
+        mn_prev = mn_found;
+        mn_found = mn_found->next;
     }
 
     if (success)
@@ -103,6 +106,8 @@ movie_pack *search_movie_by_name(movie_budget *mb, movie_name *mn, char name[]) 
         return NULL;
 }
 
+int remove_movie(movie_budget **mb, movie_name **mn) {
+}
 int update_movie(movie_budget **mb, movie_name **mn, int budget, int year, char *name, char *genre, double score) {
     return 0;
 }
@@ -112,7 +117,7 @@ int insert_movie(movie_budget **mb, movie_name **mn, int budget, int year, char 
     movie_name *next_mn = (movie_name *)malloc(sizeof(movie_name)), *temp_mn = *mn;
     movie_pack *pack;
     
-    pack = search_movie_by_name(*mb, *mn, name);
+    pack = get_movie_by_name(*mb, *mn, name);
 
     if (pack == NULL) {
         next_mb->budget = budget;
@@ -126,29 +131,51 @@ int insert_movie(movie_budget **mb, movie_name **mn, int budget, int year, char 
         strcpy(next_mn->genre, genre);
         next_mn->score = score;
 
-        next_mb->next = NULL;
+        /*next_mb->next = NULL;
         next_mn->next = NULL;
-        /*printf("Next movie\n");
+        printf("Next movie\n");
         print_last_movie(next_mb, next_mn);*/
+        if(!(*mb == NULL && *mn == NULL) && (*mb == NULL || *mn == NULL)){
+            printf("\n\n Linked lists sync is broken.\nTerminating...\n");
+            exit(1);
+        }
 
-        if (*mb != NULL && *mn != NULL) {
-            
-            while (temp_mb->next != NULL)
-                temp_mb = temp_mb->next;
-            temp_mb->next = next_mb;
+        if ((*mb == NULL && *mn == NULL) || (((*mb)->year < year) || ((*mb)->year == year && (*mb)->budget < budget))) {
+            printf("adding to head\n");
+            next_mb->next = *mb;
+            next_mn->next = *mn;
 
-            while (temp_mn->next != NULL)
-                temp_mn = temp_mn->next;
-            temp_mn->next = next_mn;
-
-        } else {
             *mb = next_mb;
             *mn = next_mn;
+        } else {
+            printf("adding to middle\n");
+            /* TODO: sorted index 2000 -> 2020 2010 1900 */
+            /*while (temp_mb->next != NULL && !((temp_mb->year > year && year > temp_mb->next->year) || (temp_mb->year == year && (temp_mb->budget > budget && budget > temp_mb->next->budget)))){*/
+            while (temp_mb->next != NULL && !((temp_mb->year > year ) || (temp_mb->year == year && (temp_mb->budget > budget)))){
+                temp_mb = temp_mb->next;
+                temp_mn = temp_mn->next;
+            }
+            next_mb->next = temp_mb->next;
+            temp_mb->next = next_mb;
+
+            next_mn->next = temp_mn->next;
+            temp_mn->next = next_mn;
         }
         return 1;
     } else {
-        printf("Updating.\n");
-        pack[0].b->budget = budget;
+        printf("Removing.\n");
+        if (pack[2].b == NULL)
+            *mb = pack[0].b->next;
+        else
+            pack[2].b->next = pack[0].b->next;
+        free(pack[0].b);
+        
+        if (pack[3].n == NULL)
+            *mn = pack[1].n->next;
+        else
+            pack[3].n->next = pack[1].n->next;
+        free(pack[1].n);
+        /*pack[0].b->budget = budget;
         pack[0].b->year = year;
         pack[0].b->name = (char *)calloc(strlen(name) + 1, sizeof(char));
         strcpy(pack[0].b->name, name);
@@ -157,14 +184,15 @@ int insert_movie(movie_budget **mb, movie_name **mn, int budget, int year, char 
         strcpy(pack[1].n->name, name);
         pack[1].n->genre = (char *)calloc(strlen(genre) + 1, sizeof(char));
         strcpy(pack[1].n->genre, genre);
-        pack[1].n->score = score;
+        pack[1].n->score = score;*/
     }
+    
     free(next_mb);
     free(next_mn);
     return 0;
 }
 
-void get_movie(FILE *src, int *budget, int *year, char **name, char **genre, double *score) {
+void parse_movie(FILE *src, int *budget, int *year, char **name, char **genre, double *score) {
     int i, counter = 0;
     char input, *ap, *apb = NULL;
 
@@ -188,7 +216,7 @@ void get_movie(FILE *src, int *budget, int *year, char **name, char **genre, dou
         apb = strtok(ap, ",");
         /*printf("movie = %s; ", apb);*/
         if (strcmp(apb, "unknown") == 0) {
-            *budget = -1;
+            *budget = 0;
         } else {
             *budget = strtod(apb, NULL);
         }
@@ -265,8 +293,12 @@ int main() {
     head_mn = NULL;
 
     get_headers(src, headers);
-    while (!feof(src)) {
-        get_movie(src, &budget, &year, &name, &genre, &score);
+    while (!feof(src) && i < 20) {
+        /*printf("< %d. list\n", i);
+        print_movies(head_mb, head_mn);
+        printf(">\n");*/
+
+        parse_movie(src, &budget, &year, &name, &genre, &score);
         
         /*printf("\nbudget: %d, ", budget);
         printf("year: %d, ", year);
@@ -274,22 +306,22 @@ int main() {
         printf("genre: %s, ", genre);
         printf("score: %.1f\n", score);*/
         
-        success = insert_movie(&head_mb, &head_mn, budget, year, name, genre, score);
-        if (success) {
-            printf("> last movie ");
-            print_last_movie(head_mb, head_mn);
-            i++;
-        }
+        /*do{*/
+            success = insert_movie(&head_mb, &head_mn, budget, year, name, genre, score);
+        /*}while(!success);*/
+        
+        i++;
     }
     printf("Program is done.\n");
     print_movies(head_mb, head_mn);
     printf("Length = %d\n\n", i);
 
 
-    /*pack = search_movie_by_name(head_mb, head_mn, "kikujiro");
+    /*pack = get_movie_by_name(head_mb, head_mn, "far and away");
     if(pack != NULL){
         printf("> pack\n");
         print_movie(pack[0].b, pack[1].n);
+        print_movie(pack[2].b, pack[3].n);
         pack[0].b->budget = 38;
         strcpy(pack[1].n->genre, "adventure time");
 
@@ -298,5 +330,6 @@ int main() {
     } else {
         printf("Not found.\n");
     }*/
+
     return 0;
 }
