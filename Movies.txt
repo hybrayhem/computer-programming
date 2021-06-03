@@ -1,5 +1,6 @@
 budget,genre,name,score,year
 30000000,animation,rugrats in paris: the movie,6.1,2000
+30,animation,rugrats in paris: the movie,3.1,2010
 70000000,action,six days seven nights,5.8,1998
 60000000,adventure,far and away,6.5,1992
 unknown,comedy,greenfingers,6.9,2000
@@ -6819,3 +6820,4 @@ unknown,animation,the congress,6.5,2013
 5000000,drama,lone star,7.5,1996
 4500000,drama,after.life,5.9,2009
 unknown,comedy,straight talk,5.7,1992
+55,drama,straight talk,7.7,1986

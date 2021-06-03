@@ -24,7 +24,7 @@ typedef union movie_pack {
 void print_movie(movie_budget *mb, movie_name *mn) {
     /*printf("Movie budget = b: %d, y: %d, n: %s\n", mb->budget, mb->year, mb->name);
     printf("Movie name = g: %s, n: %s, s: %.2f\n\n", mn->genre, mn->name, mn->score);*/
-    printf("%-15d %-12s %-35s %1.1f %10d\n", mb->budget, mn->genre, mb->name, mn->score, mb->year);
+    printf("%-15d %-12s %-45s %1.1f %10d\n", mb->budget, mn->genre, mb->name, mn->score, mb->year);
 }
 void print_movies(movie_budget *mb, movie_name *mn) {
     if (mb == NULL || mn == NULL) {
@@ -42,6 +42,12 @@ void print_last_movie(movie_budget *mb, movie_name *mn) {
     } else {
         print_last_movie(mb->next, mn->next);
     }
+}
+
+int compare_movies(movie_budget *mb, int year, int budget){
+    if(year > mb->year) return 1;
+    if(year == mb->year && budget > mb->budget) return 0;
+    return -1;
 }
 
 movie_budget *sorted_insert(movie_budget **mb, int year) {
@@ -106,19 +112,22 @@ movie_pack *search_movie_by_name(movie_budget *mb, movie_name *mn, char name[]) 
         return NULL;
 }
 
-void remove_movie(movie_budget *mb, movie_name *mn, movie_pack *pack) {
+void remove_movie(movie_budget **mb, movie_name **mn, movie_pack *pack) {
     movie_budget *current_budget = pack[0].b, *prev_budget = pack[2].b;
     movie_name *current_name = pack[1].n, *prev_name = pack[3].n;
 
     /* if prev == current */
-    if(current_budget == prev_budget) mb = current_budget->next;
-    else prev_budget->next = current_budget->next;
-    free(current_budget);
+    if(current_budget != NULL){
+        if(prev_budget == NULL/*current_budget == prev_budget*/) *mb = current_budget->next;
+        else prev_budget->next = current_budget->next;
+        free(current_budget);
+    }
 
-
-    if(current_name == prev_name) mn = current_name->next;
-    else prev_name->next = current_name->next;
-    free(current_name);
+    if(current_name != NULL){
+        if(prev_name == NULL/*current_name == prev_name*/) *mn = current_name->next;
+        else prev_name->next = current_name->next;
+        free(current_name);
+    }
 }
 
 void insert_movie(movie_budget **mb, movie_name **mn, int budget, int year, char *name, char *genre, double score) {
@@ -141,23 +150,29 @@ void insert_movie(movie_budget **mb, movie_name **mn, int budget, int year, char
         exit(1);
     }
 
-    if((*mb == NULL && *mn == NULL) || (*mb)->year < year){
+    if((*mb == NULL && *mn == NULL) || (*mb)->year < year || ((*mb)->year == year && (*mb)->budget < budget)){
         next_mb->next = *mb;
         next_mn->next = *mn;
 
         *mb = next_mb;
         *mn = next_mn;
     } else {
-        while((current_mb != NULL && current_mn != NULL) && (current_mb->year >= year)) { /* elimizdeki yıl baştan küçük sondan büyük ise kendinden küçüğü görene kadar ilerlemeli*/
+        while((current_mb != NULL && current_mn != NULL) && ((current_mb->year > year) || (current_mb->year == year && current_mb->budget >= budget))) {
+        /*while((current_mb != NULL && current_mn != NULL) && compare_movies(current_mb, year, budget) == -1) {*/
+            /*printf("%d ", compare_movies(current_mb, year, budget));*/
             prev_mb = current_mb;
             current_mb = current_mb->next;
 
             prev_mn = current_mn;
             current_mn = current_mn->next;
         }
-        printf("locating after\n");
-        if(prev_mb != NULL && prev_mn != NULL) 
-            print_movie(prev_mb, prev_mn);
+        printf("<locating after\n");
+        if(prev_mb != NULL && prev_mn != NULL && current_mb != NULL && current_mn != NULL){ 
+            /*printf("%d ", compare_movies(current_mb, year, budget));*/
+            printf("prev = "); print_movie(prev_mb, prev_mn);
+            printf("curr = "); print_movie(next_mb, next_mn);
+            printf(">\n");
+        }
         /* 4 -> 6 55* 444 3 22 1 */
 
         next_mb->next = current_mb;
@@ -307,7 +322,7 @@ int main() {
     head_mn = NULL;
 
     get_headers(src, headers);
-    while (!feof(src) /*&& i < 20*/) {
+    while (!feof(src) /*&& i < 1000*/) {
         /*printf("< %d. list\n", i);
         print_movies(head_mb, head_mn);
         printf(">\n");*/
@@ -318,7 +333,8 @@ int main() {
         /* remove existing movie for avoid duplicates */
         pack = search_movie_by_name(head_mb, head_mn, name);
         if(pack != NULL){
-            remove_movie(head_mb, head_mn, pack);
+            /*print_movie(pack[0].b, pack[1].n);*/
+            remove_movie(&head_mb, &head_mn, pack);
             i--;
         }
 
@@ -328,8 +344,7 @@ int main() {
     }
     printf("Program is done.\n");
     print_movies(head_mb, head_mn);
-    printf("Length = %d\n\n", i);
-
+    printf("Length = %d, end name = %s\n\n", i, name);
 
     /*pack = search_movie_by_name(head_mb, head_mn, "far and away");
     if(pack != NULL){
