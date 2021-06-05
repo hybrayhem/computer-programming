@@ -183,7 +183,7 @@ int main() {
     movie_pack *pack;
     genre_n *genres;
     int i = 0, inp_selection, inp_sort_type, inp_year, inp_base;
-    double imdb_average, inp_score;
+    double imdb_average = -1.0, inp_score;
     char headers[5][10] = {0}, msg[100];
 
     int budget, year;
@@ -220,8 +220,6 @@ int main() {
     printf("Program is done.\n");
     /*print_movies(head_mb, head_mn);*/
     printf("%d movies found. end name = %s\n\n", i, name);
-    init_genres(&genres, head_mn); /* TODO if null init in cases, made this for also imdb */
-    init_average(&imdb_average, head_mn);
 
     /*goto end;*/
     /* MENU */
@@ -240,13 +238,18 @@ int main() {
         case 1:
             printf("1. Budget\n2. Genre\n3. Name\n4. Score\n5.Year\n");
             inp_selection = get_selection("Please select and operation: ", 1, 5);
-            
+
             printf("Sorting... ");
-            if(inp_selection == 1) sort_movies(&head_mb, &head_mn, compare_movies_by_budget);
-            else if(inp_selection == 2) sort_movies(&head_mb, &head_mn, compare_movies_by_genre);
-            else if(inp_selection == 4) sort_movies(&head_mb, &head_mn, compare_movies_by_name);
-            else if(inp_selection == 3) sort_movies(&head_mb, &head_mn, compare_movies_by_score);
-            else if(inp_selection == 5) sort_movies(&head_mb, &head_mn, compare_movies_by_year);
+            if (inp_selection == 1)
+                sort_movies(&head_mb, &head_mn, compare_movies_by_budget);
+            else if (inp_selection == 2)
+                sort_movies(&head_mb, &head_mn, compare_movies_by_genre);
+            else if (inp_selection == 4)
+                sort_movies(&head_mb, &head_mn, compare_movies_by_name);
+            else if (inp_selection == 3)
+                sort_movies(&head_mb, &head_mn, compare_movies_by_score);
+            else if (inp_selection == 5)
+                sort_movies(&head_mb, &head_mn, compare_movies_by_year);
             printf("Done\n");
 
             printf("1. Single Selection\n2. Multiple Selection\n");
@@ -289,10 +292,12 @@ int main() {
             }
             break;
         case 6:
+            if (imdb_average == -1.0) init_average(&imdb_average, head_mn);
             printf("Average: %g\n", imdb_average);
             break;
         case 7:
             printf("\n");
+            if (genres == NULL) init_genres(&genres, head_mn);
             print_genres(genres, 1);
             break;
 
