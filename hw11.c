@@ -178,10 +178,10 @@ void sort_movies(movie_budget **head_mb, movie_name **head_mn, int (*compare)(mo
 
 int main() {
     FILE *src;
-    movie_budget *head_mb;
-    movie_name *head_mn;
+    movie_budget *head_mb = NULL;
+    movie_name *head_mn = NULL;
     movie_pack *pack;
-    genre_n *genres;
+    genre_n *genres = NULL;
     int i = 0, inp_selection, inp_sort_type, inp_year, inp_base;
     double imdb_average = -1.0, inp_score;
     char headers[5][10] = {0}, msg[100];
@@ -191,15 +191,6 @@ int main() {
     double score;
 
     src = fopen(SRCFILE, "r");
-
-    genres = (genre_n *)malloc(sizeof(genre_n)); /* TODO: check is necessary or not */
-    genres = NULL;
-
-    head_mb = (movie_budget *)malloc(sizeof(movie_budget)); /* TODO: check is necessary or not */
-    head_mn = (movie_name *)malloc(sizeof(movie_name));     /* TODO: check is necessary or not */
-    head_mb = NULL;
-    head_mn = NULL;
-
     printf("\nLoading movies from storage...\n\n");
     get_headers(src, headers);
     while (!feof(src)) {
