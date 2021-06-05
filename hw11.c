@@ -42,7 +42,7 @@ void insert_movie(movie_budget **mb, movie_name **mn, int budget, int year, char
 void parse_movie(FILE *src, int *budget, int *year, char **name, char **genre, double *score);
 void get_headers(FILE *src, char headers[][10]);
 
-/* gets selection for menu with error handling */
+/* safe scanf function that gets the selection for menu with a bullet-proof error handling */
 double get_selection(const char msg[], int lower, int upper) {
     int status, flag = 0;
     double selection = 0.0;
@@ -152,33 +152,33 @@ void print_movies_by_interval(movie_budget *mb, movie_name *mn, int start, int e
 }
 
 void print_movies_by_budget_interval(movie_budget *mb, movie_name *mn, int start, int end) {
-    while (mb->budget < start) {
+    while (mb != NULL && mn != NULL && mb->budget < start) {
         mb = mb->next;
         mn = mn->next;
     }
-    while (mb->budget >= end) {
+    while (mb != NULL && mn != NULL && mb->budget <= end) {
         print_movie(mb, mn);
         mb = mb->next;
         mn = mn->next;
     }
 }
-void print_movies_by_score_interval(movie_budget *mb, movie_name *mn, int start, int end) {
-    while (mn->score < start) {
+void print_movies_by_score_interval(movie_budget *mb, movie_name *mn, double start, double end) {
+    while (mb != NULL && mn != NULL && mn->score < start) {
         mb = mb->next;
         mn = mn->next;
     }
-    while (mn->score >= end) {
+    while (mb != NULL && mn != NULL && mn->score <= end) {
         print_movie(mb, mn);
         mb = mb->next;
         mn = mn->next;
     }
 }
 void print_movies_by_year_interval(movie_budget *mb, movie_name *mn, int start, int end) {
-    while (mb->year < start) {
+    while (mb != NULL && mn != NULL && mb->year < start) {
         mb = mb->next;
         mn = mn->next;
     }
-    while (mb->year >= end) {
+    while (mb != NULL && mn != NULL && mb->year <= end) {
         print_movie(mb, mn);
         mb = mb->next;
         mn = mn->next;
@@ -197,7 +197,7 @@ void print_movies_by_year(movie_budget *mb, movie_name *mn, int year, int base, 
     }
 }
 
-void print_movies_by_score(movie_budget *mb, movie_name *mn, int score, int base, int *success) {
+void print_movies_by_score(movie_budget *mb, movie_name *mn, double score, int base, int *success) {
     if (mb == NULL && mn == NULL) {
         printf("\n");
     } else {
@@ -271,7 +271,7 @@ int main() {
     movie_pack *pack;
     genre_n *genres = NULL;
     int i = 0, success, inp_selection, inp_sort_type, inp_year, inp_base, inp_start, inp_end, max_budget = 0;
-    double imdb_average = -1.0, inp_score;
+    double imdb_average = -1.0, inp_score, inp_dstart, inp_dend;
     char headers[5][10] = {0}, msg[100];
 
     int budget, year;
@@ -282,7 +282,7 @@ int main() {
     if (src == NULL) terminate("Couldn't open file.");
     printf("\nLoading movies from the storage...\n\n");
     get_headers(src, headers);
-    while (!feof(src) && i < 50) {
+    while (!feof(src)) {
         /* parse movie datas from file */
         parse_movie(src, &budget, &year, &name, &genre, &score);
         if (budget > max_budget) max_budget = budget;
@@ -335,7 +335,7 @@ int main() {
             printf("\n1. Single Selection\n2. Multiple Selection\n\n");
             inp_selection = get_selection("Please select and operation: ", 1, 2);
             if (inp_selection == 1) {
-                inp_start = get_selection("Enter a value: ", 0, i);
+                inp_start = get_selection("Enter a value: ", 1, i);
                 printf("\n%d. Movie\n\n", inp_start);
                 print_movies_by_interval(head_mb, head_mn, inp_start, inp_start);
             } else {
@@ -363,10 +363,10 @@ int main() {
 
                 } else if (inp_sort_type == 4) {
 
-                    inp_start = get_selection("Enter the start value: ", 0, 10);
-                    inp_end = get_selection("Enter the end value: ", 0, 10);
-                    printf("\nMovies between %d and %d, sorted by score.\n\n", inp_start, inp_end);
-                    print_movies_by_score_interval(head_mb, head_mn, inp_start, inp_end);
+                    inp_dstart = get_selection("Enter the start value: ", 0, 10);
+                    inp_dend = get_selection("Enter the end value: ", 0, 10);
+                    printf("\nMovies between %.1f and %.1f, sorted by score.\n\n", inp_dstart, inp_dend);
+                    print_movies_by_score_interval(head_mb, head_mn, inp_dstart, inp_dend);
 
                 } else if (inp_sort_type == 5) {
 
@@ -540,8 +540,8 @@ int compare_movies_by_year_budget(movie_budget *mb, movie_name *mn, movie_budget
 }
 /* printf("1. Budget\n2. Genre\n3. Name\n4. Score\n5.Year\n"); */
 int compare_movies_by_budget(movie_budget *mb, movie_name *mn, movie_budget *next_mb, movie_name *next_mn, int head) {
-    if (head) return (mb->budget < next_mb->budget);
-    return (mb->budget >= next_mb->budget);
+    if (head) return (mb->budget > next_mb->budget);
+    return (mb->budget <= next_mb->budget);
 }
 
 int compare_movies_by_genre(movie_budget *mb, movie_name *mn, movie_budget *next_mb, movie_name *next_mn, int head) {
@@ -555,13 +555,13 @@ int compare_movies_by_name(movie_budget *mb, movie_name *mn, movie_budget *next_
 }
 
 int compare_movies_by_score(movie_budget *mb, movie_name *mn, movie_budget *next_mb, movie_name *next_mn, int head) {
-    if (head) return (mn->score < next_mn->score);
-    return (mn->score >= next_mn->score);
+    if (head) return (mn->score > next_mn->score);
+    return (mn->score <= next_mn->score);
 }
 
 int compare_movies_by_year(movie_budget *mb, movie_name *mn, movie_budget *next_mb, movie_name *next_mn, int head) {
-    if (head) return (mb->year < next_mb->year);
-    return (mb->year >= next_mb->year);
+    if (head) return (mb->year > next_mb->year);
+    return (mb->year <= next_mb->year);
 }
 
 void insert_movie(movie_budget **mb, movie_name **mn, int budget, int year, char *name, char *genre, double score, int (*compare)(movie_budget *, movie_name *, movie_budget *, movie_name *, int)) {
@@ -652,7 +652,7 @@ void parse_movie(FILE *src, int *budget, int *year, char **name, char **genre, d
     free(ap);
 }
 
-/* extract headers from first line of file */
+/* extracting headers from first line of file */
 void get_headers(FILE *src, char headers[][10]) {
     int i = 0;
     char line[30], ch, *temp;
