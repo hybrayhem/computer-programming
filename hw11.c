@@ -172,6 +172,41 @@ void print_movies_by_score(movie_budget *mb, movie_name *mn, int score, int base
     }
 }
 
+void free_all(movie_budget *mb, movie_name *mn, genre_n *genres) {
+    movie_budget *temp_mb;
+    movie_name *temp_mn;
+    genre_n *temp_g;
+
+    while (mb != NULL && mn != NULL) {
+        temp_mb = mb;
+        temp_mn = mn;
+        mb = mb->next;
+        mn = mn->next;
+
+        if (temp_mb->name != NULL) free(temp_mb->name);
+        if (temp_mn->name != NULL) free(temp_mn->name);
+        if (temp_mn->genre != NULL) free(temp_mn->genre);
+        free(temp_mb);
+        free(temp_mn);
+    }
+
+    /*if (pack != NULL) {
+        if(pack[0].b->name != NULL) free(pack[0].b->name);
+        if(pack[1].n->name != NULL) free(pack[1].n->name);
+        if(pack[1].n->genre != NULL) free(pack[1].n->genre);
+        free(pack[0].b);
+        free(pack[1].n);
+    }*/
+
+    while (genres != NULL) {
+        temp_g = genres;
+        genres = genres->next;
+
+        if (temp_g->name != NULL) free(temp_g->name);
+        free(temp_g);
+    }
+}
+
 void terminate(char err[]) {
     printf("\n%s\n\n", err);
     exit(0);
@@ -190,6 +225,9 @@ void sort_movies(movie_budget **head_mb, movie_name **head_mn, int (*compare)(mo
         current_mb = current_mb->next;
         current_mn = current_mn->next;
 
+        if (temp_mb->name != NULL) free(temp_mb->name);
+        if (temp_mn->name != NULL) free(temp_mn->name);
+        if (temp_mn->genre != NULL) free(temp_mn->genre);
         free(temp_mb);
         free(temp_mn);
     }
@@ -215,7 +253,7 @@ int main() {
     if (src == NULL) terminate("Couldn't open file.");
     printf("\nLoading movies from storage...\n\n");
     get_headers(src, headers);
-    while (!feof(src) && i < 50) {
+    while (!feof(src)) {
         /* parse movie datas from file */
         parse_movie(src, &budget, &year, &name, &genre, &score);
 
@@ -264,8 +302,6 @@ int main() {
             else if (inp_selection == 5)
                 sort_movies(&head_mb, &head_mn, compare_movies_by_year_budget);
             printf("Done\n");
-
-            print_movies(head_mb, head_mn);
 
             printf("1. Single Selection\n2. Multiple Selection\n");
             inp_selection = get_selection("Please select and operation: ", 1, 2);
@@ -330,8 +366,8 @@ int main() {
         }
     }
 
-    free(head_mb);
-    free(head_mn);
+    free_all(head_mb, head_mn, genres);
+    fclose(src);
     return 0;
 }
 
