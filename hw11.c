@@ -384,6 +384,7 @@ void parse_movie(FILE *src, int *budget, int *year, char **name, char **genre, d
 
         apb = strtok(NULL, ",");
         *year = atoi(apb);
+        while((*year) > 9999) (*year) /= 10; 
     }
 
     free(ap);
