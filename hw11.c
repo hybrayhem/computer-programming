@@ -136,6 +136,22 @@ void print_genres(genre_n *genre, int withnum) {
     }
 }
 
+void print_movies_by_interval(movie_budget *mb, movie_name *mn, int start, int end) {
+    int i;
+
+    for (i = 1; i < start; i++) {
+        mb = mb->next;
+        mn = mn->next;
+    }
+
+    for (i = start; i <= end && mb != NULL && mn != NULL; i++) {
+        print_movie(mb, mn);
+
+        mb = mb->next;
+        mn = mn->next;
+    }
+}
+
 void print_movies_by_year(movie_budget *mb, movie_name *mn, int year, int base) { /* base = 0 if(mb.year <= year) */ /* base = 1 if(mb.year > year) */
     if (mb == NULL && mn == NULL) {
         printf("\n");
@@ -154,6 +170,11 @@ void print_movies_by_score(movie_budget *mb, movie_name *mn, int score, int base
             print_movie(mb, mn); /* TODO: change with printf("%s\n", mn->name); */
         print_movies_by_score(mb->next, mn->next, score, base);
     }
+}
+
+void terminate(char err[]) {
+    printf("\n%s\n\n", err);
+    exit(0);
 }
 
 void sort_movies(movie_budget **head_mb, movie_name **head_mn, int (*compare)(movie_budget *, movie_name *, movie_budget *, movie_name *, int)) {
@@ -182,7 +203,7 @@ int main() {
     movie_name *head_mn = NULL;
     movie_pack *pack;
     genre_n *genres = NULL;
-    int i = 0, inp_selection, inp_sort_type, inp_year, inp_base;
+    int i = 0, inp_selection, inp_sort_type, inp_year, inp_base, inp_start, inp_end;
     double imdb_average = -1.0, inp_score;
     char headers[5][10] = {0}, msg[100];
 
@@ -191,9 +212,10 @@ int main() {
     double score;
 
     src = fopen(SRCFILE, "r");
+    if (src == NULL) terminate("Couldn't open file.");
     printf("\nLoading movies from storage...\n\n");
     get_headers(src, headers);
-    while (!feof(src)) {
+    while (!feof(src) && i < 50) {
         /* parse movie datas from file */
         parse_movie(src, &budget, &year, &name, &genre, &score);
 
@@ -208,23 +230,23 @@ int main() {
         insert_movie(&head_mb, &head_mn, budget, year, name, genre, score, compare_movies_by_year_budget);
         i++;
     }
-    printf("Program is done.\n");
-    /*print_movies(head_mb, head_mn);*/
+    if (i == 0) terminate("Source file is empty.");
+    /*printf("Program is done.\n");
+    print_movies(head_mb, head_mn);*/
     printf("%d movies found. end name = %s\n\n", i, name);
 
-    /*goto end;*/
-    /* MENU */
-    printf("1. List of the Sorted Data\n");
-    printf("2. List of the Genres\n");
-    printf("3. List of the Movie Through the Years\n");
-    printf("4. List of the Movie Through the Scores\n");
-    printf("5. All Informations of a Single Movie\n");
-    printf("6. Average of the IMDB Scores\n");
-    printf("7. Frequence of the Genres\n");
-    printf("8. Exit\n\n");
-
     while (inp_selection != 8) {
+        /* MENU */
+        printf("1. List of the Sorted Data\n");
+        printf("2. List of the Genres\n");
+        printf("3. List of the Movie Through the Years\n");
+        printf("4. List of the Movie Through the Scores\n");
+        printf("5. All Informations of a Single Movie\n");
+        printf("6. Average of the IMDB Scores\n");
+        printf("7. Frequence of the Genres\n");
+        printf("8. Exit\n\n");
         inp_selection = get_selection("Please select and operation: ", 1, 8);
+
         switch (inp_selection) {
         case 1:
             printf("1. Budget\n2. Genre\n3. Name\n4. Score\n5.Year\n");
@@ -235,20 +257,31 @@ int main() {
                 sort_movies(&head_mb, &head_mn, compare_movies_by_budget);
             else if (inp_selection == 2)
                 sort_movies(&head_mb, &head_mn, compare_movies_by_genre);
-            else if (inp_selection == 4)
-                sort_movies(&head_mb, &head_mn, compare_movies_by_name);
             else if (inp_selection == 3)
+                sort_movies(&head_mb, &head_mn, compare_movies_by_name);
+            else if (inp_selection == 4)
                 sort_movies(&head_mb, &head_mn, compare_movies_by_score);
             else if (inp_selection == 5)
-                sort_movies(&head_mb, &head_mn, compare_movies_by_year);
+                sort_movies(&head_mb, &head_mn, compare_movies_by_year_budget);
             printf("Done\n");
+
+            print_movies(head_mb, head_mn);
 
             printf("1. Single Selection\n2. Multiple Selection\n");
             inp_selection = get_selection("Please select and operation: ", 1, 2);
-            /* TODO: handle selections */
+            if (inp_selection == 1) {
+                inp_start = get_selection("Enter a value: ", 0, i);
+                print_movies_by_interval(head_mb, head_mn, inp_start, inp_start);
+            } else {
+                inp_start = get_selection("Enter the start value: ", 0, i);
+                inp_end = get_selection("Enter the end value: ", 0, i);
+
+                print_movies_by_interval(head_mb, head_mn, inp_start, inp_end);
+            }
             break;
         case 2:
             printf("\n");
+            if (genres == NULL) init_genres(&genres, head_mn);
             print_genres(genres, 0);
             break;
         case 3:
@@ -296,7 +329,7 @@ int main() {
             break;
         }
     }
-end:
+
     free(head_mb);
     free(head_mn);
     return 0;
@@ -396,13 +429,13 @@ int compare_movies_by_budget(movie_budget *mb, movie_name *mn, movie_budget *nex
 }
 
 int compare_movies_by_genre(movie_budget *mb, movie_name *mn, movie_budget *next_mb, movie_name *next_mn, int head) {
-    if (head) return (strcmp(mn->genre, next_mn->genre) < 0);
-    return (strcmp(mn->genre, next_mn->genre) >= 0);
+    if (head) return (strcmp(mn->genre, next_mn->genre) > 0);
+    return (strcmp(mn->genre, next_mn->genre) <= 0);
 }
 
 int compare_movies_by_name(movie_budget *mb, movie_name *mn, movie_budget *next_mb, movie_name *next_mn, int head) {
-    if (head) return (strcmp(mb->name, next_mb->name) < 0);
-    return (strcmp(mb->name, next_mb->name) >= 0);
+    if (head) return (strcmp(mb->name, next_mb->name) > 0);
+    return (strcmp(mb->name, next_mb->name) <= 0);
 }
 
 int compare_movies_by_score(movie_budget *mb, movie_name *mn, movie_budget *next_mb, movie_name *next_mn, int head) {
@@ -430,10 +463,7 @@ void insert_movie(movie_budget **mb, movie_name **mn, int budget, int year, char
     strcpy(next_mn->genre, genre);
     next_mn->score = score;
 
-    if (!(*mb == NULL && *mn == NULL) && (*mb == NULL || *mn == NULL)) {
-        printf("\n\n Linked lists sync is broken.\nTerminating...\n");
-        exit(1);
-    }
+    if (!(*mb == NULL && *mn == NULL) && (*mb == NULL || *mn == NULL)) terminate("Linked lists sync is broken.\nTerminating...");
 
     /*if ((*mb == NULL && *mn == NULL) || (*mb)->year < year || ((*mb)->year == year && (*mb)->budget < budget)) {*/
     if ((*mb == NULL && *mn == NULL) || (*compare)(*mb, *mn, next_mb, next_mn, 1)) {
@@ -512,7 +542,7 @@ void get_headers(FILE *src, char headers[][10]) {
     char line[30], ch, *temp;
 
     do {
-        fscanf(src, "%c", &ch);
+        fscanf(src, "%c", &ch); /* TODO: check success */
         line[i] = ch;
         i++;
     } while (ch != '\n');
