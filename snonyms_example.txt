@@ -1,3 +1,0 @@
-happy = glad content joyful
-sad = gloomy unhappy miserable
-large = big great huge
