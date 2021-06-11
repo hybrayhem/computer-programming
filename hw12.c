@@ -14,7 +14,7 @@
 #include <string.h>
 #include <time.h>
 
-#define SYNFILE "synonyms_test.txt"
+#define SYNFILE "synonyms.txt"
 #define ANTFILE "antonyms_test.txt"
 
 typedef struct word {
@@ -55,14 +55,18 @@ char *dscan_line(FILE *src) {
         for (i = 0; i < counter - 1; i++) {
             ap[i] = apb[i];
         }
-        ap[counter - 1] = input;
+        if (apb != NULL) free(apb);
 
-        if (apb != NULL)
-            free(apb);
+        if (input == '\n') {
+            ap[counter - 1] = '\0';
+            break;
+        }
+
+        ap[counter - 1] = input;
         apb = ap;
 
-    } while (input != '\n' && !feof(src));
-    if (input == '\n') ap[strlen(ap) - 1] = '\0';
+    } while (!feof(src));
+
     return ap;
 }
 
@@ -115,9 +119,7 @@ void parsed_insert_word(char *raw_data, word **head_w) {
 }
 
 void load_words(word **head_w, char *filename) {
-    int i = 0;
-    char *line, *element;
-    word *current_word = *head_w;
+    char *line;
 
     FILE *word_file;
     word_file = fopen(filename, "r");
@@ -126,7 +128,7 @@ void load_words(word **head_w, char *filename) {
     while (!feof(word_file)) {
 
         line = dscan_line(word_file);
-        printf("Line : %s\n", line);
+        /*printf("Line : %s\n", line);*/
         parsed_insert_word(line, head_w);
 
         free(line);
@@ -134,6 +136,7 @@ void load_words(word **head_w, char *filename) {
         /*current_word = current_word->next;*/
     }
     printf("\n\n");
+    fclose(word_file);
 }
 
 int main() {

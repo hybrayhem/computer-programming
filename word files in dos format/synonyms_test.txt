@@ -1,0 +1,10 @@
+happy = glad,content,joyful
+sad = gloomy,unhappy,miserable
+large = big,great,huge
+aback = backwards,rearwards,aft,abaft,astern,behind,back
+abandon = leave,forsake,desert,renounce,cease,relinquish,discontinue,castoff,resign,retire,quit,forego,forswear,depart from,vacate,surrender,abjure,repudiate
+abandoned = profligate,wicked,vicious,unprincipled,reprobate,incorrigible,sinful,graceless,demoralized,dissolute,depraved,bad,licentious,corrupt
+abase = degrade,disgrace,bring low,reduce,humble,demean,stoop,humiliate,depress,lower,sink,dishonor
+abasement = degradation,depression,disgrace,humiliation,abjection,dishonor,shame
+abash = confound,confuse,discompose,bewilder,daunt,cow,humble,disconcert,dishearten,motility,shame,humiliate
+abate = terminate,remove,suppress,lower,reduce,mitigate,diminish,moderate,lessen,subside,decrease
