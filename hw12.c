@@ -17,7 +17,11 @@
 #define SYNFILE "synonyms_test.txt"
 #define ANTFILE "antonyms_test.txt"
 
+typedef enum { synonym,
+               antonym } word_t;
+
 typedef struct word {
+    word_t type;
     char *word;
     char **pairs;  /* a char array for antonyms/synonyms of the word */
     double chance; /* chance of being asked the word */
@@ -26,7 +30,7 @@ typedef struct word {
 
 void print_word(word *w) {
     int i;
-    printf("Word: %-12s, Chance : %.1f  -   ", w->word, w->chance);
+    printf("Word: %-12s, Chance : %.2f, Type: %d  -   ", w->word, w->chance, w->type);
     printf("Pairs: ");
     for (i = 0; w->pairs[i] != NULL; i++) {
         printf("%s ", w->pairs[i]);
@@ -70,7 +74,7 @@ char *dscan_line(FILE *src) {
     return ap;
 }
 
-void parsed_insert_word(char *raw_data, word **head_w) {
+void parsed_insert_word(word **head_w, char *raw_data, word_t type) {
     int i, pair_num = 5;
     word *new_word = (word *)malloc(sizeof(word)), *temp_w = *head_w;
 
@@ -104,7 +108,8 @@ void parsed_insert_word(char *raw_data, word **head_w) {
     new_word->pairs[i - 1] = NULL;
 
     new_word->next = NULL;
-    new_word->chance = (rand() % 100 + 1) / 50.0;
+    new_word->chance = 1.0;
+    new_word->type = type;
     /*print_word(new_word);*/
 
     /* insert to end */
@@ -118,7 +123,7 @@ void parsed_insert_word(char *raw_data, word **head_w) {
     }
 }
 
-void load_words(word **head_w, char *filename, int *word_count) {
+void load_words(word **head_w, char *filename, int *word_count, word_t type) {
     char *line;
 
     FILE *word_file;
@@ -129,7 +134,7 @@ void load_words(word **head_w, char *filename, int *word_count) {
 
         line = dscan_line(word_file);
         /*printf("Line : %s\n", line);*/
-        parsed_insert_word(line, head_w);
+        parsed_insert_word(head_w, line, type);
         free(line);
 
         (*word_count)++;
@@ -139,16 +144,12 @@ void load_words(word **head_w, char *filename, int *word_count) {
     fclose(word_file);
 }
 
-void update_chance_array(word *head_syn, word *head_ant, double chance_array[]) {
+void update_chance_array(word *head_w, double chance_array[]) {
     int i;
 
-    for (i = 0; head_syn != NULL; i++) {
-        chance_array[i] = head_syn->chance;
-        head_syn = head_syn->next;
-    }
-    for (; head_ant != NULL; i++) {
-        chance_array[i] = head_ant->chance;
-        head_ant = head_ant->next;
+    for (i = 0; head_w != NULL; i++) {
+        chance_array[i] = head_w->chance;
+        head_w = head_w->next;
     }
     chance_array[i] = -1.0;
 }
@@ -169,10 +170,11 @@ void print_weightes(int weight_array[]) {
     printf("\n\n");
 }
 
-int get_random_word(double chance_array[], int len) {
-    int i, sum = 0, *chance_weights = (int *)calloc(len, sizeof(int)), *indexes = (int *)calloc(len, sizeof(int));
-    double min_chance = chance_array[0], expand_factor;
+int get_random_word(double chance_array[], int word_count) {
+    int i, sum = 0, random_index, *indexes = (int *)calloc(word_count + 1, sizeof(int));
+    double min_chance, expand_factor;
 
+    min_chance = chance_array[0];
     for (i = 1; chance_array[i] != -1.0; i++) {
         if (chance_array[i] < min_chance) min_chance = chance_array[i];
     }
@@ -180,55 +182,106 @@ int get_random_word(double chance_array[], int len) {
     printf("min chance: %.5f, expand factor: %.5f\n", min_chance, expand_factor);
 
     for (i = 0; chance_array[i] != -1.0; i++) {
-        chance_weights[i] = chance_array[i] * expand_factor + 0.1;
-        sum += chance_weights[i];
+        /*chance_weights[i] = chance_array[i] * expand_factor + 0.1;
+        sum += chance_weights[i];*/
+        sum += chance_array[i] * expand_factor + 0.1;
         indexes[i] = sum;
     }
-    chance_weights[i] = -1;
+    /*chance_weights[i] = -1;
+    print_weightes(chance_weights);*/
     indexes[i] = -1;
-    print_weightes(chance_weights);
     print_weightes(indexes);
+    random_index = rand() % indexes[i - 1];
+    for (i = 0; indexes[i] != -1 && indexes[i] < random_index; i++)
+        ;
+    printf("%d. selected, random index was %d\n", i, random_index);
+    return i;
 }
 
-int check_answer(char *answer, char **pairs){
-
-}
-
-void ask_question(word *syn_list, word *ant_list, int syn_count, int ant_count, int word_index) {
+int check_answer(char *answer, char **pairs) {
     int i;
-    word *search_word;
-
-    if(word_index > syn_count) search_word = ant_list;
-    else search_word = syn_list;
-
-    for(i = 0; search_word != NULL && i < syn_count; i++){
-
+    for (i = 0; pairs[i] != NULL; i++) {
+        if (strcmp(answer, pairs[i]) == 0) {
+            return 1;
+        }
     }
+    return 0;
+}
+
+word *get_word_by_index(word *word_list, int index) {
+    int i;
+    printf("%d ", index);
+    for (i = 0; i < index; i++) {
+        /*printf("%s\n", word_list->word);*/
+        word_list = word_list->next;
+    }
+    return word_list;
+}
+
+double increase_chance(double chance){
+    return 0.0;
+}
+
+double decrease_chance(double chance){
+    return 0.0;
+}
+
+int ask_question(word *word_list, int word_index) {
+    int right_answer;
+    char *answer /*answer[50]*/;
+    word *question = get_word_by_index(word_list, word_index);
+
+    if (question->type == synonym)
+        printf("What is the synonym of %s? c=%f\n", question->word, question->chance);
+    else if (question->type == antonym)
+        printf("What is the antonym of %s? c=%f\n", question->word, question->chance);
+    
+    /*fflush(stdin);
+    scanf(" %[^\n]%*c", answer);*/
+    answer = dscan_line(stdin);
+    
+    if (strcmp(answer, "q") == 0) return 1;
+
+    right_answer = check_answer(answer, question->pairs);
+    if (right_answer) {
+        printf("You are the king ");
+        /*(question->chance) /= 2;*/
+        (question->chance) = 1.0 / ((1.0 / (question->chance)) + 1.0);
+    } else {
+        printf("Idiot ");
+        /*(question->chance) *= 2;*/
+        (question->chance) = (1.0 / (question->chance)) + 1.0;
+    }
+
+    printf("new chance %.2f    ", question->chance);
+    printf("%s\n", answer);
+
+    return 0;
 }
 
 int main() {
-    int syn_count = 0, ant_count = 0, word_len, word_index;
+    int word_count = 0, word_index, quit = 0;
     double *chance_array;
-    word *synonym_list = NULL;
-    word *antonym_list = NULL;
+    word *word_list = NULL;
 
     srand(time(NULL));
 
-    load_words(&synonym_list, SYNFILE, &syn_count);
-    load_words(&antonym_list, ANTFILE, &ant_count);
-    word_len = syn_count + ant_count + 1;
+    load_words(&word_list, SYNFILE, &word_count, synonym);
+    load_words(&word_list, ANTFILE, &word_count, antonym);
 
-    printf("Print synonym_list %d\n", syn_count);
-    print_words(synonym_list);
-    printf("Print antonym_list %d\n", ant_count);
-    print_words(antonym_list);
+    printf("Print word list %d\n", word_count);
+    print_words(word_list);
 
-    chance_array = (double *)calloc(word_len, sizeof(double));
-    update_chance_array(synonym_list, antonym_list, chance_array);
-    print_chances(chance_array);
+    chance_array = (double *)calloc(word_count + 1, sizeof(double));
 
-    word_index = get_random_word(chance_array, word_len);
-    /*ask_question(synonym_list, antonym_list, word_index);*/
+    while (!quit) {
+        update_chance_array(word_list, chance_array);
+        printf("Chances ");
+        print_chances(chance_array);
+
+        word_index = get_random_word(chance_array, word_count);
+        quit = ask_question(word_list, word_index);
+    }
 
     return 0;
 }
