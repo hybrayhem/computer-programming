@@ -191,7 +191,7 @@ int get_random_word(double chance_array[], int word_count) {
     print_weightes(chance_weights);*/
     indexes[i] = -1;
     print_weightes(indexes);
-    random_index = rand() % indexes[i - 1];
+    random_index = rand() % indexes[i - 1] + 1;
     for (i = 0; indexes[i] != -1 && indexes[i] < random_index; i++)
         ;
     printf("%d. selected, random index was %d\n", i, random_index);
@@ -218,12 +218,50 @@ word *get_word_by_index(word *word_list, int index) {
     return word_list;
 }
 
-double increase_chance(double chance){
-    return 0.0;
+/* -------------------------------------------------------------------------- */
+/*                         Word probability algorithm                         */
+/* -------------------------------------------------------------------------- */
+
+/* Right answer, start chance = 1.0 
+    1 -> 1/2
+    2 -> 1/3
+    3 -> 1/4
+    4 -> 1/5
+
+    start chance = 5
+    1 -> 4
+    2 -> 3
+    3 -> 2
+    4 -> 1
+
+*/
+
+/* Wrong answer, start chance = 1.0
+    1 -> 2
+    2 -> 3
+    3 -> 4
+    4 -> 5
+
+    start chance = 1/5
+    1 -> 1/4
+    2 -> 1/3
+    3 -> 1/2
+    4 -> 1
+
+*/
+
+double increase_chance(double chance) {
+    if (chance >= 1.0) {
+        return chance + 1;
+    }
+    return 1.0 / ((1.0 / chance) - 1.0);
 }
 
-double decrease_chance(double chance){
-    return 0.0;
+double decrease_chance(double chance) {
+    if (chance > 1.0) {
+        return chance - 1;
+    }
+    return 1.0 / ((1.0 / chance) + 1.0);
 }
 
 int ask_question(word *word_list, int word_index) {
@@ -235,22 +273,22 @@ int ask_question(word *word_list, int word_index) {
         printf("What is the synonym of %s? c=%f\n", question->word, question->chance);
     else if (question->type == antonym)
         printf("What is the antonym of %s? c=%f\n", question->word, question->chance);
-    
+
     /*fflush(stdin);
     scanf(" %[^\n]%*c", answer);*/
     answer = dscan_line(stdin);
-    
+
     if (strcmp(answer, "q") == 0) return 1;
 
     right_answer = check_answer(answer, question->pairs);
     if (right_answer) {
         printf("You are the king ");
         /*(question->chance) /= 2;*/
-        (question->chance) = 1.0 / ((1.0 / (question->chance)) + 1.0);
+        (question->chance) = decrease_chance(question->chance);
     } else {
         printf("Idiot ");
         /*(question->chance) *= 2;*/
-        (question->chance) = (1.0 / (question->chance)) + 1.0;
+        (question->chance) = increase_chance(question->chance);
     }
 
     printf("new chance %.2f    ", question->chance);
