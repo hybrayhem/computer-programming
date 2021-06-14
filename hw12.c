@@ -14,8 +14,8 @@
 #include <string.h>
 #include <time.h>
 
-#define SYNFILE "synonyms_test.txt"
-#define ANTFILE "antonyms_test.txt"
+#define SYNFILE "synonyms.txt"
+#define ANTFILE "antonyms.txt"
 #define USRFILE "usernames.txt"
 
 typedef enum { synonym,
@@ -46,7 +46,7 @@ double get_selection(const char msg[], int lower, int upper) {
         if (status < 1 || selection < lower || selection > upper) {
             while (getchar() != '\n')
                 ;
-            printf("TRY AGAIN\n");
+            printf("Invalid! Try Again.\n");
             continue;
         }
         flag = 1;
@@ -308,6 +308,7 @@ int ask_question(user *user, word *word_list, int word_index) {
         (question->chance) = increase_chance(question->chance);
         (user->wrongs)++;
     }
+    user->chance_array[word_index] = question->chance;
 
     /*printf("new chance %.2f    ", question->chance);
     printf("%s\n", answer);*/
@@ -326,7 +327,10 @@ void get_username(char **username) {
 
     for (i = 1; !feof(usrfile); i++) {
         *username = dscan_line(usrfile);
-        printf("%d. %s\n", i, *username);
+        if ((*username)[0] != 0)
+            printf("%d. %s\n", i, *username);
+        else
+            i--;
         free(*username);
     }
     printf("%d. Create new user\n", i);
@@ -351,9 +355,90 @@ void get_username(char **username) {
     fclose(usrfile);
 }
 
-void read_user();
-void write_user();
-void init_chance_array(); /* writes readed chance array to words array */
+void create_user(user *user, int word_count) {
+    int i;
+    FILE *usrfile = fopen(USRFILE, "a");
+
+    fprintf(usrfile, "%s\n", user->username);
+
+    printf("Create user %s\n", user->username);
+    for (i = 0; i < word_count; i++) {
+        user->chance_array[i] = 1.0;
+    }
+    user->chance_array[word_count] = -1;
+    user->rights = 0;
+    user->wrongs = 0;
+
+    fclose(usrfile);
+}
+
+void read_user(user *user, int word_count) {
+    int i = 0;
+    double temp;
+    FILE *usrfile;
+
+    user->chance_array = (double *)calloc(word_count + 1, sizeof(double));
+
+    user->filename = (char *)malloc((strlen(user->username) + 9) * sizeof(char));
+    sprintf(user->filename, "%s.worddat", user->username);
+    usrfile = fopen(user->filename, "rb");
+    if (usrfile == NULL) {
+        create_user(user, word_count);
+        return;
+    }
+
+    /* fill user with reading user data file */
+    fread(user->username, sizeof(char), strlen(user->username) + 1, usrfile);
+    printf("Username: %s\n", user->username);
+
+    fread(&(user->rights), sizeof(int), 1, usrfile);
+    fread(&(user->wrongs), sizeof(int), 1, usrfile);
+    /*fread(user->chance_array, sizeof(double), word_count + 1, usrfile);*/
+    i = 0;
+    do {
+        fread(&(user->chance_array[i]), sizeof(double), 1, usrfile);
+        /*fread(&temp, sizeof(double), 1, usrfile);
+        printf("%f ", temp);*/
+        i++;
+    } while (i < word_count);
+    user->chance_array[word_count] = -1;
+
+    fclose(usrfile);
+
+    printf("fread(%s) username: %s, r/w: %d/%d, ", user->filename, user->username, user->rights, user->wrongs);
+    print_chances(user->chance_array);
+}
+
+void write_user(user user, int word_count) {
+    int i;
+    FILE *usrfile = fopen(user.filename, "wb");
+
+    printf("fwrite(%s) username: %s, r/w: %d/%d, ", user.filename, user.username, user.rights, user.wrongs);
+    print_chances(user.chance_array);
+    fwrite(user.username, sizeof(char), strlen(user.username) + 1, usrfile);
+    fwrite(&(user.rights), sizeof(int), 1, usrfile);
+    fwrite(&(user.wrongs), sizeof(int), 1, usrfile);
+
+    /*fwrite(user.chance_array, sizeof(double), word_count + 1, usrfile);*/
+    do {
+        fwrite(&(user.chance_array[i]), sizeof(double), 1, usrfile);
+        /*printf("%f ", user.chance_array[i]);*/
+        i++;
+    } while (i < word_count);
+    printf("\n");
+
+    fclose(usrfile);
+}
+
+/* writes readed chance array to words array */
+void init_word_chances(user user, word *head_w) {
+    int i;
+
+    for (i = 0; user.chance_array[i] != -1 && head_w != NULL; i++) {
+        head_w->chance = user.chance_array[i];
+        head_w = head_w->next;
+    }
+}
 
 int main() {
     int word_count = 0, word_index, quit = 0;
@@ -361,18 +446,21 @@ int main() {
     word *words = NULL;
 
     srand(time(NULL));
-
-    get_username(&(user.username));
-    printf("User: %s\n\n", user.username);
-
     load_words(&words, SYNFILE, &word_count, synonym);
     load_words(&words, ANTFILE, &word_count, antonym);
+
     printf("Print word list %d\n", word_count);
     print_words(words);
 
-    user.chance_array = (double *)calloc(word_count + 1, sizeof(double));
+    get_username(&(user.username));
+    printf("get username: %s\n\n", user.username);
+    read_user(&user, word_count);
+    init_word_chances(user, words);
+
+    print_words(words);
+
+    /* TODO: build menu */
     while (!quit) {
-        update_chance_array(words, user.chance_array);
         print_chances(user.chance_array);
 
         word_index = get_random_word(user.chance_array, word_count);
@@ -380,6 +468,7 @@ int main() {
         printf("\n");
     }
 
+    write_user(user, word_count);
     store_words(words, SYNFILE, synonym);
     store_words(words, ANTFILE, antonym);
     return 0;
