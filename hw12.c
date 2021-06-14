@@ -14,8 +14,8 @@
 #include <string.h>
 #include <time.h>
 
-#define SYNFILE "synonyms.txt"
-#define ANTFILE "antonyms.txt"
+#define SYNFILE "synonyms_test.txt"
+#define ANTFILE "antonyms_test.txt"
 #define USRFILE "usernames.txt"
 
 typedef enum { synonym,
@@ -281,9 +281,26 @@ double decrease_chance(double chance) {
     return 1.0 / ((1.0 / chance) + 1.0);
 }
 
+char *word_type_to_string(word_t type) {
+    if (type == synonym) return "synonym";
+    return "antonym";
+}
+
+void add_pair(char *answer, char **pairs) {
+    int i = 0;
+
+    while (pairs[i] != NULL)
+        i++;
+    pairs = (char **)realloc(pairs, (i + 2) * sizeof(char *));
+
+    pairs[i] = (char *)malloc((strlen(answer) + 1) * sizeof(char));
+    strcpy(pairs[i], answer);
+    pairs[i + 1] = NULL;
+}
+
 int ask_question(user *user, word *word_list, int word_index) {
     int right_answer;
-    char *answer;
+    char *answer, *temp;
     word *question = get_word_by_index(word_list, word_index);
 
     if (question->type == synonym)
@@ -305,6 +322,16 @@ int ask_question(user *user, word *word_list, int word_index) {
         (user->rights)++;
     } else {
         printf("Wrong. \n");
+
+        printf("Do you want to add '%s' to the %ss of %s? (y / n) ", answer, word_type_to_string(question->type), question->word);
+        do {
+            temp = dscan_line(stdin);
+        } while (temp[0] == 0 || (temp[0] != 'y' && temp[0] != 'n'));
+        if (temp[0] == 'y') {
+            add_pair(answer, question->pairs);
+            return 0;
+        }
+
         (question->chance) = increase_chance(question->chance);
         (user->wrongs)++;
     }
