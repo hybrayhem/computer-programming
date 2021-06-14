@@ -22,8 +22,9 @@ typedef enum { synonym,
                antonym } word_t;
 
 typedef struct user {
-    char *username;
-    double rw_ratio, *chance_array;
+    char *username, *filename;
+    int rights, wrongs;   /* number of right and wrong answers */
+    double *chance_array; /* user specific ask probability of words */
 } user;
 
 typedef struct word {
@@ -150,8 +151,7 @@ void parsed_insert_word(word **head_w, char *raw_data, word_t type) {
 void load_words(word **head_w, char *filename, int *word_count, word_t type) {
     char *line;
 
-    FILE *word_file;
-    word_file = fopen(filename, "r");
+    FILE *word_file = fopen(filename, "r");
     if (word_file == NULL) printf("Couldn't open file.\n");
 
     while (!feof(word_file)) {
@@ -164,6 +164,35 @@ void load_words(word **head_w, char *filename, int *word_count, word_t type) {
         (*word_count)++;
     }
     /*printf("\n\n");*/
+    fclose(word_file);
+}
+
+void store_words(word *head_w, char *filename, word_t type) {
+    int i;
+    char seperator[2];
+    FILE *word_file = fopen(filename, "w");
+
+    if (type == synonym) {
+        seperator[0] = '=';
+    } else if (type == antonym) {
+        seperator[0] = '<';
+        seperator[1] = '>';
+    }
+
+    while (head_w != NULL) {
+        if (head_w->type == type) {
+            /*print_word(head_w);*/
+
+            fprintf(word_file, "%s %s ", head_w->word, seperator);
+            for (i = 0; head_w->pairs[i + 1] != NULL; i++) {
+                fprintf(word_file, "%s,", head_w->pairs[i]);
+            }
+            fprintf(word_file, "%s", head_w->pairs[i]);
+            if (!(head_w->next == NULL || head_w->type != head_w->next->type)) fprintf(word_file, "\n");
+        }
+
+        head_w = head_w->next;
+    }
     fclose(word_file);
 }
 
@@ -252,7 +281,7 @@ double decrease_chance(double chance) {
     return 1.0 / ((1.0 / chance) + 1.0);
 }
 
-int ask_question(word *word_list, int word_index) {
+int ask_question(user *user, word *word_list, int word_index) {
     int right_answer;
     char *answer;
     word *question = get_word_by_index(word_list, word_index);
@@ -261,8 +290,8 @@ int ask_question(word *word_list, int word_index) {
         printf("What is the synonym of %s?\n", question->word);
     else if (question->type == antonym)
         printf("What is the antonym of %s?\n", question->word);
-
     printf("> ");
+
     do {
         answer = dscan_line(stdin);
     } while (answer[0] == 0);
@@ -273,9 +302,11 @@ int ask_question(word *word_list, int word_index) {
     if (right_answer) {
         printf("Right. \n");
         (question->chance) = decrease_chance(question->chance);
+        (user->rights)++;
     } else {
         printf("Wrong. \n");
         (question->chance) = increase_chance(question->chance);
+        (user->wrongs)++;
     }
 
     /*printf("new chance %.2f    ", question->chance);
@@ -322,6 +353,7 @@ void get_username(char **username) {
 
 void read_user();
 void write_user();
+void init_chance_array(); /* writes readed chance array to words array */
 
 int main() {
     int word_count = 0, word_index, quit = 0;
@@ -344,9 +376,11 @@ int main() {
         print_chances(user.chance_array);
 
         word_index = get_random_word(user.chance_array, word_count);
-        quit = ask_question(words, word_index);
+        quit = ask_question(&user, words, word_index);
         printf("\n");
     }
 
+    store_words(words, SYNFILE, synonym);
+    store_words(words, ANTFILE, antonym);
     return 0;
 }
