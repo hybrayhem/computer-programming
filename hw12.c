@@ -16,13 +16,14 @@
 
 #define SYNFILE "synonyms_test.txt"
 #define ANTFILE "antonyms_test.txt"
+#define USRFILE "usernames.txt"
 
 typedef enum { synonym,
                antonym } word_t;
 
 typedef struct user {
     char *username;
-    double *chance_array;
+    double rw_ratio, *chance_array;
 } user;
 
 typedef struct word {
@@ -32,6 +33,25 @@ typedef struct word {
     double chance; /* chance of being asked the word */
     struct word *next;
 } word;
+
+/* secure scanf function that gets the selection for menu with a bullet-proof error handling */
+double get_selection(const char msg[], int lower, int upper) {
+    int status, flag = 0;
+    double selection = 0.0;
+
+    while (!flag) {
+        if (msg[0] != '\0') printf("%s", msg);
+        status = scanf("%lf", &selection);
+        if (status < 1 || selection < lower || selection > upper) {
+            while (getchar() != '\n')
+                ;
+            printf("TRY AGAIN\n");
+            continue;
+        }
+        flag = 1;
+    }
+    return selection;
+}
 
 void print_word(word *w) {
     int i;
@@ -54,29 +74,28 @@ void print_words(word *head_w) {
 
 /* dynamically scans a line from src and stores in an array */
 char *dscan_line(FILE *src) {
-    int i, counter = 0;
-    char input, *ap, *apb = NULL;
+    int counter = 0, size = 3;
+    char input, *str = (char *)malloc((size + 1) * sizeof(char));
     do {
         fscanf(src, "%c", &input);
         counter++;
 
-        ap = (char *)calloc(counter + 1, sizeof(char));
-        for (i = 0; i < counter - 1; i++) {
-            ap[i] = apb[i];
+        if (counter >= size) {
+            size *= 2;
+            str = (char *)realloc(str, (size + 1) * sizeof(char));
         }
-        if (apb != NULL) free(apb);
 
         if (input == '\n') {
-            ap[counter - 1] = '\0';
+            str[counter - 1] = '\0';
             break;
         }
 
-        ap[counter - 1] = input;
-        apb = ap;
+        str[counter - 1] = input;
+        input = 0;
 
     } while (!feof(src));
 
-    return ap;
+    return str;
 }
 
 void parsed_insert_word(word **head_w, char *raw_data, word_t type) {
@@ -112,9 +131,9 @@ void parsed_insert_word(word **head_w, char *raw_data, word_t type) {
     }
     new_word->pairs[i - 1] = NULL;
 
-    new_word->next = NULL;
-    new_word->chance = 1.0;
     new_word->type = type;
+    new_word->chance = 1.0;
+    new_word->next = NULL;
     /*print_word(new_word);*/
 
     /* insert to end */
@@ -244,7 +263,9 @@ int ask_question(word *word_list, int word_index) {
         printf("What is the antonym of %s?\n", question->word);
 
     printf("> ");
-    answer = dscan_line(stdin);
+    do {
+        answer = dscan_line(stdin);
+    } while (answer[0] == 0);
 
     if (strcmp(answer, "q") == 0) return 1;
 
@@ -263,6 +284,45 @@ int ask_question(word *word_list, int word_index) {
     return 0;
 }
 
+void skip_line(FILE *src) {
+    while (fgetc(src) != '\n' && !feof(src))
+        ;
+}
+
+void get_username(char **username) {
+    int i, selection;
+    FILE *usrfile = fopen(USRFILE, "r");
+
+    for (i = 1; !feof(usrfile); i++) {
+        *username = dscan_line(usrfile);
+        printf("%d. %s\n", i, *username);
+        free(*username);
+    }
+    printf("%d. Create new user\n", i);
+
+    selection = get_selection("Enter the selection: ", 1, i);
+    if (selection == i) {
+        printf("Please enter username: ");
+        do {
+            *username = dscan_line(stdin);
+        } while ((*username)[0] == 0);
+    } else {
+        rewind(usrfile);
+
+        for (i = selection; i > 1; i--)
+            skip_line(usrfile);
+        /*printf("%d\n", i);*/
+
+        *username = dscan_line(usrfile);
+        /*printf("User: %s\n\n", *username);*/
+    }
+
+    fclose(usrfile);
+}
+
+void read_user();
+void write_user();
+
 int main() {
     int word_count = 0, word_index, quit = 0;
     user user;
@@ -270,14 +330,15 @@ int main() {
 
     srand(time(NULL));
 
+    get_username(&(user.username));
+    printf("User: %s\n\n", user.username);
+
     load_words(&words, SYNFILE, &word_count, synonym);
     load_words(&words, ANTFILE, &word_count, antonym);
-
     printf("Print word list %d\n", word_count);
     print_words(words);
 
     user.chance_array = (double *)calloc(word_count + 1, sizeof(double));
-
     while (!quit) {
         update_chance_array(words, user.chance_array);
         print_chances(user.chance_array);
