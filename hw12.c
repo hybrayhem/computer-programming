@@ -14,12 +14,13 @@
 #include <string.h>
 #include <time.h>
 
-#define SYNFILE "synonyms_test.txt"
-#define ANTFILE "antonyms_test.txt"
+#define SYNFILE "synonyms.txt"
+#define ANTFILE "antonyms.txt"
 #define USRFILE "usernames.txt"
 
 
 /* --------------------- Structure & Enum Declarations --------------------- */
+/* word type */
 typedef enum { synonym,
                antonym } word_t;
 
@@ -109,13 +110,14 @@ int main() {
            "  | |/ |/ / _ \\/ __/ _  / _ \\/ _ \\/ // /  ' \\/_/ \n  |__/|__/\\___/_/  \\_,_/\\___/_//_/\\_, /_/_/_(_)  \n"
            "                                 /___/                       v0.0.2\n\n");
     
-    while (inp_selection != 4) {
+    while (inp_selection != 5) {
         /* MENU */
         printf("\n1. Start Game\n");
         printf("2. Add synonym/antonym\n");
         printf("3. Show user info\n");
-        printf("4. Save & Exit\n\n");
-        inp_selection = get_selection("Please select an operation: ", 1, 4);
+        printf("4. About\n");
+        printf("5. Save & Exit\n\n");
+        inp_selection = get_selection("Please select an operation: ", 1, 5);
         printf("\n");
 
         switch (inp_selection) {
@@ -161,6 +163,17 @@ int main() {
             printf("|        Right/Wrong Ratio: %5d / %-5d                               |\n", user.rights, user.wrongs);
             printf("|                                                                       |\n");
             printf("+-----------------------------------------------------------------------+\n\n");
+            break;
+
+        case 4:
+            printf("\n+-----------------------------------------------------------------------------------------------------------+\n");
+            printf("|                                                                                                           |\n");
+            printf("|               Wordonym (c) 2021, the word practice game developed by CSE102 Game Studios.                 |\n");
+            printf("|                                                                                                           |\n");
+            printf("|        Words sourced from book 'A Complete Dictionary of Synonyms and Antonyms' by Samuel Follow.         |\n");
+            printf("|                 All words are filtered, the game can be played by students of all ages.                   |\n");
+            printf("|                                                                                                           |\n");
+            printf("+-----------------------------------------------------------------------------------------------------------+\n\n");
             break;
         }
     }
@@ -295,7 +308,7 @@ void parsed_insert_word(word **head_w, char *raw_data, word_t type) {
 
     strtok(NULL, " "); /* remove = or <> sign */
 
-    raw_data = strtok(NULL, ","); /* get first pair */
+    raw_data = strtok(NULL, " "); /* get first pair */
     for (i = 1; raw_data != NULL; i++) {
 
         if (i > pair_num) { /* expand array to double on each five words read */
@@ -308,7 +321,7 @@ void parsed_insert_word(word **head_w, char *raw_data, word_t type) {
         check_alloc(new_word->pairs[i - 1]);
         strcpy(new_word->pairs[i - 1], raw_data);                                       /* copy data in */
 
-        raw_data = strtok(NULL, ","); /* get the next word */
+        raw_data = strtok(NULL, " "); /* get the next word */
     }
 
     if (i > pair_num) {
@@ -371,7 +384,7 @@ void store_words(word *head_w, char *filename, word_t type) {
 
             fprintf(word_file, "%s %s ", head_w->word, seperator);
             for (i = 0; head_w->pairs[i + 1] != NULL; i++) {
-                fprintf(word_file, "%s,", head_w->pairs[i]);
+                fprintf(word_file, "%s ", head_w->pairs[i]);
             }
             fprintf(word_file, "%s", head_w->pairs[i]);
             if (!(head_w->next == NULL || head_w->type != head_w->next->type)) fprintf(word_file, "\n"); /* add newline until last element */
