@@ -286,16 +286,16 @@ char *word_type_to_string(word_t type) {
     return "antonym";
 }
 
-void add_pair(char *answer, char **pairs) {
+void insert_string(char *new_str, char ***str_array) {
     int i = 0;
 
-    while (pairs[i] != NULL)
+    while ((*str_array)[i] != NULL)
         i++;
-    pairs = (char **)realloc(pairs, (i + 2) * sizeof(char *));
+    *str_array = (char **)realloc(*str_array, (i + 2) * sizeof(char *));
 
-    pairs[i] = (char *)malloc((strlen(answer) + 1) * sizeof(char));
-    strcpy(pairs[i], answer);
-    pairs[i + 1] = NULL;
+    (*str_array)[i] = (char *)malloc((strlen(new_str) + 1) * sizeof(char));
+    strcpy((*str_array)[i], new_str);
+    (*str_array)[i + 1] = NULL;
 }
 
 int ask_question(user *user, word *word_list, int word_index) {
@@ -328,7 +328,7 @@ int ask_question(user *user, word *word_list, int word_index) {
             temp = dscan_line(stdin);
         } while (temp[0] == 0 || (temp[0] != 'y' && temp[0] != 'n'));
         if (temp[0] == 'y') {
-            add_pair(answer, question->pairs);
+            insert_string(answer, &(question->pairs));
             return 0;
         }
 
@@ -348,58 +348,79 @@ void skip_line(FILE *src) {
         ;
 }
 
-void get_username(char **username) {
-    int i, selection;
+void get_usernames(char ***usernames) {
+    int i;
+    char *username;
     FILE *usrfile = fopen(USRFILE, "r");
+    *usernames = (char **)calloc(1, (sizeof(char *)));
 
-    for (i = 1; !feof(usrfile); i++) {
-        *username = dscan_line(usrfile);
-        if ((*username)[0] != 0)
-            printf("%d. %s\n", i, *username);
-        else
-            i--;
-        free(*username);
+    for (i = 0; !feof(usrfile); i++) {
+        username = dscan_line(usrfile);
+        insert_string(username, usernames);
     }
-    printf("%d. Create new user\n", i);
-
-    selection = get_selection("Enter the selection: ", 1, i);
-    if (selection == i) {
-        printf("Please enter username: ");
-        do {
-            *username = dscan_line(stdin);
-        } while ((*username)[0] == 0);
-    } else {
-        rewind(usrfile);
-
-        for (i = selection; i > 1; i--)
-            skip_line(usrfile);
-        /*printf("%d\n", i);*/
-
-        *username = dscan_line(usrfile);
-        /*printf("User: %s\n\n", *username);*/
-    }
-
+    (*usernames)[i] = NULL;
     fclose(usrfile);
 }
 
-void create_user(user *user, int word_count) {
+void write_usernames(char **usernames) {
     int i;
-    FILE *usrfile = fopen(USRFILE, "a");
+    FILE *usrfile = fopen(USRFILE, "w");
 
-    fprintf(usrfile, "%s\n", user->username);
+    for (i = 0; usernames[i + 1] != NULL; i++) {
+        fprintf(usrfile, "%s\n", usernames[i]);
+    }
+    fprintf(usrfile, "%s", usernames[i]);
+}
+
+int username_exist(char *username, char **usernames) {
+    int i;
+    for (i = 0; usernames[i] != NULL; i++) {
+        if (strcmp(username, usernames[i]) == 0) return 1;
+    }
+    return 0;
+}
+
+void select_username(char **usernames, char **username) {
+    int i, selection, valid = 0;
+
+    for (i = 0; usernames[i] != NULL; i++) {
+        printf("%d. %s\n", i + 1, usernames[i]);
+    }
+    printf("%d. Create new user\n", i + 1);
+
+    selection = get_selection("Enter the selection: ", 1, i + 1);
+    if (selection == i + 1) {
+        while (!valid) {
+            printf("Please enter username: ");
+            do {
+                *username = dscan_line(stdin);
+            } while ((*username)[0] == 0);
+            if (username_exist(*username, usernames))
+                printf("Username exists, try again.\n");
+            else
+                valid = 1;
+        }
+    } else {
+        *username = (char *)malloc((strlen(usernames[selection - 1]) + 1) * sizeof(char));
+        strcpy(*username, usernames[selection - 1]);
+    }
+}
+
+void create_user(user *user, int word_count, char **usernames) {
+    int i;
 
     printf("Create user %s\n", user->username);
+    insert_string(user->username, &usernames);
+
     for (i = 0; i < word_count; i++) {
         user->chance_array[i] = 1.0;
     }
     user->chance_array[word_count] = -1;
     user->rights = 0;
     user->wrongs = 0;
-
-    fclose(usrfile);
 }
 
-void read_user(user *user, int word_count) {
+int read_user(user *user, int word_count) {
     int i = 0;
     double temp;
     FILE *usrfile;
@@ -410,8 +431,7 @@ void read_user(user *user, int word_count) {
     sprintf(user->filename, "%s.worddat", user->username);
     usrfile = fopen(user->filename, "rb");
     if (usrfile == NULL) {
-        create_user(user, word_count);
-        return;
+        return 0;
     }
 
     /* fill user with reading user data file */
@@ -434,6 +454,8 @@ void read_user(user *user, int word_count) {
 
     printf("fread(%s) username: %s, r/w: %d/%d, ", user->filename, user->username, user->rights, user->wrongs);
     print_chances(user->chance_array);
+
+    return 1;
 }
 
 void write_user(user user, int word_count) {
@@ -478,8 +500,8 @@ word *search_word(word *head_w, char *word, word_t type) {
 }
 
 int main() {
-    int word_count = 0, word_index, quit = 0, inp_selection, inp_type;
-    char *inp_name;
+    int i, word_count = 0, word_index, quit = 0, inp_selection, inp_type;
+    char *inp_name, **usernames;
     user user;
     word *words = NULL, *inp_word;
 
@@ -491,20 +513,20 @@ int main() {
     print_words(words);
 
     printf("Please select your user or create new one:\n");
-    get_username(&(user.username));
+    get_usernames(&usernames);
+    select_username(usernames, &(user.username));
     printf("get username: %s\n\n", user.username);
-    read_user(&user, word_count);
+    if (!read_user(&user, word_count)) create_user(&user, word_count, usernames);
     init_word_chances(user, words);
 
     print_words(words);
 
-    /* TODO: build menu */
     while (inp_selection != 4) {
 
         /* MENU */
         printf("\n1. Start Game\n");
         printf("2. Add synonym/antonym\n");
-        printf("3. Show user stats\n");
+        printf("3. Show user info\n");
         printf("4. Save&Exit\n\n");
         inp_selection = get_selection("Please select an operation: ", 1, 4);
 
@@ -537,7 +559,7 @@ int main() {
                 do {
                     inp_name = dscan_line(stdin);
                 } while (inp_name[0] == 0);
-                add_pair(inp_name, inp_word->pairs);
+                insert_string(inp_name, &(inp_word->pairs));
             }
             free(inp_name);
             break;
@@ -550,6 +572,7 @@ int main() {
 
     printf("\n\nSaving progress...\n");
     write_user(user, word_count);
+    write_usernames(usernames);
     store_words(words, SYNFILE, synonym);
     store_words(words, ANTFILE, antonym);
     return 0;
