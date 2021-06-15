@@ -3,7 +3,7 @@ happy <> sad,gloomy,unhappy,miserable
 high <> low,small,short,alcak
 small <> large,big,great,huge
 aback <> onwards,forwards,ahead,before,afront,beyond,afore
-abandon <> pursue,prosecute,undertake,seek,court,cherish,favor,protect,claim,maintain,defend,advocate,retain,support,uphold,occupy,haunt,hold,assert,vindicate,keep
+abandon <> pursue,prosecute,undertake,seek,court,cherish,favor,protect,claim,maintain,defend,advocate,retain,support,uphold,occupy,haunt,hold,assert,vindicate,keep,idontknow
 abandoned <> virtuous,conscientious,correct,upright,worthy,righteous,self-controlled,high-principled,steady,good
 abase <> promote,exalt,honor,raise,elevate,dignify,aggrandize,idontknow
 abasement <> promotion,elevation,honor,exaltation,dignity,aggrandizement,onur,abasementantonymtest

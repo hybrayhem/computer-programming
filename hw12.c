@@ -79,7 +79,7 @@ void insert_string(char *new_str, char ***str_array);
 double get_selection(const char msg[], int lower, int upper);
 
 /* ---------------------------- Ending operations --------------------------- */
-/*void free_all();*/
+void free_all(word *head_w, user user);
 void terminate(char err[]);
 void check_alloc(void *ptr);
 
@@ -171,6 +171,8 @@ int main() {
     write_usernames(usernames);
     store_words(words, SYNFILE, synonym);
     store_words(words, ANTFILE, antonym);
+
+    free_all(words, user);
     return 0;
 }
 
@@ -634,6 +636,29 @@ double get_selection(const char msg[], int lower, int upper) {
 /* -------------------------------------------------------------------------- */
 /*                              Ending operations                             */
 /* -------------------------------------------------------------------------- */
+
+void free_all(word *head_w, user user) {
+    int i;
+    word *temp_w;
+
+    while (head_w != NULL) {
+        temp_w = head_w;
+        head_w = head_w->next;
+
+        if (temp_w->word != NULL) free(temp_w->word);
+        if (temp_w->pairs != NULL) {
+            for (i = 0; temp_w->pairs[i] != NULL; i++) {
+                free(temp_w->pairs[i]);
+            }
+            free(temp_w->pairs);
+        }
+        free(temp_w);
+    }
+
+    if (user.filename != NULL) free(user.filename);
+    if (user.chance_array != NULL) free(user.chance_array);
+    if (user.username != NULL) free(user.username);
+}
 
 void terminate(char err[]) {
     printf("\n%s\n\n", err);

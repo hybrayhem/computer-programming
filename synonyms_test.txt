@@ -7,4 +7,4 @@ abandoned = profligate,wicked,vicious,unprincipled,reprobate,incorrigible,sinful
 abase = degrade,disgrace,bring low,reduce,humble,demean,stoop,humiliate,depress,lower,sink,dishonor
 abasement = degradation,depression,disgrace,humiliation,abjection,dishonor,shame
 abash = confound,confuse,discompose,bewilder,daunt,cow,humble,disconcert,dishearten,motility,shame,humiliate
-abate = terminate,remove,suppress,lower,reduce,mitigate,diminish,moderate,lessen,subside,decrease
+abate = terminate,remove,suppress,lower,reduce,mitigate,diminish,moderate,lessen,subside,decrease,karabateee
