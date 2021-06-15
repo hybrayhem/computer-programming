@@ -46,7 +46,7 @@ double get_selection(const char msg[], int lower, int upper) {
         if (status < 1 || selection < lower || selection > upper) {
             while (getchar() != '\n')
                 ;
-            printf("Invalid! Try Again.\n");
+            printf("Invalid.\n");
             continue;
         }
         flag = 1;
@@ -467,10 +467,21 @@ void init_word_chances(user user, word *head_w) {
     }
 }
 
+word *search_word(word *head_w, char *word, word_t type) {
+    while (head_w != NULL) {
+        if (head_w->type == type && strcmp(head_w->word, word) == 0) {
+            return head_w;
+        }
+        head_w = head_w->next;
+    }
+    return NULL;
+}
+
 int main() {
-    int word_count = 0, word_index, quit = 0;
+    int word_count = 0, word_index, quit = 0, inp_selection, inp_type;
+    char *inp_name;
     user user;
-    word *words = NULL;
+    word *words = NULL, *inp_word;
 
     srand(time(NULL));
     load_words(&words, SYNFILE, &word_count, synonym);
@@ -479,6 +490,7 @@ int main() {
     printf("Print word list %d\n", word_count);
     print_words(words);
 
+    printf("Please select your user or create new one:\n");
     get_username(&(user.username));
     printf("get username: %s\n\n", user.username);
     read_user(&user, word_count);
@@ -487,14 +499,56 @@ int main() {
     print_words(words);
 
     /* TODO: build menu */
-    while (!quit) {
-        print_chances(user.chance_array);
+    while (inp_selection != 4) {
 
-        word_index = get_random_word(user.chance_array, word_count);
-        quit = ask_question(&user, words, word_index);
-        printf("\n");
+        /* MENU */
+        printf("\n1. Start Game\n");
+        printf("2. Add synonym/antonym\n");
+        printf("3. Show user stats\n");
+        printf("4. Save&Exit\n\n");
+        inp_selection = get_selection("Please select an operation: ", 1, 4);
+
+        switch (inp_selection) {
+
+        case 1:
+            printf("Enter q for exit.\n");
+            while (!quit) {
+                print_chances(user.chance_array);
+
+                word_index = get_random_word(user.chance_array, word_count);
+                quit = ask_question(&user, words, word_index);
+                printf("\n");
+            }
+            quit = 0;
+            break;
+
+        case 2:
+            printf("Enter the word name for adding new pair: ");
+            do {
+                inp_name = dscan_line(stdin);
+            } while (inp_name[0] == 0);
+            inp_type = get_selection("Synonym(0) or Antonym(1): ", 0, 1);
+            inp_word = search_word(words, inp_name, inp_type);
+
+            if (inp_word == NULL)
+                printf("%s not found.\n", inp_name);
+            else {
+                printf("Enter the new %s of %s: ", word_type_to_string(inp_type), inp_name);
+                do {
+                    inp_name = dscan_line(stdin);
+                } while (inp_name[0] == 0);
+                add_pair(inp_name, inp_word->pairs);
+            }
+            free(inp_name);
+            break;
+
+        case 3:
+            printf("\nUsername: %s\nRight/Wrong Ratio: %d/%d\n", user.username, user.rights, user.wrongs);
+            break;
+        }
     }
 
+    printf("\n\nSaving progress...\n");
     write_user(user, word_count);
     store_words(words, SYNFILE, synonym);
     store_words(words, ANTFILE, antonym);
