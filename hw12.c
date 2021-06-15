@@ -18,6 +18,7 @@
 #define ANTFILE "antonyms_test.txt"
 #define USRFILE "usernames.txt"
 
+
 /* --------------------- Structure & Enum Declarations --------------------- */
 typedef enum { synonym,
                antonym } word_t;
@@ -80,45 +81,7 @@ double get_selection(const char msg[], int lower, int upper);
 /* ---------------------------- Ending operations --------------------------- */
 /*void free_all();*/
 void terminate(char err[]);
-
-
-/* TODO: remove debug print functions */
-void print_word(word *w) {
-    int i;
-    printf("Word: %-12s, Chance : %.2f, Type: %d  -   ", w->word, w->chance, w->type);
-    printf("Pairs: ");
-    for (i = 0; w->pairs[i] != NULL; i++) {
-        printf("%s ", w->pairs[i]);
-    }
-    printf("\n");
-}
-
-void print_words(word *head_w) {
-    if (head_w == NULL) {
-        printf("\n");
-    } else {
-        print_word(head_w);
-        print_words(head_w->next);
-    }
-}
-
-void print_chances(double chance_array[]) {
-    int i;
-    printf("Chance: ");
-    for (i = 0; chance_array[i] != -1.0; i++) {
-        printf("%3.3g ", chance_array[i]);
-    }
-    printf("\n");
-}
-
-void print_weightes(int weight_array[]) {
-    int i;
-    printf("Weight: ");
-    for (i = 0; weight_array[i] != -1; i++) {
-        printf("%3d ", weight_array[i]);
-    }
-    printf("\n");
-}
+void check_alloc(void *ptr);
 
 
 
@@ -151,8 +114,9 @@ int main() {
         printf("\n1. Start Game\n");
         printf("2. Add synonym/antonym\n");
         printf("3. Show user info\n");
-        printf("4. Save&Exit\n\n");
+        printf("4. Save & Exit\n\n");
         inp_selection = get_selection("Please select an operation: ", 1, 4);
+        printf("\n");
 
         switch (inp_selection) {
 
@@ -160,8 +124,6 @@ int main() {
         case 1:
             printf("Enter q for exit.\n");
             while (!quit) {
-                print_chances(user.chance_array); /* TODO: remove debug print */
-
                 word_index = get_random_word(user.chance_array, word_count);
                 quit = ask_question(&user, words, word_index);
                 printf("\n");
@@ -204,7 +166,7 @@ int main() {
     }
 
     /* Write all changes in word list and user to files */
-    printf("\n\nSaving progress...\n");
+    printf("\nSaving progress...\n");
     write_user(user, word_count);
     write_usernames(usernames);
     store_words(words, SYNFILE, synonym);
@@ -237,6 +199,8 @@ double decrease_chance(double chance) {
 int get_random_word(double chance_array[], int word_count) {
     int i, sum = 0, random_index, *indexes = (int *)calloc(word_count + 1, sizeof(int));
     double min_chance, expand_factor;
+
+    check_alloc(indexes);
 
     min_chance = chance_array[0];
     for (i = 1; chance_array[i] != -1.0; i++) {
@@ -317,11 +281,14 @@ int check_answer(char *answer, char **pairs) {
 void parsed_insert_word(word **head_w, char *raw_data, word_t type) {
     int i, pair_num = 5;
     word *new_word = (word *)malloc(sizeof(word)), *temp_w = *head_w;
+    check_alloc(new_word);
 
     new_word->pairs = (char **)malloc((pair_num * sizeof(char *)));
+    check_alloc(new_word->pairs);
 
     raw_data = strtok(raw_data, " "); /* get word name */
     new_word->word = (char *)malloc((strlen(raw_data) + 1) * sizeof(char));
+    check_alloc(new_word->word);
     strcpy(new_word->word, raw_data);
 
     strtok(NULL, " "); /* remove = or <> sign */
@@ -332,9 +299,11 @@ void parsed_insert_word(word **head_w, char *raw_data, word_t type) {
         if (i > pair_num) { /* expand array to double on each five words read */
             pair_num *= 2;
             new_word->pairs = (char **)realloc(new_word->pairs, pair_num * sizeof(char *));
+            check_alloc(new_word->pairs);
         }
 
         new_word->pairs[i - 1] = (char *)malloc((strlen(raw_data) + 1) * sizeof(char)); /* allocate new element and */
+        check_alloc(new_word->pairs[i - 1]);
         strcpy(new_word->pairs[i - 1], raw_data);                                       /* copy data in */
 
         raw_data = strtok(NULL, ","); /* get the next word */
@@ -342,6 +311,7 @@ void parsed_insert_word(word **head_w, char *raw_data, word_t type) {
 
     if (i > pair_num) {
         new_word->pairs = realloc(new_word->pairs, i * sizeof(char *));
+        check_alloc(new_word->pairs);
     }
     new_word->pairs[i - 1] = NULL; /* end array with a sentinel value */
 
@@ -384,6 +354,7 @@ void store_words(word *head_w, char *filename, word_t type) {
     int i;
     char seperator[2];
     FILE *word_file = fopen(filename, "w");
+    if (word_file == NULL) terminate("Couldn't open file.\n");
 
     /* synonym words seperated by '=' and antonyms by '<>'*/
     if (type == synonym) {
@@ -457,8 +428,11 @@ int read_user(user *user, int word_count) {
     FILE *usrfile;
 
     user->chance_array = (double *)calloc(word_count + 1, sizeof(double));
+    check_alloc(user->chance_array);
 
     user->filename = (char *)malloc((strlen(user->username) + 9) * sizeof(char));
+    check_alloc(user->filename);
+
     sprintf(user->filename, "%s.worddat", user->username);
     usrfile = fopen(user->filename, "rb");
     if (usrfile == NULL) {
@@ -498,6 +472,7 @@ void create_user(user *user, int word_count, char **usernames) {
 void write_user(user user, int word_count) {
     int i = 0;
     FILE *usrfile = fopen(user.filename, "wb");
+    if (usrfile == NULL) terminate("Couldn't open file.\n");
 
     fwrite(user.username, sizeof(char), strlen(user.username) + 1, usrfile);
     fwrite(&(user.rights), sizeof(int), 1, usrfile);
@@ -530,11 +505,17 @@ void get_usernames(char ***usernames) {
     int i;
     char *username;
     FILE *usrfile = fopen(USRFILE, "r");
+    if (usrfile == NULL) terminate("Couldn't open file.\n");
+
     *usernames = (char **)calloc(1, (sizeof(char *)));
+    check_alloc(*usernames);
 
     for (i = 0; !feof(usrfile); i++) {
         username = dscan_line(usrfile);
-        insert_string(username, usernames);
+        if (username[0] != 0)
+            insert_string(username, usernames);
+        else
+            i--;
     }
     (*usernames)[i] = NULL;
     fclose(usrfile);
@@ -544,7 +525,7 @@ void get_usernames(char ***usernames) {
 void select_username(char **usernames, char **username) {
     int i, selection, valid = 0;
 
-    printf("Please select or create a user:\n");
+    printf("\nPlease select or create a user:\n\n");
     for (i = 0; usernames[i] != NULL; i++) {
         printf("%d. %s\n", i + 1, usernames[i]);
     }
@@ -564,6 +545,7 @@ void select_username(char **usernames, char **username) {
         }
     } else {
         *username = (char *)malloc((strlen(usernames[selection - 1]) + 1) * sizeof(char));
+        check_alloc(*username);
         strcpy(*username, usernames[selection - 1]);
     }
 }
@@ -572,6 +554,7 @@ void select_username(char **usernames, char **username) {
 void write_usernames(char **usernames) {
     int i;
     FILE *usrfile = fopen(USRFILE, "w");
+    if (usrfile == NULL) terminate("Couldn't open file.\n");
 
     for (i = 0; usernames[i + 1] != NULL; i++) {
         fprintf(usrfile, "%s\n", usernames[i]);
@@ -588,6 +571,8 @@ void write_usernames(char **usernames) {
 char *dscan_line(FILE *src) {
     int counter = 0, size = 3;
     char input, *str = (char *)malloc((size + 1) * sizeof(char));
+    check_alloc(str);
+
     do {
         fscanf(src, "%c", &input);
         counter++;
@@ -595,6 +580,7 @@ char *dscan_line(FILE *src) {
         if (counter >= size) {
             size *= 2;
             str = (char *)realloc(str, (size + 1) * sizeof(char));
+            check_alloc(str);
         }
 
         if (input == '\n') {
@@ -617,8 +603,10 @@ void insert_string(char *new_str, char ***str_array) { /* str_array: address of 
     while ((*str_array)[i] != NULL)
         i++;
     *str_array = (char **)realloc(*str_array, (i + 2) * sizeof(char *));
+    check_alloc(*str_array);
 
     (*str_array)[i] = (char *)malloc((strlen(new_str) + 1) * sizeof(char));
+    check_alloc((*str_array)[i]);
     strcpy((*str_array)[i], new_str);
     (*str_array)[i + 1] = NULL;
 }
@@ -650,4 +638,8 @@ double get_selection(const char msg[], int lower, int upper) {
 void terminate(char err[]) {
     printf("\n%s\n\n", err);
     exit(0);
+}
+
+void check_alloc(void *ptr){
+    if(ptr == NULL) terminate("Out of memory.\n");
 }
