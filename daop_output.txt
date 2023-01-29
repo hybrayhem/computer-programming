@@ -1,0 +1,23 @@
+genre = dram
+genres 0. = action
+genres 1. = dram
+Found.
+i: 1
+genre = comedy
+genres 0. = action
+genres 1. = dram
+Not found.
+*genres 0. = action
+*genres 1. = dram
+*genres 2. = comedy
+
+
+i: 2
+#genres 0. = action
+#genres 1. = dram
+
+genre = action
+genres 0. = action
+Found.
+i: 0
+
