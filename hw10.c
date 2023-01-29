@@ -13,15 +13,15 @@ typedef struct{
     double score;
     int year;
 }Movie;
-
+char **genres; /* array of genre's */
 
 
 int show_menu();
 int get_selection(int lower, int upper);
 int insert_movie(Movie movie, Movie movies[], int *l);
 int update_movie(Movie movie, Movie movies[], int l);
-int numerate_genre(char **genres, const char *genre);
-void get_movie(FILE *src, Movie *movie, char **genres);
+int numerate_genre(char genre[]);
+void get_movie(FILE *src, Movie *movie);
 
 /* counting number of lines in file */
 int count_lines(FILE *src){
@@ -39,13 +39,13 @@ int count_lines(FILE *src){
 void print_movies(Movie *movies, int l){
     int i;
     for(i=0; i < l; i++){
-        printf("%d. movie = budget: %.1f, genre: %d, name: %s, score: %.1f, year: %d\n", i, movies[i].budget, movies[i].genre, movies[i].name, movies[i].score, movies[i].year);
+        printf("%d. movie = budget: %.1f, genre: %s(%d), name: %s, score: %.1f, year: %d\n", i, movies[i].budget, genres[movies[i].genre], movies[i].genre, movies[i].name, movies[i].score, movies[i].year);
     }
 }
 
 /* prints given movie */
 void print_movie(Movie movie){
-    printf("%-10.f, %10d, %-40s, %-8.1f, %5d;\n", movie.budget, movie.genre, movie.name, movie.score, movie.year);
+    printf("%-10.f, %-10s, %-40s, %-8.1f, %5d;\n", movie.budget, genres[movie.genre], movie.name, movie.score, movie.year);
 }
 
 
@@ -81,8 +81,10 @@ int main(){
     long int i;
     FILE *src;
     Movie *movies, movie = {0};
-    char **genres;
     char headers[5][10] = {0};
+
+    genres = (char **)calloc(1, sizeof(char *));
+    genres[0] = NULL;
 
     src = fopen(SRCFILE, "r");
     number_of_lines = count_lines(src);
@@ -97,11 +99,11 @@ int main(){
         /*printf("\n*-------------------------\n");
         print_movies(movies, l);
         printf("-------------------------*\n");*/
-        get_movie(src, &movie, genres);
+        get_movie(src, &movie);
         success = insert_movie(movie, movies, &l);
     }
-    /*printf("l = %d\n", l);
-    print_movies(movies, 10); printf("\n\n");*/
+    printf("l = %d\n", l);
+    print_movies(movies, 10); printf("\n\n");
 
     /* MENU */
     selection = show_menu();
@@ -217,13 +219,9 @@ int show_menu(){
     return selection;
 }
 
-/* numerates genre, assigns unique integer for each genre */
-int numerate_genre(char **genres, const char *genre){
-    return 0;
-}
 
 /* extracts movie struct from line of file */
-void get_movie(FILE *src, Movie *movie, char **genres){
+void get_movie(FILE *src, Movie *movie){
     int i, counter = 0;
     char input, *ap, *apb = NULL;
 
@@ -232,7 +230,7 @@ void get_movie(FILE *src, Movie *movie, char **genres){
         fscanf(src, "%c", &input);
         counter++;
 
-        ap = (char *)calloc(counter, sizeof(char));
+        ap = (char *)malloc((counter+1)*sizeof(char));
         for (i = 0; i < counter - 1; i++)
         {
             ap[i] = apb[i];
@@ -256,7 +254,7 @@ void get_movie(FILE *src, Movie *movie, char **genres){
 
         apb = strtok(NULL, ",");
         /*printf("%s; ", apb);*/
-        movie->genre = numerate_genre(genres, apb);
+        movie->genre = numerate_genre(apb);
 
         apb = strtok(NULL, ",");
         /*printf("%s; ", apb);*/
@@ -277,4 +275,47 @@ void get_movie(FILE *src, Movie *movie, char **genres){
     /*printf("ap = %s\n", ap);*/
     free(ap);
 
+}
+
+/* numerates genre, assigns unique integer for each genre */    /* IT WAS SEMANTICALLY CORRECT, BUT THERE IS A SMALL SEGMENT ERROR PROBLEM THAT NEEDS TIME TO RESOLVE. */
+int numerate_genre(/*char *genres[], */char genre[]){
+	/*int i, j, flag =0;
+	char **temp = NULL;
+	
+	for(i=0; genres[i] != NULL; i++){
+		if(strcmp(genres[i], genre) == 0){
+			flag = 1;
+			return i;		
+		}
+	}
+	
+	
+    temp = (char **)calloc(i, sizeof(char *));
+    for(j = 0; j < i; j++){
+        temp[j] = (char *)malloc((strlen(genres[j])+1)*sizeof(char));
+        strcpy(temp[j], genres[j]);
+    }
+    for(j=0; temp[j] != NULL; j++){
+        printf("*temp %d. = %s\n", j, temp[j]);
+    }
+
+
+    genres = (char **)calloc(i+2, sizeof(char *));
+    for(j = 0; j < i; j++){
+        genres[j] = (char *)malloc((strlen(temp[j])+1)*sizeof(char));
+        strcpy(genres[j], temp[j]);
+    }
+    genres[i] = (char *)malloc((strlen(genre)+1)*sizeof(char));
+    strcpy(genres[i], genre);
+    genres[i+1] = NULL;
+
+    for(j=0; genres[j] != NULL; j++){
+		printf("genres %d. = %s\n", j, genres[j]);
+	}
+	printf("\n\n");
+
+    if(temp != NULL) free(temp);
+
+    return i-1;*/
+    return 0;
 }
