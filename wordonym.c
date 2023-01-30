@@ -439,7 +439,6 @@ char *word_type_to_string(word_t type) {
 /* if exists reads user from bin file username.worddat, else returns 0 as */
 int read_user(user *user, int word_count) {
     int i = 0;
-    double temp;
     FILE *usrfile;
 
     user->chance_array = (double *)calloc(word_count + 1, sizeof(double));
@@ -681,3 +680,4 @@ void terminate(char err[]) {
 void check_alloc(void *ptr){
     if(ptr == NULL) terminate("Out of memory.\n");
 }
+

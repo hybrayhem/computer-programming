@@ -3183,7 +3183,7 @@ mere <> mixed compound impure biased
 meretricious <> solid good chaste simple pure
 meridian <> nadir depth depression profundity base
 merit <> badness demerit unworthiness worthlessness weakness imperfection error defect fault failing
-mesh <> extrication escape deliverance
+mesh <> extrication escape deliverance net
 message <> non-communication interception
 metaphor <> letter literalness
 metaphorical <> literal
