@@ -1,0 +1,1085 @@
+Loading movies from the storage...
+
+6730 movies loaded to the memory.
+
+
+1. List of the Sorted Data
+2. List of the Genres
+3. List of the Movie Through the Years
+4. List of the Movie Through the Scores
+5. All Informations of a Single Movie
+6. Average of the IMDB Scores
+7. Frequence of the Genres
+8. Exit
+
+Please select and operation: 1
+
+1. Budget
+2. Genre
+3. Name
+4. Score
+5. Year
+
+Please select and operation: 1
+
+Sorting... Done
+
+1. Single Selection
+2. Multiple Selection
+
+Please select and operation: 1 
+Enter a value: 100
+
+100. Movie
+
+-               comedy       una sonrisa a la vida                         7.3       2015
+
+1. List of the Sorted Data
+2. List of the Genres
+3. List of the Movie Through the Years
+4. List of the Movie Through the Scores
+5. All Informations of a Single Movie
+6. Average of the IMDB Scores
+7. Frequence of the Genres
+8. Exit
+
+Please select and operation: 1
+
+1. Budget
+2. Genre
+3. Name
+4. Score
+5. Year
+
+Please select and operation: 1
+
+Sorting... Done
+
+1. Single Selection
+2. Multiple Selection
+
+Please select and operation: 2
+Enter the start value: 5000
+Enter the end value: 50010 
+
+Movies between 5000 and 50010, sorted by budget.
+
+6000            crime        following                                     7.6       1998
+7000            drama        primer                                        6.9       2004
+7000            action       el mariachi                                   6.9       1992
+15000           horror       paranormal activity                           6.3       2007
+15000           drama        go fish                                       5.6       1994
+20000           drama        zero day                                      7.3       2003
+22769           comedy       the living end                                6.5       1992
+23000           comedy       slacker                                       7.1       1991
+25000           comedy       in the company of men                         7.3       1997
+25000           comedy       the brothers mcmullen                         6.6       1995
+30000           drama        ratcatcher                                    7.5       1999
+38000           crime        laws of gravity                               7.0       1992
+42000           drama        george washington                             7.4       2000
+50000           drama        upstream color                                6.7       2013
+50000           mystery      coherence                                     7.2       2013
+50000           comedy       eating out                                    5.9       2004
+
+1. List of the Sorted Data
+2. List of the Genres
+3. List of the Movie Through the Years
+4. List of the Movie Through the Scores
+5. All Informations of a Single Movie
+6. Average of the IMDB Scores
+7. Frequence of the Genres
+8. Exit
+
+Please select and operation: 1   
+
+1. Budget
+2. Genre
+3. Name
+4. Score
+5. Year
+
+Please select and operation: 1
+
+Sorting... Done
+
+1. Single Selection
+2. Multiple Selection
+
+Please select and operation: 2
+Enter the start value: 5000
+Enter the end value: 5010
+
+Movies between 5000 and 5010, sorted by budget.
+
+
+1. List of the Sorted Data
+2. List of the Genres
+3. List of the Movie Through the Years
+4. List of the Movie Through the Scores
+5. All Informations of a Single Movie
+6. Average of the IMDB Scores
+7. Frequence of the Genres
+8. Exit
+
+Please select and operation: 1
+
+1. Budget
+2. Genre
+3. Name
+4. Score
+5. Year
+
+Please select and operation: 2
+
+Sorting... Done
+
+1. Single Selection
+2. Multiple Selection
+
+Please select and operation: 2
+Enter the start value: 10
+Enter the end value: 20
+
+Movies between 10 and 20, sorted by genre.
+
+-               action       kill me three times                           5.9       2014
+-               action       '71                                           7.2       2014
+-               action       walking with the enemy                        6.0       2013
+-               action       killing season                                5.4       2013
+-               action       journey to the west                           6.8       2013
+-               action       pawn                                          5.7       2013
+-               action       the sweeney                                   6.1       2012
+-               action       into the white                                7.2       2012
+-               action       secretos peligrosos                           7.2       2010
+-               action       elite squad: the enemy within                 8.1       2010
+-               action       easy money                                    6.7       2010
+
+1. List of the Sorted Data
+2. List of the Genres
+3. List of the Movie Through the Years
+4. List of the Movie Through the Scores
+5. All Informations of a Single Movie
+6. Average of the IMDB Scores
+7. Frequence of the Genres
+8. Exit
+
+Please select and operation: 1
+
+1. Budget
+2. Genre
+3. Name
+4. Score
+5. Year
+
+Please select and operation: 3
+
+Sorting... Done
+
+1. Single Selection
+2. Multiple Selection
+
+Please select and operation: 2
+Enter the start value: 3000
+Enter the end value: 3005
+
+Movies between 3000 and 3005, sorted by name.
+
+12000000        biography    lion                                          8.1       2016
+3000000         action       lionheart                                     6.1       1990
+35000000        drama        lions for lambs                               6.2       2007
+-               drama        lisa                                          5.9       1989
+-               drama        listen to me                                  5.3       1989
+-               comedy       little big league                             6.1       1994
+
+1. List of the Sorted Data
+2. List of the Genres
+3. List of the Movie Through the Years
+4. List of the Movie Through the Scores
+5. All Informations of a Single Movie
+6. Average of the IMDB Scores
+7. Frequence of the Genres
+8. Exit
+
+Please select and operation: 1
+
+1. Budget
+2. Genre
+3. Name
+4. Score
+5. Year
+
+Please select and operation: 4
+
+Sorting... Done
+
+1. Single Selection
+2. Multiple Selection
+
+Please select and operation: 4
+TRY AGAIN
+Please select and operation: 2
+Enter the start value: 2000
+TRY AGAIN
+Enter the start value: 8
+Enter the end value: 8.1
+
+Movies between 8.0 and 8.1, sorted by score.
+
+28000000        animation    aladdin                                       8.0       1992
+47000000        drama        arrival                                       8.0       2016
+-               drama        au revoir les enfants                         8.0       1987
+12800000        crime        bailando en la oscuridad                      8.0       2000
+25000000        animation    beauty and the beast                          8.0       1991
+2700000         drama        before sunset                                 8.0       2004
+70000000        adventure    big fish                                      8.0       2003
+13000000        drama        black swan                                    8.0       2010
+35000000        crime        blood in blood out                            8.0       1993
+2800000         drama        burnt by the sun                              8.0       1994
+150000000       action       casino royale                                 8.0       2006
+2900000         drama        central station                               8.0       1998
+88000000        biography    cinderella man                                8.0       2005
+19000000        comedy       crimes and misdemeanors                       8.0       1989
+5000000         biography    dallas buyers club                            8.0       2013
+22000000        adventure    dances with wolves                            8.0       1990
+16400000        comedy       dead poets society                            8.0       1989
+58000000        action       deadpool                                      8.0       2016
+100000000       adventure    diamante de sangre                            8.0       2006
+-               crime        dogville                                      8.0       2003
+-               animation    ghost in the shell                            8.0       1995
+14600000        comedy       groundhog day                                 8.0       1993
+6400000         comedy       hannah and her sisters                        8.0       1986
+23000000        drama        her                                           8.0       2013
+-               crime        hey ram                                       8.0       2000
+40000000        drama        jfk                                           8.0       1991
+-               comedy       kal ho naa ho                                 8.0       2003
+30000000        action       kill bill: vol. 2                             8.0       2004
+-               action       knockin' on heaven's door                     8.0       1997
+37000000        drama        magnolia                                      8.0       1999
+-               drama        manon of the spring                           8.0       1986
+15000000        drama        mulholland drive                              8.0       2001
+12000000        adventure    my name is khan                               8.0       2010
+25000000        crime        mystic river                                  8.0       2003
+140000000       action       pirates of the caribbean: the curse of the black pearl 8.0       2003
+25000000        drama        rain man                                      8.0       1988
+150000000       animation    ratatouille                                   8.0       2007
+135000000       adventure    revenant: el renacido                         8.0       2015
+-               crime        salaam bombay!                                8.0       1988
+31000000        drama        scent of a woman                              8.0       1992
+4500000         drama        secrets & lies                                8.0       1996
+30000000        sci-fi       sector 9                                      8.0       2009
+-               comedy       shaun of the dead                             8.0       2004
+-               drama        short term 12                                 8.0       2013
+40000000        crime        sin city                                      8.0       2005
+890000          drama        sling blade                                   8.0       1996
+15000000        drama        slumdog millionaire                           8.0       2008
+150000000       action       star trek                                     8.0       2009
+-               drama        talk to her                                   8.0       2002
+500000          drama        the death of mr. lazarescu                    8.0       2005
+-               biography    the diving bell and the butterfly             8.0       2007
+14000000        biography    the imitation game                            8.0       2014
+92000000        animation    the incredibles                               8.0       2004
+70000000        animation    the iron giant                                8.0       1999
+15000000        biography    the king's speech                             8.0       2010
+108000000       adventure    the martian                                   8.0       2015
+18000000        animation    the nightmare before christmas                8.0       1993
+13000000        drama        the perks of being a wallflower               8.0       2012
+55000000        biography    the pursuit of happyness                      8.0       2006
+4500000         action       the raid 2                                    8.0       2014
+-               drama        the return                                    8.0       2003
+-               biography    the sea inside                                8.0       2004
+-               drama        the stoning of soraya m.                      8.0       2008
+10000000        biography    the straight story                            8.0       1999
+-               drama        three colors: blue                            8.0       1993
+-               drama        tierra de nadie                               8.0       2001
+13000000        crime        true romance                                  8.0       1993
+29000001        mystery      twelve monkeys                                8.0       1995
+1500000         animation    waltz with bashir                             8.0       2008
+200000000       action       x-men: days of future past                    8.0       2014
+150000000       animation    zootopia                                      8.0       2016
+20000000        biography    12 years a slave                              8.1       2013
+1000000         crime        3-iron                                        8.1       2004
+-               drama        about elly                                    8.1       2009
+-               animation    akira                                         8.1       1988
+2000000         drama        amores perros                                 8.1       2000
+2500000         drama        before sunrise                                8.1       1995
+1900000         drama        before the rain                               8.1       1994
+-               comedy       black cat white cat                           8.1       1998
+52000000        biography    catch me if you can                           8.1       2002
+-               crime        chungking express                             8.1       1994
+4500000         drama        donnie darko                                  8.1       2001
+4000000         action       elite squad                                   8.1       2007
+-               action       elite squad: the enemy within                 8.1       2010
+13000000        biography    en el nombre del padre                        8.1       1993
+-               drama        farewell my concubine                         8.1       1993
+7000000         crime        fargo                                         8.1       1996
+94000000        animation    finding nemo                                  8.1       2003
+61000000        crime        gone girl                                     8.1       2014
+170000000       action       guardians of the galaxy                       8.1       2014
+125000000       adventure    harry potter and the deathly hallows: part 2  8.1       2011
+17500000        biography    hotel rwanda                                  8.1       2004
+165000000       animation    how to train your dragon                      8.1       2010
+-               drama        in the mood for love                          8.1       2000
+6428966         crime        infernal affairs                              8.1       2002
+15000000        adventure    into the wild                                 8.1       2007
+-               drama        jean de florette                              8.1       1986
+63000000        adventure    jurassic park                                 8.1       1993
+30000000        action       kill bill: vol. 1                             8.1       2003
+-               crime        la haine                                      8.1       1995
+12000000        biography    lion                                          8.1       2016
+150000000       action       mad max: fury road                            8.1       2015
+2800000         crime        memories of murder                            8.1       2003
+30000000        drama        million dollar baby                           8.1       2004
+-               drama        mommy                                         8.1       2014
+115000000       animation    monsters inc.                                 8.1       2001
+25000000        crime        no country for old men                        8.1       2007
+7300000         animation    persépolis                                   8.1       2007
+6000000         drama        platoon                                       8.1       1986
+46000000        crime        prisoners                                     8.1       2013
+3300000         comedy       relatos salvajes                              8.1       2014
+-               drama        sacrifice                                     8.1       1986
+80000000        mystery      shutter island                                8.1       2010
+-               animation    song of the sea                               8.1       2014
+20000000        crime        spotlight                                     8.1       2015
+-               drama        spring summer fall winter... and spring       8.1       2003
+8000000         adventure    stand by me                                   8.1       1986
+245000000       action       star wars: the force awakens                  8.1       2015
+110000000       action       the bourne ultimatum                          8.1       2007
+1300000         drama        the celebration                               8.1       1998
+25000000        adventure    the grand budapest hotel                      8.1       2014
+-               crime        the handmaiden                                8.1       2016
+25000000        drama        the help                                      8.1       2011
+9000000         drama        the legend of 1900                            8.1       1998
+16000000        adventure    the princess bride                            8.1       1987
+40000000        drama        the sixth sense                               8.1       1999
+-               animation    the tale of the princess kaguya               8.1       2013
+60000000        comedy       the truman show                               8.1       1998
+25000000        drama        there will be blood                           8.1       2007
+-               drama        three colors: red                             8.1       1994
+-               drama        turtles can fly                               8.1       2004
+-               drama        wings of desire                               8.1       1987
+-               drama        yi yi                                         8.1       2000
+-               adventure    zindagi na milegi dobara                      8.1       2011
+
+1. List of the Sorted Data
+2. List of the Genres
+3. List of the Movie Through the Years
+4. List of the Movie Through the Scores
+5. All Informations of a Single Movie
+6. Average of the IMDB Scores
+7. Frequence of the Genres
+8. Exit
+
+Please select and operation: 1
+
+1. Budget
+2. Genre
+3. Name
+4. Score
+5. Year
+
+Please select and operation: 5
+
+Sorting... Done
+
+1. Single Selection
+2. Multiple Selection
+
+Please select and operation: 2010
+TRY AGAIN
+Please select and operation: 1
+Enter a value: 2010
+
+2010. Movie
+
+11000000        comedy       canadian bacon                                5.9       1995
+
+1. List of the Sorted Data
+2. List of the Genres
+3. List of the Movie Through the Years
+4. List of the Movie Through the Scores
+5. All Informations of a Single Movie
+6. Average of the IMDB Scores
+7. Frequence of the Genres
+8. Exit
+
+Please select and operation: 1
+
+1. Budget
+2. Genre
+3. Name
+4. Score
+5. Year
+
+Please select and operation: 5
+
+Sorting... Done
+
+1. Single Selection
+2. Multiple Selection
+
+Please select and operation: 2
+Enter the start value: 2010
+Enter the end value: 2012
+
+Movies between 2010 and 2012, sorted by year.
+
+20000000        adventure    vampires suck                                 3.5       2010
+35000000        comedy       furry vengeance                               3.8       2010
+50000000        comedy       marmaduke                                     4.2       2010
+150000000       action       the last airbender                            4.2       2010
+85000000        action       cats & dogs: the revenge of kitty galore      4.3       2010
+100000000       comedy       sex and the city 2                            4.4       2010
+10000000        action       skyline                                       4.4       2010
+80000000        animation    yogi bear                                     4.6       2010
+47000000        action       jonah hex                                     4.7       2010
+25000000        horror       my soul to take                               4.8       2010
+112000000       adventure    gulliver's travels                            4.9       2010
+68000000        adventure    the twilight saga: eclipse                    4.9       2010
+10000000        horror       vanishing on 7th street                       4.9       2010
+8000000         drama        passion play                                  5.0       2010
+48000000        comedy       tooth fairy                                   5.0       2010
+20000000        action       dylan dog: dead of night                      5.1       2010
+-               comedy       elektra luxx                                  5.1       2010
+4500000         comedy       the romantics                                 5.1       2010
+35000000        horror       a nightmare on elm street                     5.2       2010
+26000000        action       legion                                        5.2       2010
+20000000        animation    alpha and omega                               5.3       2010
+35000000        comedy       the back-up plan                              5.3       2010
+120000000       comedy       how do you know                               5.4       2010
+75000000        action       killers                                       5.4       2010
+22000000        drama        stone                                         5.4       2010
+28000000        action       the spy next door                             5.4       2010
+20000000        comedy       the tempest                                   5.4       2010
+800000          comedy       hatchet ii                                    5.5       2010
+100000000       comedy       little fockers                                5.5       2010
+10000000        action       macgruber                                     5.5       2010
+24000000        comedy       piranha 3d                                    5.5       2010
+40000000        action       the bounty hunter                             5.5       2010
+37000000        action       cop out                                       5.6       2010
+25000000        fantasy      don't be afraid of the dark                   5.6       2010
+1800000         drama        el último exorcismo                          5.6       2010
+20000000        horror       saw 3d: the final chapter                     5.6       2010
+55000000        comedy       when in rome                                  5.6       2010
+-               comedy       a little help                                 5.7       2010
+20000000        comedy       death at a funeral                            5.7       2010
+60000000        drama        eat pray love                                 5.7       2010
+-               comedy       kaboom                                        5.7       2010
+25000000        biography    love ranch                                    5.7       2010
+3000000         horror       paranormal activity 2                         5.7       2010
+-               action       twelve                                        5.7       2010
+52000000        comedy       valentine's day                               5.7       2010
+125000000       action       clash of the titans                           5.8       2010
+500000          comedy       rubber                                        5.8       2010
+150000000       drama        the wolfman                                   5.8       2010
+20000000        comedy       you again                                     5.8       2010
+-               comedy       dinner for schmucks                           5.9       2010
+95000000        adventure    percy jackson & the olympians: the lightning thief 5.9       2010
+60000000        action       resident evil: afterlife                      5.9       2010
+20000000        drama        the last song                                 5.9       2010
+-               sci-fi       beyond the black rainbow                      6.0       2010
+-               drama        for colored girls                             6.0       2010
+80000000        comedy       grown ups                                     6.0       2010
+12000000        comedy       henry's crime                                 6.0       2010
+100000000       action       the tourist                                   6.0       2010
+-               comedy       waiting for forever                           6.0       2010
+-               comedy       greenberg                                     6.1       2010
+-               action       kites: más allá de las fronteras            6.1       2010
+35000000        comedy       nanny mcphee returns                          6.1       2010
+13000000        crime        the killer inside me                          6.1       2010
+150000000       action       the sorcerer's apprentice                     6.1       2010
+19000000        comedy       the switch                                    6.1       2010
+10000000        comedy       burke and hare                                6.2       2010
+15000000        biography    casino jack                                   6.2       2010
+15000000        comedy       diary of a wimpy kid                          6.2       2010
+-               comedy       i'm still here                                6.2       2010
+-               drama        la vida según attenberg                      6.2       2010
+25000000        crime        london boulevard                              6.2       2010
+30000000        drama        step up 3d                                    6.2       2010
+20000000        action       takers                                        6.2       2010
+-               comedy       tamara drewe                                  6.2       2010
+40000000        action       the karate kid                                6.2       2010
+65000           comedy       tiny furniture                                6.2       2010
+70000000        drama        wall street: money never sleeps               6.2       2010
+-               crime        all good things                               6.3       2010
+15000000        drama        country strong                                6.3       2010
+7000000         comedy       cyrus                                         6.3       2010
+55000000        comedy       date night                                    6.3       2010
+25000000        drama        dear john                                     6.3       2010
+10000000        horror       devil                                         6.3       2010
+32000000        comedy       going the distance                            6.3       2010
+2000000         crime        i spit on your grave                          6.3       2010
+117000000       action       knight and day                                6.3       2010
+32000000        action       repo men                                      6.3       2010
+165000000       animation    shrek forever after                           6.3       2010
+7000000         comedy       somewhere                                     6.3       2010
+20000000        crime        the american                                  6.3       2010
+155000000       adventure    the chronicles of narnia: the voyage of the dawn treader 6.3       2010
+45000000        action       the warrior's way                             6.3       2010
+22000000        comedy       you will meet a tall dark stranger            6.3       2010
+-               action       black death                                   6.4       2010
+55000000        drama        burlesque                                     6.4       2010
+12000000        action       centurion                                     6.4       2010
+5000000         comedy       everything must go                            6.4       2010
+-               comedy       get him to the greek                          6.4       2010
+36000000        comedy       hot tub time machine                          6.4       2010
+-               drama        monsters                                      6.4       2010
+-               drama        norwegian wood                                6.4       2010
+40000000        action       predators                                     6.4       2010
+-               thriller     red hill                                      6.4       2010
+110000000       action       salt                                          6.4       2010
+20000000        comedy       she's out of my league                        6.4       2010
+25000000        action       the losers                                    6.4       2010
+200000000       adventure    alice in wonderland                           6.5       2010
+44000000        drama        charlie st. cloud                             6.5       2010
+4000000         comedy       dirty girl                                    6.5       2010
+31000000        drama        extraordinary measures                        6.5       2010
+24000000        action       faster                                        6.5       2010
+-               biography    frankie & alice                               6.5       2010
+50000000        drama        hereafter                                     6.5       2010
+19000000        comedy       leap year                                     6.5       2010
+40000000        comedy       morning glory                                 6.5       2010
+52000000        action       parís en la mira                             6.5       2010
+650000          drama        stake land                                    6.5       2010
+20000000        horror       the crazies                                   6.5       2010
+80000000        action       the expendables                               6.5       2010
+-               drama        the housemaid                                 6.5       2010
+65000000        comedy       due date                                      6.6       2010
+80000000        crime        edge of darkness                              6.6       2010
+-               drama        last night                                    6.6       2010
+30000000        adventure    letters to juliet                             6.6       2010
+38000000        comedy       life as we know it                            6.6       2010
+10500000        action       machete                                       6.6       2010
+-               drama        meek's cutoff                                 6.6       2010
+200000000       action       prince of persia: the sands of time           6.6       2010
+-               comedy       the last circus                               6.6       2010
+10000000        biography    the runaways                                  6.6       2010
+-               comedy       uncle boonmee who can recall his past lives   6.6       2010
+-               action       easy money                                    6.7       2010
+30000000        comedy       love & other drugs                            6.7       2010
+15000000        adventure    ramona and beezus                             6.7       2010
+200000000       action       robin hood                                    6.7       2010
+100000000       action       the other guys                                6.7       2010
+100000000       action       green zone                                    6.8       2010
+-               comedy       happythankyoumoreplease                       6.8       2010
+-               comedy       heartbreaker                                  6.8       2010
+1500000         horror       insidious                                     6.8       2010
+2500000         comedy       super                                         6.8       2010
+110000000       action       the a-team                                    6.8       2010
+15000000        drama        the company men                               6.8       2010
+500000          comedy       the perfect host                              6.8       2010
+170000000       action       tron: legacy                                  6.8       2010
+100000000       action       unstoppable                                   6.8       2010
+80000000        action       the book of eli                               6.9       2010
+25000000        crime        the conspirator                               6.9       2010
+20000000        drama        the debt                                      6.9       2010
+8000000         action       wild target                                   6.9       2010
+200000000       action       iron man 2                                    7.0       2010
+80000000        animation    legend of the guardians: the owls of ga'hoole 7.0       2010
+5000000         drama        rabbit hole                                   7.0       2010
+3000000         drama        sepultado                                     7.0       2010
+-               comedy       the trip                                      7.0       2010
+-               drama        trollhunter                                   7.0       2010
+-               drama        welcome to the rileys                         7.0       2010
+8000000         comedy       easy a                                        7.1       2010
+7000000         comedy       hesher                                        7.1       2010
+8000000         comedy       it's kind of a funny story                    7.1       2010
+25000000        comedy       little white lies                             7.1       2010
+58000000        action       red                                           7.1       2010
+3500000         comedy       the kids are all right                        7.1       2010
+3200000         comedy       beginners                                     7.2       2010
+12500000        biography    conviction                                    7.2       2010
+-               drama        heartbeats                                    7.2       2010
+20000000        drama        let me in                                     7.2       2010
+7200000         biography    made in dagenham                              7.2       2010
+15000000        drama        never let me go                               7.2       2010
+16000000        drama        remember me                                   7.2       2010
+35000000        biography    secretariat                                   7.2       2010
+-               action       secretos peligrosos                           7.2       2010
+45000000        drama        the ghost writer                              7.2       2010
+2000000         drama        winter's bone                                 7.2       2010
+-               crime        animal kingdom                                7.3       2010
+-               comedy       another year                                  7.3       2010
+-               drama        certified copy                                7.3       2010
+-               comedy       four lions                                    7.3       2010
+-               comedy       la versión de mi vida                        7.3       2010
+130000000       animation    megamind                                      7.3       2010
+-               comedy       submarine                                     7.3       2010
+-               adventure    the way back                                  7.3       2010
+3500000         drama        blue valentine                                7.4       2010
+35000000        crime        the next three days                           7.4       2010
+-               adventure    the way                                       7.4       2010
+-               drama        biutiful                                      7.5       2010
+-               comedy       boy                                           7.5       2010
+-               drama        even the rain                                 7.5       2010
+-               comedy       guzaarish                                     7.5       2010
+-               drama        la llave de sarah                             7.5       2010
+60000000        action       scott pilgrim vs. the world                   7.5       2010
+18000000        adventure    127 hours                                     7.6       2010
+6000000         action       13 assassins                                  7.6       2010
+-               action       ip man 2                                      7.6       2010
+23000000        animation    the secret world of arrietty                  7.6       2010
+37000000        crime        the town                                      7.6       2010
+38000000        adventure    true grit                                     7.6       2010
+-               comedy       tucker and dale vs evil                       7.6       2010
+69000000        animation    despicable me                                 7.7       2010
+14000000        comedy       flipped                                       7.7       2010
+-               adventure    harry potter and the deathly hallows: part 1  7.7       2010
+-               drama        in a better world                             7.7       2010
+30000000        action       kick-ass                                      7.7       2010
+40000000        biography    the social network                            7.7       2010
+-               action       i saw the devil                               7.8       2010
+260000000       animation    tangled                                       7.8       2010
+25000000        biography    the fighter                                   7.8       2010
+-               action       the man from nowhere                          7.8       2010
+13000000        drama        black swan                                    8.0       2010
+12000000        adventure    my name is khan                               8.0       2010
+15000000        biography    the king's speech                             8.0       2010
+-               action       elite squad: the enemy within                 8.1       2010
+165000000       animation    how to train your dragon                      8.1       2010
+80000000        mystery      shutter island                                8.1       2010
+6800000         drama        incendies                                     8.2       2010
+200000000       animation    toy story 3                                   8.3       2010
+160000000       action       inception                                     8.8       2010
+79000000        comedy       jack and jill                                 3.4       2011
+27000000        action       spy kids 4: all the time in the world         3.6       2011
+-               horror       the human centipede ii (full sequence)        3.9       2011
+25000000        horror       shark night 3d                                4.0       2011
+57000000        action       ghost rider: spirit of vengeance              4.3       2011
+75000000        animation    alvin and the chipmunks: chipwrecked          4.4       2011
+32000000        action       big mommas: like father like son              4.4       2011
+13000000        drama        in the land of blood and honey                4.4       2011
+7000000         action       catch .44                                     4.6       2011
+30000000        action       the darkest hour                              4.9       2011
+16000000        drama        the roommate                                  4.9       2011
+110000000       adventure    the twilight saga: breaking dawn - part 1     4.9       2011
+35000000        action       abduction                                     5.1       2011
+5000000         horror       apollo 18                                     5.2       2011
+90000000        action       conan the barbarian                           5.2       2011
+80000000        comedy       zookeeper                                     5.2       2011
+2000000         drama        silent house                                  5.3       2011
+-               drama        sleeping beauty                               5.3       2011
+70000000        comedy       the dilemma                                   5.3       2011
+35000000        crime        trespass                                      5.3       2011
+50000000        action       drive angry                                   5.4       2011
+13000000        fantasy      intruders                                     5.4       2011
+8000000         comedy       prom                                          5.4       2011
+42000000        fantasy      red riding hood                               5.4       2011
+40000000        action       season of the witch                           5.4       2011
+63000000        animation    hop                                           5.5       2011
+750000          horror       the innkeepers                                5.5       2011
+110000000       animation    the smurfs                                    5.5       2011
+17000000        drama        beastly                                       5.6       2011
+200000000       action       green lantern                                 5.6       2011
+6000000         drama        the good doctor                               5.6       2011
+49900000        adventure    your highness                                 5.6       2011
+40000000        comedy       arthur                                        5.7       2011
+20000000        drama        atlas shrugged: part i                        5.7       2011
+20000000        comedy       bad teacher                                   5.7       2011
+-               drama        elles                                         5.7       2011
+6600000         comedy       jumping the broom                             5.7       2011
+56000000        comedy       new year's eve                                5.7       2011
+-               crime        texas killing fields                          5.7       2011
+-               comedy       the sitter                                    5.7       2011
+23000000        action       agentes secretos                              5.8       2011
+3000000         drama        aislados                                      5.8       2011
+70000000        action       battle los angeles                            5.8       2011
+5000000         horror       paranormal activity 3                         5.8       2011
+20000000        adventure    princesa por accidente                        5.8       2011
+12000000        crime        rampart                                       5.8       2011
+25000000        action       straw dogs                                    5.8       2011
+120000000       action       the green hornet                              5.8       2011
+40000000        horror       final destination 5                           5.9       2011
+24000000        comedy       footloose                                     5.9       2011
+36000000        comedy       hall pass                                     5.9       2011
+135000000       animation    happy feet two                                5.9       2011
+-               comedy       peace love & misunderstanding                 5.9       2011
+30000000        adventure    sanctum                                       5.9       2011
+35000000        comedy       something borrowed                            5.9       2011
+163000000       action       cowboys & aliens                              6.0       2011
+55000000        drama        dream house                                   6.0       2011
+36000000        animation    gnomeo & juliet                               6.0       2011
+75000000        action       immortals                                     6.0       2011
+55000000        comedy       mr. popper's penguins                         6.0       2011
+37000000        drama        the rite                                      6.0       2011
+-               comedy       10 years                                      6.1       2011
+28000000        action       30 minutos o menos                            6.1       2011
+3000000         action       hobo with a shotgun                           6.1       2011
+60000000        action       i am number four                              6.1       2011
+30000000        comedy       larry crowne                                  6.1       2011
+82000000        action       sucker punch                                  6.1       2011
+8000000         action       violet & daisy                                6.1       2011
+20000000        comedy       what's your number?                           6.1       2011
+-               drama        wuthering heights                             6.1       2011
+-               drama        360                                           6.2       2011
+-               comedy       a good old fashioned orgy                     6.2       2011
+-               comedy       butter                                        6.2       2011
+200000000       animation    cars 2                                        6.2       2011
+-               drama        coriolanus                                    6.2       2011
+10000000        comedy       friends with kids                             6.2       2011
+25000000        comedy       no strings attached                           6.2       2011
+4000000         action       red state                                     6.2       2011
+40000000        horror       scream 4                                      6.2       2011
+17000000        action       seeking justice                               6.2       2011
+41000000        comedy       the big year                                  6.2       2011
+-               comedy       the decoy bride                               6.2       2011
+25000000        action       the eagle                                     6.2       2011
+45000000        comedy       the rum diary                                 6.2       2011
+38000000        horror       the thing                                     6.2       2011
+75000000        action       tower heist                                   6.2       2011
+15000000        drama        w.e.                                          6.2       2011
+-               comedy       a little bit of heaven                        6.3       2011
+19000000        adventure    a very harold & kumar 3d christmas            6.3       2011
+-               comedy       cedar rapids                                  6.3       2011
+-               comedy       chalet girl                                   6.3       2011
+45000000        action       johnny english reborn                         6.3       2011
+23000000        comedy       take me home tonight                          6.3       2011
+52000000        comedy       the change-up                                 6.3       2011
+-               drama        the deep blue sea                             6.3       2011
+195000000       action       transformers: dark of the moon                6.3       2011
+12000000        comedy       young adult                                   6.3       2011
+-               drama        alps: los suplantadores                       6.4       2011
+40000000        action       colombiana                                    6.4       2011
+5000000         comedy       flypaper                                      6.4       2011
+30000000        comedy       fright night                                  6.4       2011
+80000000        comedy       just go with it                               6.4       2011
+-               crime        kill list                                     6.4       2011
+5000000         comedy       our idiot brother                             6.4       2011
+13000000        biography    the iron lady                                 6.4       2011
+-               biography    a dangerous method                            6.5       2011
+70000000        action       killer elite                                  6.5       2011
+14000000        drama        margaret                                      6.5       2011
+80000000        comedy       the hangover part ii                          6.5       2011
+1000000         horror       you're next                                   6.5       2011
+13000000        action       attack the block                              6.6       2011
+60000000        drama        contagion                                     6.6       2011
+21000000        comedy       diary of a wimpy kid: rodrick rules           6.6       2011
+35000000        comedy       friends with benefits                         6.6       2011
+35000000        biography    j. edgar                                      6.6       2011
+250000000       action       pirates of the caribbean: on stranger tides   6.6       2011
+-               comedy       take this waltz                               6.6       2011
+-               drama        the art of getting by                         6.6       2011
+10000000        drama        the ledge                                     6.6       2011
+40000000        action       the mechanic                                  6.6       2011
+2000000         biography    the snowtown murders                          6.6       2011
+8000000         drama        albert nobbs                                  6.7       2011
+-               comedy       hysteria                                      6.7       2011
+40000000        action       in time                                       6.7       2011
+11000000        crime        killer joe                                    6.7       2011
+250000          drama        like crazy                                    6.7       2011
+130000000       animation    puss in boots                                 6.7       2011
+-               drama        sound of my voice                             6.7       2011
+21000000        drama        the beaver                                    6.7       2011
+-               comedy       this must be the place                        6.7       2011
+5000000         biography    bernie                                        6.8       2011
+32500000        comedy       bridesmaids                                   6.8       2011
+-               comedy       goon                                          6.8       2011
+30000000        action       hanna                                         6.8       2011
+-               drama        house of tolerance                            6.8       2011
+30000000        action       machine gun preacher                          6.8       2011
+-               comedy       salmon fishing in the yemen                   6.8       2011
+25000000        action       the grey                                      6.8       2011
+-               adventure    the hunter                                    6.8       2011
+-               comedy       the inbetweeners movie                        6.8       2011
+32000000        drama        the tree of life                              6.8       2011
+30000000        drama        anonymous                                     6.9       2011
+140000000       action       captain america: the first avenger            6.9       2011
+37000000        drama        dolphin tale                                  6.9       2011
+40000000        adventure    extremely loud & incredibly close             6.9       2011
+35000000        comedy       horrible bosses                               6.9       2011
+-               drama        martha marcy may marlene                      6.9       2011
+-               biography    puncture                                      6.9       2011
+90000000        animation    rio                                           6.9       2011
+-               comedy       take me home                                  6.9       2011
+38000000        drama        water for elephants                           6.9       2011
+100000          drama        another earth                                 7.0       2011
+2000000         drama        courageous                                    7.0       2011
+-               biography    my week with marilyn                          7.0       2011
+15000000        drama        one day                                       7.0       2011
+40000000        adventure    paul                                          7.0       2011
+50000000        mystery      super 8                                       7.0       2011
+150000000       action       thor                                          7.0       2011
+16700000        action       don 2                                         7.1       2011
+-               drama        el espía que sabía demasiado                7.1       2011
+12000000        biography    kill the irishman                             7.1       2011
+3500000         drama        margin call                                   7.1       2011
+7400000         drama        melancolía                                   7.1       2011
+-               drama        perfect sense                                 7.1       2011
+110000000       action       real steel                                    7.1       2011
+18000000        biography    soul surfer                                   7.1       2011
+50200000        romance      the adjustment bureau                         7.1       2011
+-               biography    the devil's double                            7.1       2011
+12500000        drama        the ides of march                             7.1       2011
+45000000        adventure    the muppets                                   7.1       2011
+50000000        comedy       we bought a zoo                               7.1       2011
+-               comedy       god bless america                             7.2       2011
+-               drama        north sea texas                               7.2       2011
+135000000       animation    rango                                         7.2       2011
+6500000         drama        shame                                         7.2       2011
+66000000        drama        war horse                                     7.2       2011
+30000000        animation    winnie the pooh                               7.2       2011
+25000000        comedy       ¿sabes quién viene?                         7.2       2011
+125000000       action       fast five                                     7.3       2011
+150000000       animation    kung fu panda 2                               7.3       2011
+10000000        comedy       the best exotic marigold hotel                7.3       2011
+20000000        comedy       the descendants                               7.3       2011
+6000000         comedy       the guard                                     7.3       2011
+40000000        crime        the lincoln lawyer                            7.3       2011
+-               crime        bullhead                                      7.4       2011
+50000000        comedy       crazy stupid love.                            7.4       2011
+-               drama        jane eyre                                     7.4       2011
+27000000        mystery      limitless                                     7.4       2011
+145000000       action       mission: impossible - ghost protocol          7.4       2011
+5000000         drama        take shelter                                  7.4       2011
+135000000       animation    the adventures of tintin                      7.4       2011
+22000000        animation    from up on poppy hill                         7.5       2011
+150000000       adventure    hugo                                          7.5       2011
+125000000       action       sherlock holmes: a game of shadows            7.5       2011
+32000000        mystery      source code                                   7.5       2011
+7000000         drama        we need to talk about kevin                   7.5       2011
+-               crime        headhunters                                   7.6       2011
+13000000        drama        la piel que habito                            7.6       2011
+50000000        biography    moneyball                                     7.6       2011
+93000000        action       rise of the planet of the apes                7.6       2011
+10920000        drama        rockstar                                      7.6       2011
+94000000        drama        the flowers of war                            7.6       2011
+1100000         action       the raid: redemption                          7.6       2011
+8000000         comedy       50/50                                         7.7       2011
+-               drama        detachment                                    7.7       2011
+17000000        comedy       midnight in paris                             7.7       2011
+-               drama        weekend                                       7.7       2011
+15000000        crime        drive                                         7.8       2011
+160000000       action       x-men: first class                            7.8       2011
+15000000        comedy       the artist                                    7.9       2011
+125000000       adventure    harry potter and the deathly hallows: part 2  8.1       2011
+25000000        drama        the help                                      8.1       2011
+-               adventure    zindagi na milegi dobara                      8.1       2011
+25000000        drama        warrior                                       8.2       2011
+500000          drama        a separation                                  8.4       2011
+-               biography    the intouchables                              8.6       2011
+-               horror       dracula 3d                                    3.6       2012
+5000000         comedy       piranha 3dd                                   3.8       2012
+17000000        horror       the apparition                                4.1       2012
+750000          horror       the devil inside                              4.2       2012
+11000000        comedy       lol                                           4.3       2012
+5000000         horror       paranormal activity 4                         4.6       2012
+3000000         horror       atm                                           4.7       2012
+-               comedy       the abcs of death                             4.7       2012
+2500000         drama        about cherry                                  4.8       2012
+2000000         action       aftershock                                    4.8       2012
+26350000        comedy       lay the favorite                              4.8       2012
+20000000        comedy       madea's witness protection                    4.9       2012
+20000000        action       the cold light of day                         4.9       2012
+6400000         horror       [rec] 3: genesis                              5.0       2012
+1000000         horror       chernobyl diaries                             5.0       2012
+20500000        drama        cosmópolis                                   5.0       2012
+20000000        adventure    terror en silent hill 2: la revelación       5.0       2012
+11500000        action       universal soldier: day of reckoning           5.0       2012
+35000000        action       alex cross                                    5.1       2012
+2500000         horror       the lords of salem                            5.1       2012
+-               comedy       the three stooges                             5.1       2012
+16000000        comedy       vamps                                         5.1       2012
+3000000         comedy       bachelorette                                  5.3       2012
+40000000        action       one for the money                             5.3       2012
+20000000        mystery      pasión un asesinato perfecto                 5.3       2012
+5000000         crime        spring breakers                               5.3       2012
+3000000         comedy       tim and eric's billion dollar movie           5.3       2012
+-               drama        bel ami                                       5.4       2012
+14000000        adventure    fun size                                      5.4       2012
+65000000        action       red dawn                                      5.4       2012
+65000000        action       resident evil: retribution                    5.4       2012
+15000000        action       the man with the iron fists                   5.4       2012
+6000000         comedy       casa de mi padre                              5.5       2012
+35000000        action       stolen                                        5.5       2012
+120000000       adventure    the twilight saga: breaking dawn - part 2     5.5       2012
+6900000         drama        house at the end of the street                5.6       2012
+85000000        adventure    mirror mirror                                 5.6       2012
+70000000        comedy       that's my boy                                 5.6       2012
+-               horror       the bay                                       5.6       2012
+12000000        crime        the samaritan                                 5.6       2012
+-               comedy       wanderlust                                    5.6       2012
+-               drama        at any price                                  5.7       2012
+55000000        action       bullet to the head                            5.7       2012
+25000000        comedy       joyful noise                                  5.7       2012
+35000000        comedy       playing for keeps                             5.7       2012
+68000000        action       the watch                                     5.7       2012
+40000000        comedy       what to expect when you're expecting          5.7       2012
+209000000       action       battleship                                    5.8       2012
+150000000       action       furia de titanes 2                            5.8       2012
+-               comedy       girl most likely                              5.8       2012
+79000000        action       journey 2: the mysterious island              5.8       2012
+-               comedy       save the date                                 5.8       2012
+40000000        comedy       the guilt trip                                5.8       2012
+12500000        drama        the paperboy                                  5.8       2012
+-               horror       v/h/s                                         5.8       2012
+40000000        comedy       a thousand words                              5.9       2012
+69000000        action       abraham lincoln: vampire hunter               5.9       2012
+-               drama        gone                                          5.9       2012
+-               biography    hyde park on hudson                           5.9       2012
+58000000        action       red tails                                     5.9       2012
+75000000        comedy       rock of ages                                  5.9       2012
+14000000        horror       the possession                                5.9       2012
+-               drama        to the wonder                                 5.9       2012
+850000          comedy       for a good time call...                       6.0       2012
+2900000         horror       no one lives                                  6.0       2012
+20000000        drama        not fade away                                 6.0       2012
+2000000         action       hit and run                                   6.1       2012
+20000000        action       lockout                                       6.1       2012
+7000000         comedy       magic mike                                    6.1       2012
+6000000         horror       maniac                                        6.1       2012
+25000000        adventure    on the road                                   6.1       2012
+25000000        comedy       parental guidance                             6.1       2012
+170000000       action       snow white and the huntsman                   6.1       2012
+95000000        comedy       the campaign                                  6.1       2012
+10000000        horror       the collection                                6.1       2012
+-               action       the sweeney                                   6.1       2012
+150000000       comedy       dark shadows                                  6.2       2012
+15000000        crime        killing them softly                           6.2       2012
+-               drama        red lights                                    6.2       2012
+-               drama        shadow dancer                                 6.2       2012
+30000000        comedy       the five-year engagement                      6.2       2012
+35000000        comedy       this is 40                                    6.2       2012
+45000000        action       búsqueda implacable 2                        6.3       2012
+12000000        crime        deadfall                                      6.3       2012
+22000000        comedy       diary of a wimpy kid: dog days                6.3       2012
+-               drama        farewell my queen                             6.3       2012
+-               drama        ginger & rosa                                 6.3       2012
+30000000        comedy       hope springs                                  6.3       2012
+-               comedy       struck by lightning                           6.3       2012
+65000000        action       this means war                                6.3       2012
+-               comedy       to rome with love                             6.3       2012
+125000000       action       total recall                                  6.3       2012
+-               drama        being flynn                                   6.4       2012
+270000          biography    compliance                                    6.4       2012
+-               drama        great expectations                            6.4       2012
+42000000        action       here comes the boom                           6.4       2012
+-               comedy       john dies at the end                          6.4       2012
+-               comedy       thanks for sharing                            6.4       2012
+2000000         drama        the company you keep                          6.4       2012
+65000000        comedy       the dictator                                  6.4       2012
+70000000        animation    the lorax                                     6.4       2012
+26000000        crime        the raven                                     6.4       2012
+17000000        drama        the woman in black                            6.4       2012
+70000000        action       underworld awakening                          6.4       2012
+60000000        drama        upside down                                   6.4       2012
+12000000        action       act of valor                                  6.5       2012
+40000000        biography    big miracle                                   6.5       2012
+-               drama        byzantium                                     6.5       2012
+25000000        action       contraband                                    6.5       2012
+35000000        action       premium rush                                  6.5       2012
+30000000        action       safe                                          6.5       2012
+45000000        crime        savages                                       6.5       2012
+-               adventure    sightseers                                    6.5       2012
+15000000        comedy       stand up guys                                 6.5       2012
+33000000        drama        step up revolution                            6.5       2012
+25000000        drama        the lucky one                                 6.5       2012
+12000000        drama        arbitrage                                     6.6       2012
+-               comedy       celeste & jesse forever                       6.6       2012
+95000000        animation    ice age: continental drift                    6.6       2012
+250000000       action       john carter                                   6.6       2012
+42000000        action       man on a ledge                                6.6       2012
+-               biography    renoir                                        6.6       2012
+100000000       action       the expendables 2                             6.6       2012
+25000000        comedy       the odd life of timothy green                 6.6       2012
+12000000        comedy       think like a man                              6.6       2012
+-               comedy       todo lo que necesitas es amor                 6.6       2012
+50000000        comedy       american reunion                              6.7       2012
+-               comedy       liberal arts                                  6.7       2012
+12000000        comedy       project x                                     6.7       2012
+10000000        adventure    seeking a friend for the end of the world     6.7       2012
+125000000       action       the bourne legacy                             6.7       2012
+55000000        animation    the pirates! band of misfits                  6.7       2012
+-               biography    hitchcock                                     6.8       2012
+225000000       action       men in black 3                                6.8       2012
+85000000        action       protegiendo al enemigo                        6.8       2012
+11000000        comedy       quartet                                       6.8       2012
+3000000         horror       sinister                                      6.8       2012
+500000          drama        smashed                                       6.8       2012
+-               drama        starlet                                       6.8       2012
+30000000        drama        the vow                                       6.8       2012
+60000000        drama        trouble with the curve                        6.8       2012
+145000000       animation    madagascar 3: europe's most wanted            6.9       2012
+2000000         comedy       the first time                                6.9       2012
+10000000        action       the iceman                                    6.9       2012
+-               drama        the reluctant fundamentalist                  6.9       2012
+39000000        animation    frankenweenie                                 7.0       2012
+-               comedy       if i were you                                 7.0       2012
+60000000        action       jack reacher                                  7.0       2012
+60000000        animation    paranorman                                    7.0       2012
+130000000       adventure    prometheus                                    7.0       2012
+750000          comedy       safety not guaranteed                         7.0       2012
+50000000        comedy       ted                                           7.0       2012
+230000000       action       the amazing spider-man                        7.0       2012
+-               comedy       the angels' share                             7.0       2012
+30000000        horror       the cabin in the woods                        7.0       2012
+-               comedy       the magic of belle isle                       7.0       2012
+-               drama        a late quartet                                7.1       2012
+12000000        sci-fi       chronicle                                     7.1       2012
+35000000        action       dredd                                         7.1       2012
+85000000        animation    hotel transylvania                            7.1       2012
+-               drama        lore                                          7.1       2012
+16000000        comedy       people like us                                7.1       2012
+2500000         comedy       robot & frank                                 7.1       2012
+32000000        drama        the master                                    7.1       2012
+6000000         drama        the words                                     7.1       2012
+42000000        action       21 jump street                                7.2       2012
+-               drama        a hijacking                                   7.2       2012
+185000000       animation    brave                                         7.2       2012
+20000000        biography    chasing mavericks                             7.2       2012
+-               action       into the white                                7.2       2012
+16600000        adventure    kon-tiki                                      7.2       2012
+-               comedy       much ado about nothing                        7.2       2012
+17000000        comedy       pitch perfect                                 7.2       2012
+8000000         comedy       ruby sparks                                   7.2       2012
+15000000        comedy       seven psychopaths                             7.2       2012
+78000000        adventure    the hunger games                              7.2       2012
+1000000         biography    the sessions                                  7.2       2012
+1800000         adventure    beasts of the southern wild                   7.3       2012
+31000000        drama        flight                                        7.3       2012
+26000000        crime        lawless                                       7.3       2012
+145000000       animation    rise of the guardians                         7.3       2012
+-               comedy       stuck in love                                 7.3       2012
+7395080         crime        talaash                                       7.3       2012
+15000000        crime        the place beyond the pines                    7.3       2012
+-               comedy       en la casa                                    7.4       2012
+-               comedy       frances ha                                    7.4       2012
+65000000        biography    lincoln                                       7.4       2012
+30000000        action       looper                                        7.4       2012
+10000000        drama        mud                                           7.4       2012
+-               drama        no                                            7.4       2012
+-               drama        twice born                                    7.4       2012
+40000000        drama        zero dark thirty                              7.4       2012
+102000000       action       cloud atlas                                   7.5       2012
+-               drama        rust and bone                                 7.5       2012
+6000000         drama        what maisie knew                              7.5       2012
+-               biography    a royal affair                                7.6       2012
+10000000        drama        disconnect                                    7.6       2012
+-               comedy       la bicicleta verde                            7.6       2012
+61000000        drama        les misérables                               7.6       2012
+45000000        drama        the impossible                                7.6       2012
+44500000        adventure    argo                                          7.7       2012
+7000000         action       end of watch                                  7.7       2012
+165000000       animation    wreck-it ralph                                7.7       2012
+-               drama        el círculo roto                              7.8       2012
+16000000        adventure    moonrise kingdom                              7.8       2012
+21000000        comedy       silver linings playbook                       7.8       2012
+200000000       action       skyfall                                       7.8       2012
+8900000         drama        amour                                         7.9       2012
+-               comedy       english vinglish                              7.9       2012
+120000000       adventure    life of pi                                    7.9       2012
+180000000       adventure    the hobbit: an unexpected journey             7.9       2012
+13000000        drama        the perks of being a wallflower               8.0       2012
+-               drama        kahaani                                       8.2       2012
+3800000         drama        the hunt                                      8.3       2012
+100000000       drama        django unchained                              8.4       2012
+250000000       action       the dark knight rises                         8.4       2012
+
+1. List of the Sorted Data
+2. List of the Genres
+3. List of the Movie Through the Years
+4. List of the Movie Through the Scores
+5. All Informations of a Single Movie
+6. Average of the IMDB Scores
+7. Frequence of the Genres
+8. Exit
+
+Please select and operation: 8

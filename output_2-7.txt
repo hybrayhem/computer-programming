@@ -1,0 +1,366 @@
+Loading movies from the storage...
+
+6730 movies loaded to the memory.
+
+
+1. List of the Sorted Data
+2. List of the Genres
+3. List of the Movie Through the Years
+4. List of the Movie Through the Scores
+5. All Informations of a Single Movie
+6. Average of the IMDB Scores
+7. Frequence of the Genres
+8. Exit
+
+Please select and operation: 2
+
+
+action       
+animation    
+adventure    
+biography    
+comedy       
+drama        
+crime        
+horror       
+sci-fi       
+thriller     
+mystery      
+western      
+romance      
+fantasy      
+family       
+musical      
+war          
+
+
+1. List of the Sorted Data
+2. List of the Genres
+3. List of the Movie Through the Years
+4. List of the Movie Through the Scores
+5. All Informations of a Single Movie
+6. Average of the IMDB Scores
+7. Frequence of the Genres
+8. Exit
+
+Please select and operation: 3  
+Enter a year: 2017
+Until(0) or Since(1) 2017:1
+
+
+Movie not found.
+
+Enter a year: 2016
+Until(0) or Since(1) 2016:1
+
+captain america: civil war
+batman v superman: dawn of justice
+rogue one
+finding dory
+star trek beyond
+the legend of tarzan
+fantastic beasts and where to find them
+x-men: apocalypse
+the jungle book
+suicide squad
+alice through the looking glass
+doctor strange
+independence day: resurgence
+warcraft: the beginning
+moana
+zootopia
+the great wall
+kung fu panda 3
+ghostbusters
+the bfg
+gods of egypt
+teenage mutant ninja turtles: out of the shadows
+trolls
+monster trucks
+assassin's creed
+jason bourne
+the huntsman: winter's war
+miss peregrine's home for peculiar children
+allegiant
+horizonte profundo
+passengers
+live by night
+ice age: collision course
+ben-hur
+los ilusionistas 2
+the magnificent seven
+allied
+the finest hours
+la vida secreta de tus mascotas
+inferno
+the angry birds movie
+storks
+pete's dragon
+london has fallen
+sully
+jack reacher: sin regreso
+kubo and the two strings
+deadpool
+free state of jones
+zoolander 2
+the nice guys
+central intelligence
+13 hours
+arrival
+silence
+the girl on the train
+office christmas party
+día del atentado
+the accountant
+a monster calls
+el especialista: la resurrección
+snowden
+keeping up with the joneses
+resident evil: the final chapter
+a cure for wellness
+billy lynn's long halftime walk
+hasta el último hombre
+the conjuring 2
+war dogs
+how to be single
+the 5th wave
+why him?
+collateral beauty
+neighbors 2: sorority rising
+whiskey tango foxtrot
+underworld: blood wars
+el bebé de bridget jones
+the brothers grimsby
+mike and dave need wedding dates
+criminal
+leap!
+la la land
+mi papá es un gato
+café society
+the lost city of z
+a hologram for the king
+florence foster jenkins
+the boss
+the infiltrator
+pride and prejudice and zombies
+dirty grandpa
+money monster
+bad santa 2
+mother's day
+the founder
+rules don't apply
+hidden figures
+fences
+eddie the eagle
+nocturnal animals
+hail caesar!
+collide
+me before you
+gold
+popstar: never stop never stopping
+the take
+bad moms
+triple 9
+risen
+boo! a madea halloween
+the light between oceans
+nerve
+manos de piedra
+sausage party
+my big fat greek wedding 2
+midnight special
+the shallows
+almost christmas
+the comedian
+keanu
+the disappointments room
+10 cloverfield lane
+a united kingdom
+sola contra el poder
+miracles from heaven
+hell or high water
+lion
+the purge: election year
+presencia siniestra
+free fire
+max steel
+everybody wants some!!
+the forest
+denial
+don't breathe
+ouija: origin of evil
+split
+jackie
+the edge of seventeen
+loving
+the birth of a nation
+middle school: the worst years of my life
+manchester by the sea
+the boy
+mr. church
+a street cat named bob
+morgan
+20th century women
+el demonio neón
+the bad batch
+bleed for this
+personal shopper
+the belko experiment
+incarnate
+la bruja de blair
+paris can wait
+lights out
+the darkness
+the hollars
+batman: the killing joke
+swiss army man
+love & friendship
+31
+moonlight
+meet the blacks
+sleight
+till we meet again
+american honey
+genius
+the handmaiden
+pet
+the choice
+paterson
+i daniel blake
+anthropoid
+shin godzilla
+dangal
+lowriders
+your name
+norman
+certain women
+mothers and daughters
+chuck
+el fin del sueño americano
+lady macbeth
+the exception
+el cliente
+their finest
+from the land of the moon
+estación zombie: tren a busan
+in a valley of violence
+maudie
+the love witch
+la tortuga roja
+ella es un monstruo
+indignation
+absolutely fabulous: the movie
+carrie pilby
+our kind of traitor
+king cobra
+complete unknown
+captain fantastic
+kingsglaive: final fantasy xv
+dead awake
+the other side of the door
+buster's mal heart
+goat
+voraz
+frantz
+neruda
+hunt for the wilderpeople
+white girl
+the void
+the eyes of my mother
+toni erdmann
+wakefield
+the wailing
+
+
+1. List of the Sorted Data
+2. List of the Genres
+3. List of the Movie Through the Years
+4. List of the Movie Through the Scores
+5. All Informations of a Single Movie
+6. Average of the IMDB Scores
+7. Frequence of the Genres
+8. Exit
+
+Please select and operation: 4
+Enter a score: 2
+Less(0) or Greater(1) 2.0:0
+
+saving christmas
+ultra warrior
+disaster movie
+the hottie & the nottie
+
+
+1. List of the Sorted Data
+2. List of the Genres
+3. List of the Movie Through the Years
+4. List of the Movie Through the Scores
+5. All Informations of a Single Movie
+6. Average of the IMDB Scores
+7. Frequence of the Genres
+8. Exit
+
+Please select and operation: 5
+Please enter the name of the movie: ultra warrior   
+
+Budget: Unknown
+Genre: action
+Name: ultra warrior
+Score: 1.6
+Year: 1990
+
+
+1. List of the Sorted Data
+2. List of the Genres
+3. List of the Movie Through the Years
+4. List of the Movie Through the Scores
+5. All Informations of a Single Movie
+6. Average of the IMDB Scores
+7. Frequence of the Genres
+8. Exit
+
+Please select and operation: 6
+
+Average: 6.3752
+
+1. List of the Sorted Data
+2. List of the Genres
+3. List of the Movie Through the Years
+4. List of the Movie Through the Scores
+5. All Informations of a Single Movie
+6. Average of the IMDB Scores
+7. Frequence of the Genres
+8. Exit
+
+Please select and operation: 7
+
+action       1305
+animation    275
+adventure    391
+biography    356
+comedy       2060
+drama        1422
+crime        512
+horror       274
+sci-fi       13
+thriller     16
+mystery      38
+western      2
+romance      15
+fantasy      31
+family       14
+musical      4
+war          2
+
+
+1. List of the Sorted Data
+2. List of the Genres
+3. List of the Movie Through the Years
+4. List of the Movie Through the Scores
+5. All Informations of a Single Movie
+6. Average of the IMDB Scores
+7. Frequence of the Genres
+8. Exit
+
+Please select and operation: 8
+
