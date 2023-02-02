@@ -17,7 +17,7 @@
 void test_clean_file () 
 {
 	char *to_delete[10] = {"effort", "thereby", "robot"};
-	clean_file("input.txt", "output.txt", to_delete, 3);
+	clean_file("file_input.txt", "file_output.txt", to_delete, 3);
 	printf("test_clean_file     DONE...\n\n");
 
 	

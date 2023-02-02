@@ -1,7 +1,0 @@
-{
-    "files.associations": {
-        "exception": "c",
-        "thread": "c",
-        "typeinfo": "c"
-    }
-}
