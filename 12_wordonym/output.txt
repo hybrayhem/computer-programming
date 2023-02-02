@@ -1,0 +1,110 @@
+Please select or create a user:
+
+1. hybrayhem
+2. Create new user
+Enter the selection: 1
+
+   _      __            __                     __    
+  | | /| / /__  _______/ /__  ___  __ ____ _  / /    
+  | |/ |/ / _ \/ __/ _  / _ \/ _ \/ // /  ' \/_/ 
+  |__/|__/\___/_/  \_,_/\___/_//_/\_, /_/_/_(_)  
+                                 /___/                       v0.0.2
+
+
+1. Start Game
+2. Add synonym/antonym
+3. Show user info
+4. About
+5. Save & Exit
+
+Please select an operation: 4
+
+
++-----------------------------------------------------------------------------------------------------------+
+|                                                                                                           |
+|               Wordonym (c) 2021, the word practice game developed by CSE102 Game Studios.                 |
+|                                                                                                           |
+|        Words sourced from book 'A Complete Dictionary of Synonyms and Antonyms' by Samuel Follow.         |
+|                 All words are filtered, the game can be played by students of all ages.                   |
+|                                                                                                           |
++-----------------------------------------------------------------------------------------------------------+
+
+
+1. Start Game
+2. Add synonym/antonym
+3. Show user info
+4. About
+5. Save & Exit
+
+Please select an operation: 3
+
+
++-----------------------------------------------------------------------+
+|                                                                       |
+|        Username: hybrayhem                                            |
+|                                                                       |
+|        Right/Wrong Ratio:     0 / 3                                   |
+|                                                                       |
++-----------------------------------------------------------------------+
+
+
+1. Start Game
+2. Add synonym/antonym
+3. Show user info
+4. About
+5. Save & Exit
+
+Please select an operation: 1
+
+Enter q for exit.
+What is the antonym of host?
+> home
+Wrong. 
+Do you want to add 'home' to the antonyms of host? (y / n) n
+
+What is the antonym of mesh?
+> net
+Wrong. 
+Do you want to add 'net' to the antonyms of mesh? (y / n) y
+
+What is the synonym of group?
+> collection
+Right. 
+
+What is the synonym of total?
+> sum
+Right. 
+
+What is the antonym of doughty?
+> q
+
+
+1. Start Game
+2. Add synonym/antonym
+3. Show user info
+4. About
+5. Save & Exit
+
+Please select an operation: 3
+
+
++-----------------------------------------------------------------------+
+|                                                                       |
+|        Username: hybrayhem                                            |
+|                                                                       |
+|        Right/Wrong Ratio:     2 / 4                                   |
+|                                                                       |
++-----------------------------------------------------------------------+
+
+
+1. Start Game
+2. Add synonym/antonym
+3. Show user info
+4. About
+5. Save & Exit
+
+Please select an operation: 5
+
+
+Saving progress...
+
