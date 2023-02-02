@@ -1,0 +1,26 @@
+- budget - genre - name - score - year
+ l = 6730
+0. movie = budget: 30000000.0, genre: (null)(0), name: rugrats in paris: the movie, score: 6.1, year: 2000
+1. movie = budget: 70000000.0, genre: (null)(0), name: six days seven nights, score: 5.8, year: 1998
+2. movie = budget: 60000000.0, genre: (null)(0), name: far and away, score: 6.5, year: 1992
+3. movie = budget: -1.0, genre: (null)(0), name: greenfingers, score: 6.9, year: 2000
+4. movie = budget: -1.0, genre: (null)(0), name: american honey, score: 7.0, year: 2016
+5. movie = budget: -1.0, genre: (null)(0), name: crime story, score: 6.8, year: 1993
+6. movie = budget: -1.0, genre: (null)(0), name: dangerously close, score: 6.6, year: 1986
+7. movie = budget: 50000000.0, genre: (null)(0), name: murder by numbers, score: 6.1, year: 2002
+8. movie = budget: 1000000.0, genre: (null)(0), name: loving annabelle, score: 6.6, year: 2006
+9. movie = budget: -1.0, genre: (null)(0), name: all about my mother, score: 7.9, year: 1999
+
+
+1. List of the Sorted
+2. List of the Genres
+3. List of the Movie Through the Years
+4. List of the Movie Through the Scores
+5. All Informations of a Single Movie
+6. Average of the IMDB Scores
+7. Frequence of the Genres
+8. Exit
+
+Please select an operation: 8
+Exit.
+
